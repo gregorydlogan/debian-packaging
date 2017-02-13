@@ -1,0 +1,10 @@
+/var/log/activemq/*log {
+	weekly
+	copytruncate
+	rotate 52
+	missingok
+	notifempty
+	compress
+	sharedscripts
+}
+

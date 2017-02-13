@@ -1,0 +1,5 @@
+ffmpeg (3.2.2-1) wheezy jessie trusty xenial; urgency=low
+
+  * Initial release of FFmpeg packaged for Opencast, care of John Van Sickle's static builds
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Fri, 27 Jan 2017 00:00:00 -0600

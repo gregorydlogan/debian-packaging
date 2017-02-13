@@ -1,0 +1,145 @@
+Source: opencast
+Section: java
+Priority: optional
+Maintainer: Greg Logan <gregorydlogan@gmail.com>
+Build-Depends:
+ debhelper (>= 9),
+ dh-exec,
+ maven (>= 3.1.0),
+ openjdk-8-jdk | openjdk-7-jdk
+Standards-Version: 3.9.5
+Homepage: http://opencast.org
+Vcs-Git: git@bitbucket.org:greg_logan/debian_packaging.git
+Vcs-Browser: https://bitbucket.org/greg_logan/debian_packaging
+
+Package: opencast-common
+Architecture: all
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ openjdk-8-jre | openjdk-7-jre,
+ adduser,
+ netcat
+Description: Open Source Lecture Capture & Video Management Tool Common Files
+ Opencast is a free, open-source platform to support the management of
+ educational audio and video content. Institutions will use Opencast to
+ produce lecture recordings, manage existing video, serve designated
+ distribution channels, and provide user interfaces to engage students with
+ educational videos.
+ This is the base fileset for Opencast and is not functional without an 
+ opencast-* package.
+
+Package: opencast-allinone
+Architecture: all
+Depends:
+ opencast-common,
+ activemq,
+ ffmpeg,
+ tesseract-ocr,
+ hunspell
+Conflicts:
+ opencast-admin,
+ opencast-worker,
+ opencast-presentation
+Suggests:
+ mariadb-server,
+ opencast-activemq
+Description: Open Source Lecture Capture & Video Management Tool All-In-One Profile
+ Opencast is a free, open-source platform to support the management of
+ educational audio and video content. Institutions will use Opencast to
+ produce lecture recordings, manage existing video, serve designated
+ distribution channels, and provide user interfaces to engage students with
+ educational videos.
+ This is the all-in-one profile of Opencast.  You 
+ will not need any additional nodes for this install.
+
+Package: opencast-admin
+Architecture: all
+Depends:
+ opencast-common,
+ nfs-kernel-server,
+ activemq
+Conflicts:
+ opencast-allinone,
+ opencast-worker,
+ opencast-presentation
+Suggests:
+ opencast-activemq,
+ mariadb-server
+Description: Open Source Lecture Capture & Video Management Tool Admin Profile
+ Opencast is a free, open-source platform to support the management of
+ educational audio and video content. Institutions will use Opencast to
+ produce lecture recordings, manage existing video, serve designated
+ distribution channels, and provide user interfaces to engage students with
+ educational videos.
+ This is the admin node profile of Opencast.  You will need
+ one of these installed in a clustered install of Opencast.
+
+Package: opencast-worker
+Architecture: all
+Depends:
+ opencast-common,
+ sox,
+ ffmpeg,
+ hunspell,
+ tesseract-ocr,
+ nfs-client
+Conflicts:
+ opencast-admin,
+ opencast-allinone,
+ opencast-presentation
+Description: Open Source Lecture Capture & Video Management Tool Worker Profile
+ Opencast is a free, open-source platform to support the management of
+ educational audio and video content. Institutions will use Opencast to
+ produce lecture recordings, manage existing video, serve designated
+ distribution channels, and provide user interfaces to engage students with
+ educational videos.
+ This is the worker node profile of Opencast.  You will need
+ at least one of these installed in a clustered install of Opencast.  More workers
+ means you can process videos faster, to a point.
+
+Package: opencast-presentation
+Architecture: all
+Depends:
+ opencast-common,
+ nfs-client
+Conflicts:
+ opencast-admin,
+ opencast-worker,
+ opencast-allinone
+Suggests:
+ nginx
+Description: Open Source Lecture Capture & Video Management Tool Distribution Profile
+ Opencast is a free, open-source platform to support the management of
+ educational audio and video content. Institutions will use Opencast to
+ produce lecture recordings, manage existing video, serve designated
+ distribution channels, and provide user interfaces to engage students with
+ educational videos.
+ This is the presentation node profile of Opencast.  You will need
+ at least one of these installed in a clustered install of Opencast.  This is the node
+ where your users will go for the output video files.
+
+Package: opencast-activemq
+Architecture: all
+Depends:
+ activemq,
+ opencast-common
+Description: Opencast ActiveMQ configuration file
+ This package provides a pre-configured configuration file for Opencast. This package
+ assumes it is being installed over top of the activemq-dist package provided by the 
+ same maintainer as this package.
+
+#Package: opencast-nginx
+#Architecture: amd64
+#Depends: nginx
+#Description: nginx
+
+#Package: opencast-solr
+#Architecture: all
+#Depends: openjdk-7-jre-headless
+#Description: solr
+
+#Package: opencast-elasticseach
+#Architecture: all
+#Depends: openjdk-7-jre-headless
+#Description: elasticsearch

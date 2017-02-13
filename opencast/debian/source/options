@@ -1,0 +1,3 @@
+#Ignore the node bits that have been downloaded
+extend-diff-ignore = "modules/matterhorn-admin-ui-ng/node*|modules/matterhorn-admin-ui-ng/npm*|modules/matterhorn-admin-ui-ng/coverage|modules/matterhorn-admin-ui-ng/.tmp|modules/*/target"
+

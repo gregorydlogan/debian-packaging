@@ -1,0 +1,32 @@
+--- a/etc/index/adminui/settings.yml
++++ b/etc/index/adminui/settings.yml
+@@ -160,7 +160,7 @@
+ 
+ # Path to log files:
+ #
+-path.logs: ${karaf.data}/log/elasticsearch.log
++path.logs: /var/log/opencast/elasticsearch/admin/elasticsearch.log
+ 
+ # Path to where plugins are installed:
+ #
+--- a/etc/index/externalapi/settings.yml
++++ b/etc/index/externalapi/settings.yml
+@@ -160,7 +160,7 @@
+ 
+ # Path to log files:
+ #
+-path.logs: ${karaf.data}/log/elasticsearch.log
++path.logs: /var/log/opencast/elasticsearch/externalapi/elasticsearch.log
+ 
+ # Path to where plugins are installed:
+ #
+--- a/etc/org.ops4j.pax.logging.cfg
++++ b/etc/org.ops4j.pax.logging.cfg
+@@ -26,6 +26,6 @@
+ log4j.appender.out=org.apache.log4j.FileAppender
+ log4j.appender.out.layout=org.apache.log4j.PatternLayout
+ log4j.appender.out.layout.ConversionPattern=%d{ISO8601} | %-5.5p | (%C{1}:%L) - %m%n
+-log4j.appender.out.file=${karaf.data}/log/opencast.log
++log4j.appender.out.file=/var/log/opencast/opencast/opencast.log
+ log4j.appender.out.append=true
+ log4j.appender.out.encoding=UTF-8

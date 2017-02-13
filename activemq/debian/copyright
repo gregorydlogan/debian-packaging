@@ -1,0 +1,19 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Apache ActiveMQ
+Upstream-Contact: http://activemq.apache.org/developer-forum.html
+Source: https://svn.apache.org/repos/asf/activemq/trunk/
+
+Files: *
+Copyright: 2005-2011, Apache Software Foundation
+License: Apache-2.0
+
+Files: debian/*
+Copyright:
+ Copyright 2011, Damien Raude-Morvan <drazzib@debian.org>
+ Copyright 2011, Jonas Genannt <jonas.genannt@capi2name.de>
+ Copyright 2016, Greg Logan <gregorydlogan@gmail.com>
+License: Apache-2.0
+
+License: Apache-2.0
+  On Debian GNU/Linux system you can find the complete text of the
+  Apache-2.0 license in '/usr/share/common-licenses/Apache-2.0'

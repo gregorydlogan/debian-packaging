@@ -1,0 +1,5 @@
+opencast (2.4.x-1) wheezy jessie trusty xenial; urgency=low
+
+  * Initial release of Debian packages based on Opencast 2.4.x
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Fri, 27 Jan 2017 00:00:00 -0600

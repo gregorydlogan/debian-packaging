@@ -1,0 +1,7 @@
+/etc/activemq /usr/share/activemq/conf
+
+/usr/share/activemq/bin/activemq /usr/bin/activemq
+
+/var/lib/activemq /usr/share/activemq/data
+
+/var/log/activemq /usr/share/activemq/log

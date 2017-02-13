@@ -1,0 +1,5 @@
+/etc/opencast /usr/share/opencast/etc
+
+/srv/opencast /usr/share/opencast/data
+
+/var/log/opencast /srv/opencast/log
