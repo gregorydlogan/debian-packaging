@@ -54,7 +54,7 @@ case "$1" in
     # purge stats overrides
     # stats overrides could already be removed by root
     dpkg-statoverride --remove $OC_HOME || true
-    dpkg-statoverride --remote $OC_CONFIG || true
+    dpkg-statoverride --remove $OC_CONFIG || true
     dpkg-statoverride --remove $OC_LOG || true
     dpkg-statoverride --remove $OC_DATA || true
 
