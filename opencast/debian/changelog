@@ -1,4 +1,4 @@
-opencast (2.4.x-1) wheezy jessie trusty xenial; urgency=low
+opencast (2.4.x-1) jessie xenial; urgency=low
 
   * Initial release of Debian packages based on Opencast 2.4.x
 
