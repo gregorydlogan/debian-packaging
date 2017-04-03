@@ -11,7 +11,9 @@ OC_DATA=/srv/opencast
 OC_LOG=/var/log/opencast
 
 OC_GROUP=opencast
+OC_GID=7967
 OC_USER=opencast
+OC_UID=7967
 
 # summary of how this script can be called:
 #        * <postinst> `configure' <most-recently-configured-version>
@@ -27,18 +29,14 @@ OC_USER=opencast
 
 create_group() {
     if ! getent group $OC_GROUP > /dev/null 2>&1; then
-        addgroup --system $OC_GROUP
+        addgroup --gid $OC_GID --system $OC_GROUP
     fi
 }
 
 create_user() {
     if ! getent passwd $OC_USER > /dev/null 2>&1; then
-        adduser --system --no-create-home --ingroup $OC_GROUP \
-                --home $OC_HOME --shell /bin/bash $OC_USER
-    else
-        OC_HOME=`getent passwd $OC_USER | cut -f6 -d:`
-        # Renable user (give him a shell)
-        usermod --shell /bin/bash $OC_USER
+        adduser --system --no-create-home --uid $OC_UID --ingroup $OC_GROUP \
+                --home $OC_HOME --shell /usr/sbin/nologin $OC_USER
     fi
 }
 
