@@ -8,6 +8,7 @@ set -e
 OC_HOME=/usr/share/opencast
 OC_CONFIG=/etc/opencast
 OC_DATA=/srv/opencast
+OC_KARAF_DATA=/var/lib/opencast
 OC_LOG=/var/log/opencast
 
 OC_GROUP=opencast
@@ -29,13 +30,13 @@ OC_UID=7967
 
 create_group() {
     if ! getent group $OC_GROUP > /dev/null 2>&1; then
-        addgroup --gid $OC_GID --system $OC_GROUP
+        addgroup --gid $OC_GID $OC_GROUP
     fi
 }
 
 create_user() {
     if ! getent passwd $OC_USER > /dev/null 2>&1; then
-        adduser --system --no-create-home --uid $OC_UID --ingroup $OC_GROUP \
+        adduser --no-create-home --uid $OC_UID --ingroup $OC_GROUP \
                 --home $OC_HOME --shell /usr/sbin/nologin $OC_USER
     fi
 }
@@ -56,6 +57,7 @@ case "$1" in
 	apply_permissions $OC_CONFIG
 	apply_permissions $OC_LOG
 	apply_permissions $OC_DATA
+	apply_permissions $OC_KARAF_DATA
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

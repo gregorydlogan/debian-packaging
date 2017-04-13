@@ -119,21 +119,6 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
  at least one of these installed in a clustered install of Opencast.  This is the node
  where your users will go for the output video files.
 
-Package: opencast-activemq
-Architecture: all
-Depends:
- activemq,
- opencast-common
-Description: Opencast ActiveMQ configuration file
- This package provides a pre-configured configuration file for Opencast. This package
- assumes it is being installed over top of the activemq-dist package provided by the 
- same maintainer as this package.
-
-#Package: opencast-nginx
-#Architecture: amd64
-#Depends: nginx
-#Description: nginx
-
 #Package: opencast-solr
 #Architecture: all
 #Depends: openjdk-7-jre-headless

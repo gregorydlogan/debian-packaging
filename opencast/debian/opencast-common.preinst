@@ -16,8 +16,6 @@ set -e
 
 case "$1" in
     install|upgrade)
-	mkdir -p /usr/share/opencast /srv/opencast
-	chmod 3750 /usr/share/opencast /srv/opencast
     ;;
 
     abort-upgrade)

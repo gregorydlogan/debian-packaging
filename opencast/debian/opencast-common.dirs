@@ -1,2 +1,3 @@
-/usr/share/opencast/deploy
-/var/log/opencast/opencast
+/var/lib/opencast/instances
+
+/var/log/opencast

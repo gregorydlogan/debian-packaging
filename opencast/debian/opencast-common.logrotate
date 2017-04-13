@@ -1,14 +1,4 @@
-/var/log/opencast/opencast/*log {
-	weekly
-	copytruncate
-	rotate 52
-	missingok
-	notifempty
-	compress
-	sharedscripts
-}
-
-/var/log/opencast/elasticsearch/*/*log {
+/var/log/opencast/*log {
 	weekly
 	copytruncate
 	rotate 52

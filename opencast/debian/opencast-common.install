@@ -5,9 +5,8 @@ build/opencast-dist-base/docs/* /usr/share/opencast/docs/
 build/opencast-dist-base/lib/*  /usr/share/opencast/lib/
 build/opencast-dist-base/system/*  /usr/share/opencast/system/
 
-build/opencast-dist-base/etc/*	/etc/opencast/
+build/opencast-dist-base/etc/*	/usr/share/opencast/etc/
 
-build/opencast-dist-base/data/* /srv/opencast/
+build/opencast-dist-base/data/* /var/lib/opencast/data
 
-docs/scripts/service/etc-init.d-opencast => /etc/init.d/opencast
-docs/scripts/service/opencast.service => /lib/systemd/system/opencast.service
+build/opencast-dist-base/docs/scripts/service/opencast.service => /lib/systemd/system/opencast.service

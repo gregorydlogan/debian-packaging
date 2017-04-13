@@ -8,10 +8,13 @@ set -e
 OC_HOME=/usr/share/opencast
 OC_CONFIG=/etc/opencast
 OC_DATA=/srv/opencast
+OC_KARAF_DATA=/var/lib/opencast
 OC_LOG=/var/log/opencast
 
 OC_GROUP=opencast
+OC_GID=7967
 OC_USER=opencast
+OC_UID=7967
 
 # summary of how this script can be called:
 #        * <postrm> `remove'
@@ -29,7 +32,7 @@ OC_USER=opencast
 del_group() {
     if getent group $OC_GROUP > /dev/null 2>&1; then
         if [ -x "`which delgroup 2>/dev/null`" ]; then
-            delgroup --system --only-if-empty $OC_GROUP
+            delgroup --only-if-empty $OC_GROUP
         else
             echo >&2 "Not removing \`$OC_GROUP' system group" \
               "because delgroup command was not found."
@@ -41,7 +44,7 @@ del_group() {
 del_user() {
     if getent passwd $OC_USER > /dev/null 2>&1; then
         if [ -x "`which deluser 2>/dev/null`" ]; then
-            deluser --system $OC_USER
+            deluser $OC_USER
         else
             echo >&2 "Not removing \`$OC_USER' system account" \
               "because deluser command was not found."
@@ -57,15 +60,13 @@ case "$1" in
     dpkg-statoverride --remove $OC_CONFIG || true
     dpkg-statoverride --remove $OC_LOG || true
     dpkg-statoverride --remove $OC_DATA || true
+    dpkg-statoverride --remove $OC_KARAF_DATA || true
 
     # Unsure about this:
     # http://wiki.debian.org/AccountHandlingInMaintainerScripts
-    #del_user
-    #del_group
-    # or just disable account ?
-    # disable_user
+    del_user
+    del_group
 
-    #rm -rf $OC_HOME
     ;;
 
     upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)

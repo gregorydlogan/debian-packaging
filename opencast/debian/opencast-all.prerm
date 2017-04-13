@@ -19,12 +19,8 @@ set -e
 
 case "$1" in
     remove)
-		service opencast stop
-		if [ "`which systemctl`" != "" ]; then
-			systemctl enable opencast
-		else
-			update-rc.d opencast defaults
-		fi
+        systemctl stop opencast
+        systemctl disable opencast
     ;;
 
     upgrade|deconfigure)

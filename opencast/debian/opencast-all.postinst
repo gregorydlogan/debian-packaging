@@ -19,11 +19,7 @@ set -e
 
 case "$1" in
     configure)
-		if [ "`which systemctl`" != "" ]; then
-			systemctl enable opencast
-		else
-			update-rc.d opencast defaults
-		fi
+        systemctl enable opencast
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

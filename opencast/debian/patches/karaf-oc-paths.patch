@@ -1,6 +1,6 @@
---- a/etc/custom.properties
-+++ b/etc/custom.properties
-@@ -34,7 +34,7 @@
+--- build/opencast-dist-base/etc/custom.properties
++++ build/opencast-dist-base/etc/custom.properties
+@@ -29,7 +29,7 @@
  
  # The directory where the system will store its processed files (including temporary files).  This directory should
  # be persistent between reboots (i.e., not /tmp)
@@ -9,7 +9,7 @@
  
  # The directory where the configuration files for the Elasticsearch indices are located. This directory should
  # be persistent between reboots (i.e., not /tmp)
-@@ -135,15 +135,15 @@
+@@ -142,15 +142,15 @@
  
  # Default directory to use for embedded solr indexes.
  # If not set, ${karaf.data}/solr-indexes will be used.
@@ -31,8 +31,8 @@
  
  # URLs of dedicated Solr server to use.  Note that if thesw URLs are specified, the local embedded Solr index as
  # configured using `org.opencastproject.*.solr.dir` will be ignored. A dedicated Solr server should be set up in order
---- a/etc/org.opencastproject.ingest.scanner.InboxScannerService-inbox.cfg
-+++ b/etc/org.opencastproject.ingest.scanner.InboxScannerService-inbox.cfg
+--- build/opencast-dist-base/etc/org.opencastproject.ingest.scanner.InboxScannerService-inbox.cfg
++++ build/opencast-dist-base/etc/org.opencastproject.ingest.scanner.InboxScannerService-inbox.cfg
 @@ -16,7 +16,7 @@
  workflow.config.straightToPublishing=false
  

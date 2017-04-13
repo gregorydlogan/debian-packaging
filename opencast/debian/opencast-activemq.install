@@ -1,3 +1,0 @@
-#!/usr/bin/dh-exec
-
-docs/scripts/activemq/activemq.xml etc/activemq

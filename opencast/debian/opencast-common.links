@@ -1,5 +1,4 @@
-/etc/opencast /usr/share/opencast/etc
+/usr/share/opencast/etc /etc/opencast
 
-/srv/opencast /usr/share/opencast/data
-
-/var/log/opencast /srv/opencast/log
+/var/lib/opencast /usr/share/opencast/data
+/var/lib/opencast/instances /usr/share/opencast/instances

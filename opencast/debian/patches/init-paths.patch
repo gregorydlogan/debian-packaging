@@ -1,5 +1,5 @@
---- a/docs/scripts/service/etc-init.d-opencast
-+++ b/docs/scripts/service/etc-init.d-opencast
+--- build/opencast-dist-base/docs/scripts/service/etc-init.d-opencast
++++ build/opencast-dist-base/docs/scripts/service/etc-init.d-opencast
 @@ -14,8 +14,8 @@
  # Provides: opencast
  # Required-Start: $local_fs $remote_fs $syslog $network
@@ -28,8 +28,8 @@
  
  success() {
     printf "\r%-58s [\033[32m  OK  \033[0m]\n" "$1"
---- a/docs/scripts/service/opencast.service
-+++ b/docs/scripts/service/opencast.service
+--- build/opencast-dist-base/docs/scripts/service/opencast.service
++++ build/opencast-dist-base/docs/scripts/service/opencast.service
 @@ -5,8 +5,8 @@
  After=remote-fs.target
  
