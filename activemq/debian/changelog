@@ -1,5 +1,5 @@
-activemq (5.13.0-1) wheezy jessie trusty xenial; urgency=low
+activemq (5.13.0-1) jessie stretch xenial; urgency=low
 
   * Initial release of Apache ActiveMQ packaged for Opencast but unconfigured
 
- -- Greg Logan <gregorydlogan@gmail.com>  Fri, 27 Jan 2017 00:00:00 -0600
+ -- Greg Logan <gregorydlogan@gmail.com>  Thu, 6 Jul 2017 00:00:00 -0600

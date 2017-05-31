@@ -10,3 +10,4 @@ build/opencast-dist-base/etc/*	/usr/share/opencast/etc/
 build/opencast-dist-base/data/* /var/lib/opencast/data
 
 build/opencast-dist-base/docs/scripts/service/opencast.service => /lib/systemd/system/opencast.service
+build/opencast-dist-base/docs/scripts/service/etc-init.d-opencast => /etc/init.d/opencast
