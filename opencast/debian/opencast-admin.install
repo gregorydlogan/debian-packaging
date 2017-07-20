@@ -1,1 +1,1 @@
-build/opencast-dist-admin/etc/org.apache.karaf.features.cfg	/etc/opencast/
+build/opencast-dist-admin/etc/org.apache.karaf.features.cfg	/usr/share/opencast/etc/

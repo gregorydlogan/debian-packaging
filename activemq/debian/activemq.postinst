@@ -39,11 +39,7 @@ case "$1" in
 	apply_permissions $AMQ_DATA
 	apply_permissions $AMQ_LOG
 
-	if [ "`which systemctl`" != "" ]; then
-		systemctl enable activemq
-	else
-		update-rc.d activemq defaults
-	fi
+	update-rc.d activemq defaults
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

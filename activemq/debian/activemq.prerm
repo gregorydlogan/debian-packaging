@@ -19,13 +19,9 @@ set -e
 
 case "$1" in
     remove)
-		service activemq stop
-		if [ "`which systemctl`" != "" ]; then
-			systemctl disable activemq
-		else
-			update-rc.d activemq remove
-		fi
-	;;
+        service activemq stop
+        update-rc.d activemq remove
+    ;;
 
     upgrade|deconfigure)
     ;;

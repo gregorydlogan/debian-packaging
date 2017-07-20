@@ -3,6 +3,7 @@
 *.gz
 *.dsc
 *.changes
+*.buildinfo
 
 #Ignore opencast's source, but not the debian control folder
 opencast/*
@@ -18,6 +19,7 @@ opencast/debian/*.substvars
 opencast/debian/*.debhelper
 opencast/debian/files
 opencast/debian/tmp
+opencast/debian/debhelper-build-stamp
 
 ffmpeg/*
 !ffmpeg/debian
@@ -26,6 +28,7 @@ ffmpeg/debian/*.log
 ffmpeg/debian/*.substvars
 ffmpeg/debian/*.debhelper
 ffmpeg/debian/files
+ffmpeg/debian/debhelper-build-stamp
 
 activemq/*
 !activemq/debian
@@ -34,3 +37,4 @@ activemq/debian/*.log
 activemq/debian/*.substvars
 activemq/debian/*.debhelper
 activemq/debian/files
+activemq/debian/debhelper-build-stamp
