@@ -44,8 +44,7 @@ Conflicts:
  opencast-worker,
  opencast-presentation
 Suggests:
- mariadb-server,
- opencast-activemq
+ mariadb-server
 Description: Open Source Lecture Capture & Video Management Tool All-In-One Profile
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -65,7 +64,6 @@ Conflicts:
  opencast-worker,
  opencast-presentation
 Suggests:
- opencast-activemq,
  nfs-kernel-server,
  mariadb-server
 Description: Open Source Lecture Capture & Video Management Tool Admin Profile
