@@ -1,4 +1,4 @@
-Source: opencast
+Source: opencast-3
 Section: java
 Priority: optional
 Maintainer: Greg Logan <gregorydlogan@gmail.com>
@@ -12,7 +12,7 @@ Homepage: http://opencast.org
 Vcs-Git: git@bitbucket.org:greg_logan/debian_packaging.git
 Vcs-Browser: https://bitbucket.org/greg_logan/debian_packaging
 
-Package: opencast-common
+Package: opencast-3-common
 Architecture: all
 Depends:
  ${shlibs:Depends},
@@ -29,20 +29,20 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
  distribution channels, and provide user interfaces to engage students with
  educational videos.
  This is the base fileset for Opencast and is not functional without an 
- opencast-* package.
+ opencast-3-* package.
 
-Package: opencast-allinone
+Package: opencast-3-allinone
 Architecture: all
 Depends:
- opencast-common,
+ opencast-3-common,
  activemq,
  ffmpeg,
  tesseract-ocr,
  hunspell
 Conflicts:
- opencast-admin,
- opencast-worker,
- opencast-presentation
+ opencast-3-admin,
+ opencast-3-worker,
+ opencast-3-presentation
 Suggests:
  mariadb-server
 Description: Open Source Lecture Capture & Video Management Tool All-In-One Profile
@@ -54,15 +54,15 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
  This is the all-in-one profile of Opencast.  You 
  will not need any additional nodes for this install.
 
-Package: opencast-admin
+Package: opencast-3-admin
 Architecture: all
 Depends:
- opencast-common,
+ opencast-3-common,
  activemq
 Conflicts:
- opencast-allinone,
- opencast-worker,
- opencast-presentation
+ opencast-3-allinone,
+ opencast-3-worker,
+ opencast-3-presentation
 Suggests:
  nfs-kernel-server,
  mariadb-server
@@ -75,18 +75,18 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
  This is the admin node profile of Opencast.  You will need
  one of these installed in a clustered install of Opencast.
 
-Package: opencast-worker
+Package: opencast-3-worker
 Architecture: all
 Depends:
- opencast-common,
+ opencast-3-common,
  sox,
  ffmpeg,
  hunspell,
  tesseract-ocr
 Conflicts:
- opencast-admin,
- opencast-allinone,
- opencast-presentation
+ opencast-3-admin,
+ opencast-3-allinone,
+ opencast-3-presentation
 Suggests:
  nfs-client
 Description: Open Source Lecture Capture & Video Management Tool Worker Profile
@@ -99,14 +99,14 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
  at least one of these installed in a clustered install of Opencast.  More workers
  means you can process videos faster, to a point.
 
-Package: opencast-presentation
+Package: opencast-3-presentation
 Architecture: all
 Depends:
- opencast-common
+ opencast-3-common
 Conflicts:
- opencast-admin,
- opencast-worker,
- opencast-allinone
+ opencast-3-admin,
+ opencast-3-worker,
+ opencast-3-allinone
 Suggests:
  nginx,
  nfs-client
@@ -120,12 +120,12 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
  at least one of these installed in a clustered install of Opencast.  This is the node
  where your users will go for the output video files.
 
-#Package: opencast-solr
+#Package: opencast-3-solr
 #Architecture: all
 #Depends: openjdk-7-jre-headless
 #Description: solr
 
-#Package: opencast-elasticseach
+#Package: opencast-3-elasticseach
 #Architecture: all
 #Depends: openjdk-7-jre-headless
 #Description: elasticsearch
