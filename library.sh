@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 #Usage: doBuild directoryname
 #eg: doBuild opencast
 doBuild() {
@@ -15,12 +17,19 @@ doBuild() {
 createOutputs() {
   mkdir -p outputs/$1
   if [ $# -eq 3 ]; then
-    ln -s $1 outputs/$3
+    if [ ! -h outputs/$3 ]; then
+      ln -s $1 outputs/$3
+    fi
   else
-    ln -s $1 outputs/$2
+    if [ ! -h outputs/$2 ]; then
+      ln -s $1 outputs/$2
+    fi
   fi
 }
 
+testing() {
+  false
+}
 
 #Usage: doOpencast packageversion branchname friendlyname
 #eg: doOpencast 3.1 r/3.1 3.1-new
