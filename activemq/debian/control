@@ -17,6 +17,7 @@ Depends:
  init-system-helpers,
  ${shlibs:Depends},
  ${misc:Depends}
+Conflicts: activemq
 Description: Java message broker - server
  Apache ActiveMQ is a message broker built around Java Message Service (JMS)
  API : allow sending messages between two or more clients in a loosely coupled,

@@ -8,12 +8,7 @@
 #Ignore opencast's source, but not the debian control folder
 opencast/*
 !opencast/debian
-opencast/debian/opencast-common-*
-opencast/debian/opencast-admin-*
-opencast/debian/opencast-worker-*
-opencast/debian/opencast-presentation-*
-opencast/debian/opencast-allinone-*
-opencast/debian/opencast-activemq-*
+opencast/debian/opencast-*-*
 opencast/debian/*.log
 opencast/debian/*.substvars
 opencast/debian/*.debhelper

@@ -13,6 +13,7 @@ Vcs-Browser: https://bitbucket.org/greg_logan/debian_packaging
 
 Package: ffmpeg-dist
 Architecture: amd64
+Conflicts: ffmpeg
 Description: Tools for transcoding, streaming and playing of multimedia files
  FFmpeg is the leading multimedia framework, able to decode, encode, transcode,
  mux, demux, stream, filter and play pretty much anything that humans and
