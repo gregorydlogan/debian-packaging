@@ -95,7 +95,7 @@ doActiveMQ() {
 
   VERSION=`git rev-parse HEAD`
 
-  tar cvJf activemq_$1.orig.tar.xz activemq
+  tar cvJf activemq-dist_$1.orig.tar.xz activemq
   doBuild activemq
   createOutputs $VERSION $1 $3
   mv activemq*.* outputs/$VERSION
@@ -110,7 +110,7 @@ doFfmpeg() {
 
   VERSION=`git rev-parse HEAD`
 
-  tar cvJf ffmpeg_$1.orig.tar.xz ffmpeg
+  tar cvJf ffmpeg-dist_$1.orig.tar.xz ffmpeg
   doBuild ffmpeg
   createOutputs $VERSION $1 $3
   mv ffmpeg*.* outputs/$VERSION

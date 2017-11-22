@@ -7,4 +7,3 @@ and ActiveMQ).  This package provides all of the files required for Opencast
 to start and run, but does *not* set any of the required configuration value
 for a production system.
 
- -- Greg Logan <gregorydlogan@gmail.com>  Fri, 27 Jan 2017 00:00:00 -0600

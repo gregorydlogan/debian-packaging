@@ -23,7 +23,7 @@ opencast/debian/debhelper-build-stamp
 
 ffmpeg/*
 !ffmpeg/debian
-ffmpeg/debian/ffmpeg
+ffmpeg/debian/ffmpeg-dist
 ffmpeg/debian/*.log
 ffmpeg/debian/*.substvars
 ffmpeg/debian/*.debhelper
@@ -32,7 +32,7 @@ ffmpeg/debian/debhelper-build-stamp
 
 activemq/*
 !activemq/debian
-activemq/debian/activemq
+activemq/debian/activemq-dist
 activemq/debian/*.log
 activemq/debian/*.substvars
 activemq/debian/*.debhelper

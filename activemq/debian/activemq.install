@@ -1,8 +1,0 @@
-bin/*  usr/share/activemq/bin
-lib/*  usr/share/activemq/lib
-webapps/*  usr/share/activemq/webapps
-
-conf/*	etc/activemq
-
-debian/activemq-options  usr/share/activemq
-debian/activemq.default etc/default/activemq

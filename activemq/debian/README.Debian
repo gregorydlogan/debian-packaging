@@ -2,8 +2,7 @@ activemq for Debian
 --------------------------
 
 This package provides Apache ActiveMQ packaged for Opencast.  This package 
-contains the upstream binary 5.13.0 release, packaged with no configuration 
+contains the upstream binary release, packaged with no configuration 
 file.  Note that this package is designed to be easy to use out of the box, and
 does not configure any of the suggested security parameters for production use.
 
- -- Greg Logan <gregorydlogan@gmail.com>  Fri, 27 Jan 2017 00:00:00 -0600

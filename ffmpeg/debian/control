@@ -1,4 +1,4 @@
-Source: ffmpeg
+Source: ffmpeg-dist
 Section: video
 Priority: optional
 Maintainer: Greg Logan <gregorydlogan@gmail.com>
@@ -11,7 +11,7 @@ Homepage: http://www.ffmpeg.org
 Vcs-Git: git@bitbucket.org:greg_logan/debian_packaging.git
 Vcs-Browser: https://bitbucket.org/greg_logan/debian_packaging
 
-Package: ffmpeg
+Package: ffmpeg-dist
 Architecture: amd64
 Description: Tools for transcoding, streaming and playing of multimedia files
  FFmpeg is the leading multimedia framework, able to decode, encode, transcode,
