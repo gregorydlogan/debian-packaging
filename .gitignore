@@ -8,12 +8,7 @@
 #Ignore opencast's source, but not the debian control folder
 opencast/*
 !opencast/debian
-opencast/debian/opencast-common-*
-opencast/debian/opencast-admin-*
-opencast/debian/opencast-worker-*
-opencast/debian/opencast-presentation-*
-opencast/debian/opencast-allinone-*
-opencast/debian/opencast-activemq-*
+opencast/debian/opencast-*-*
 opencast/debian/*.log
 opencast/debian/*.substvars
 opencast/debian/*.debhelper
@@ -23,7 +18,7 @@ opencast/debian/debhelper-build-stamp
 
 ffmpeg/*
 !ffmpeg/debian
-ffmpeg/debian/ffmpeg
+ffmpeg/debian/ffmpeg-dist
 ffmpeg/debian/*.log
 ffmpeg/debian/*.substvars
 ffmpeg/debian/*.debhelper
@@ -32,7 +27,7 @@ ffmpeg/debian/debhelper-build-stamp
 
 activemq/*
 !activemq/debian
-activemq/debian/activemq
+activemq/debian/activemq-dist
 activemq/debian/*.log
 activemq/debian/*.substvars
 activemq/debian/*.debhelper

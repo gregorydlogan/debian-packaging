@@ -1,23 +1,23 @@
-Source: activemq
+Source: activemq-dist
 Section: java
 Priority: optional
 Maintainer: Greg Logan <gregorydlogan@gmail.com>
 Build-Depends:
- debhelper (>= 9)
+ debhelper (>= 9),
+ dh-exec,
 Standards-Version: 3.9.5
 Homepage: http://activemq.apache.org
 Vcs-Git: git@bitbucket.org:greg_logan/debian_packaging.git
 Vcs-Browser: https://bitbucket.org/greg_logan/debian_packaging
 
-Package: activemq
+Package: activemq-dist
 Architecture: all
 Depends:
  openjdk-8-jre,
  init-system-helpers,
  ${shlibs:Depends},
  ${misc:Depends}
-Suggests:
- opencast-activemq
+Conflicts: activemq
 Description: Java message broker - server
  Apache ActiveMQ is a message broker built around Java Message Service (JMS)
  API : allow sending messages between two or more clients in a loosely coupled,

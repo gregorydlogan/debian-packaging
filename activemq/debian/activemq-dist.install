@@ -1,0 +1,14 @@
+#!/usr/bin/dh-exec
+
+bin/*  /usr/share/activemq/bin/
+lib/*  /usr/share/activemq/lib/
+webapps/*  /usr/share/activemq/webapps/
+
+conf/*	/etc/activemq/
+
+debian/activemq-options  /usr/share/activemq/
+debian/activemq.service /etc/systemd/system
+
+debian/activemq.init.d => /etc/init.d/activemq
+debian/activemq.default => /etc/default/activemq
+debian/activemq.logrotate => /etc/logrotate.d/activemq

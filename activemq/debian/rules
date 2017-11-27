@@ -17,14 +17,12 @@ include /usr/share/dpkg/default.mk
 # package maintainers to append LDFLAGS
 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
-override_dh_testdir:
-override_dh_auto_clean:
-#override_dh_clean:
-override_dh_auto_configure:
-override_dh_auto_test:
-	#Do nothing, we are working against a binary release
+override_dh_strip_nondeterminism:
 
-override_dh_auto_build:
+override_dh_auto_clean:
+	#Do nothing
+
+override_dh_auto_install:
 	#Clear out any existing configuration file so that we can overlay this package with a config package
 	rm -f conf/activemq.xml
 
