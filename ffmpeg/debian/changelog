@@ -1,5 +1,5 @@
-ffmpeg-dist (3.4-1) stable; urgency=low
+ffmpeg-dist (3.4-2) stable; urgency=low
 
-  * Initial release of FFmpeg packaged for Opencast, care of John Van Sickle's static builds
+  * Resolved issue with Debian packaging
 
- -- Greg Logan <gregorydlogan@gmail.com>  Tue, 21 Nov 2017 00:00:00 -0600
+ -- Greg Logan <gregorydlogan@gmail.com>  Wed, 6 Dec 2017 00:00:00 -0600
