@@ -35,8 +35,8 @@ Package: opencast-5-allinone
 Architecture: all
 Depends:
  opencast-5-common (>= 5.x),
- activemq | activemq-dist,
- ffmpeg,
+ activemq-dist | activemq,
+ ffmpeg-dist | ffmpeg,
  tesseract-ocr,
  hunspell
 Conflicts:
@@ -58,7 +58,7 @@ Package: opencast-5-admin
 Architecture: all
 Depends:
  opencast-5-common (>= 5.x),
- activemq | activemq-dist
+ activemq-dist | activemq
 Conflicts:
  opencast-5-allinone,
  opencast-5-worker,
@@ -80,7 +80,7 @@ Architecture: all
 Depends:
  opencast-5-common (>= 5.x),
  sox,
- ffmpeg | ffmpeg-dist,
+ ffmpeg-dist | ffmpeg,
  hunspell,
  tesseract-ocr
 Conflicts:
