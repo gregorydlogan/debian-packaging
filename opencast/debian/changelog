@@ -1,5 +1,5 @@
-opencast-3 (3.x-1) unstable; urgency=low
+opencast-3 (3.5-1) testing; urgency=low
 
-  * Initial release of Debian packages based on Opencast 3.x
+  * Initial release of Debian packages based on Opencast 3.5
 
- -- Greg Logan <gregorydlogan@gmail.com>  Tue, 29 Aug 2017 00:00:00 -0600
+ -- Greg Logan <gregorydlogan@gmail.com>  Wed, 5 Feb 2018 00:00:00 -0600

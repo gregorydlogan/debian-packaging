@@ -34,7 +34,7 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-3-allinone
 Architecture: all
 Depends:
- opencast-3-common (>= 3.x),
+ opencast-3-common (>= 3.5),
  activemq-dist | activemq,
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
@@ -57,7 +57,7 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-3-admin
 Architecture: all
 Depends:
- opencast-3-common (>= 3.x),
+ opencast-3-common (>= 3.5),
  activemq-dist | activemq
 Conflicts:
  opencast-3-allinone,
@@ -78,7 +78,7 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-3-worker
 Architecture: all
 Depends:
- opencast-3-common (>= 3.x),
+ opencast-3-common (>= 3.5),
  sox,
  ffmpeg-dist | ffmpeg,
  hunspell,
@@ -102,7 +102,7 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-3-presentation
 Architecture: all
 Depends:
- opencast-3-common (>= 3.x)
+ opencast-3-common (>= 3.5)
 Conflicts:
  opencast-3-admin,
  opencast-3-worker,
