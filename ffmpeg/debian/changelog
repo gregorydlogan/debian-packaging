@@ -1,5 +1,5 @@
-ffmpeg-dist (3.4.1-1) stable; urgency=low
+ffmpeg-dist (4.0-1) testing; urgency=low
 
-  * Updated to FFmpeg 3.4.1
+  * Updated to FFmpeg 4.0
 
- -- Greg Logan <gregorydlogan@gmail.com>  Thu, 21 Dec 2017 00:00:00 -0600
+ -- Greg Logan <gregorydlogan@gmail.com>  Thu, 3 May 2018 00:00:00 -0600
