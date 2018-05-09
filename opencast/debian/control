@@ -108,7 +108,7 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-4-adminworker
 Architecture: all
 Depends:
- opencast-4-common (>= 4.x),
+ opencast-4-common (>= 4.3),
  activemq-dist | activemq,
  sox,
  ffmpeg-dist | ffmpeg,
@@ -158,7 +158,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-4-adminpresentation
 Architecture: all
 Depends:
- opencast-4-common (>= 4.x),
+ opencast-4-common (>= 4.3),
  activemq-dist | activemq
 Conflicts:
  opencast-4-admin,
