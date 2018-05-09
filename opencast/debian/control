@@ -41,6 +41,8 @@ Depends:
  hunspell
 Conflicts:
  opencast-4-admin,
+ opencast-4-adminworker,
+ opencast-4-adminpresentation,
  opencast-4-worker,
  opencast-4-presentation
 Suggests:
@@ -61,6 +63,8 @@ Depends:
  activemq-dist | activemq
 Conflicts:
  opencast-4-allinone,
+ opencast-4-adminworker,
+ opencast-4-adminpresentation,
  opencast-4-worker,
  opencast-4-presentation
 Suggests:
@@ -85,6 +89,8 @@ Depends:
  tesseract-ocr
 Conflicts:
  opencast-4-admin,
+ opencast-4-adminworker,
+ opencast-4-adminpresentation,
  opencast-4-allinone,
  opencast-4-presentation
 Suggests:
@@ -99,12 +105,41 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
  at least one of these installed in a clustered install of Opencast.  More workers
  means you can process videos faster, to a point.
 
+Package: opencast-4-adminworker
+Architecture: all
+Depends:
+ opencast-4-common (>= 4.x),
+ activemq-dist | activemq,
+ sox,
+ ffmpeg-dist | ffmpeg,
+ hunspell,
+ tesseract-ocr
+Conflicts:
+ opencast-4-admin,
+ opencast-4-adminpresentation,
+ opencast-4-allinone,
+ opencast-4-worker,
+ opencast-4-presentation
+Suggests:
+ nfs-client
+Description: Open Source Lecture Capture & Video Management Tool Worker Profile
+ Opencast is a free, open-source platform to support the management of
+ educational audio and video content. Institutions will use Opencast to
+ produce lecture recordings, manage existing video, serve designated
+ distribution channels, and provide user interfaces to engage students with
+ educational videos.
+ This is the admin+worker node profile of Opencast.  It combines both the admin
+ and worker nodes into one profile.  In general you want separate nodes for large
+ installs but this profile works well for small installations.
+
 Package: opencast-4-presentation
 Architecture: all
 Depends:
  opencast-4-common (>= 4.x)
 Conflicts:
  opencast-4-admin,
+ opencast-4-adminworker,
+ opencast-4-adminpresentation,
  opencast-4-worker,
  opencast-4-allinone
 Suggests:
@@ -120,12 +155,27 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
  at least one of these installed in a clustered install of Opencast.  This is the node
  where your users will go for the output video files.
 
-#Package: opencast-4-solr
-#Architecture: all
-#Depends: openjdk-7-jre-headless
-#Description: solr
+Package: opencast-4-adminpresentation
+Architecture: all
+Depends:
+ opencast-4-common (>= 4.x),
+ activemq-dist | activemq
+Conflicts:
+ opencast-4-admin,
+ opencast-4-adminworker,
+ opencast-4-worker,
+ opencast-4-presentation,
+ opencast-4-allinone
+Suggests:
+ nginx,
+ nfs-client
+Description: Open Source Lecture Capture & Video Management Tool Distribution Profile
+ Opencast is a free, open-source platform to support the management of
+ educational audio and video content. Institutions will use Opencast to
+ produce lecture recordings, manage existing video, serve designated
+ distribution channels, and provide user interfaces to engage students with
+ educational videos.
+ This is the admin+presentation node profile of Opencast.  It combines both the admin
+ and presentation nodes into one profile.  In general you want separate nodes for large
+ installs but this profile works well for small installations.
 
-#Package: opencast-4-elasticseach
-#Architecture: all
-#Depends: openjdk-7-jre-headless
-#Description: elasticsearch
