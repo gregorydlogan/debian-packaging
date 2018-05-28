@@ -50,7 +50,6 @@ doOpencast() {
   do
     ln binaries/$1/$line opencast/build/$line
   done
-  cp -f `basename $0` opencast
 
   echo "Extracting common files and build profiles"
   cd opencast
