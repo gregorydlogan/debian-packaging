@@ -1,5 +1,5 @@
-opencast-5 (5.x-1) unstable; urgency=low
+opencast-5 (5.1-1) testing; urgency=low
 
-  * Initial release of Debian packages based on Opencast 5.x
+  * Initial release of Debian packages based on Opencast 5.1
 
- -- Greg Logan <gregorydlogan@gmail.com>  Fri, 24 Nov 2017 00:00:00 -0600
+ -- Greg Logan <gregorydlogan@gmail.com>  Web, 5 Sept 2018 00:00:00 -0600
