@@ -1,4 +1,4 @@
-Source: opencast-6
+Source: opencast-7
 Section: java
 Priority: optional
 Maintainer: Greg Logan <gregorydlogan@gmail.com>
@@ -12,7 +12,7 @@ Homepage: http://opencast.org
 Vcs-Git: git@bitbucket.org:greg_logan/debian_packaging.git
 Vcs-Browser: https://bitbucket.org/greg_logan/debian_packaging
 
-Package: opencast-6-common
+Package: opencast-7-common
 Architecture: all
 Depends:
  ${shlibs:Depends},
@@ -29,22 +29,22 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
  distribution channels, and provide user interfaces to engage students with
  educational videos.
  This is the base fileset for Opencast and is not functional without an 
- opencast-6-* package.
+ opencast-7-* package.
 
-Package: opencast-6-allinone
+Package: opencast-7-allinone
 Architecture: all
 Depends:
- opencast-6-common (>= 6.x),
+ opencast-7-common (>= 7.x),
  activemq-dist | activemq,
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
  hunspell
 Conflicts:
- opencast-6-admin,
- opencast-6-adminworker,
- opencast-6-adminpresentation,
- opencast-6-worker,
- opencast-6-presentation
+ opencast-7-admin,
+ opencast-7-adminworker,
+ opencast-7-adminpresentation,
+ opencast-7-worker,
+ opencast-7-presentation
 Suggests:
  mariadb-server
 Description: Open Source Lecture Capture & Video Management Tool All-In-One Profile
@@ -56,17 +56,17 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
  This is the all-in-one profile of Opencast.  You 
  will not need any additional nodes for this install.
 
-Package: opencast-6-admin
+Package: opencast-7-admin
 Architecture: all
 Depends:
- opencast-6-common (>= 6.x),
+ opencast-7-common (>= 7.x),
  activemq-dist | activemq
 Conflicts:
- opencast-6-allinone,
- opencast-6-adminworker,
- opencast-6-adminpresentation,
- opencast-6-worker,
- opencast-6-presentation
+ opencast-7-allinone,
+ opencast-7-adminworker,
+ opencast-7-adminpresentation,
+ opencast-7-worker,
+ opencast-7-presentation
 Suggests:
  nfs-kernel-server,
  mariadb-server
@@ -79,20 +79,20 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
  This is the admin node profile of Opencast.  You will need
  one of these installed in a clustered install of Opencast.
 
-Package: opencast-6-worker
+Package: opencast-7-worker
 Architecture: all
 Depends:
- opencast-6-common (>= 6.x),
+ opencast-7-common (>= 7.x),
  sox,
  ffmpeg-dist | ffmpeg,
  hunspell,
  tesseract-ocr
 Conflicts:
- opencast-6-admin,
- opencast-6-adminworker,
- opencast-6-adminpresentation,
- opencast-6-allinone,
- opencast-6-presentation
+ opencast-7-admin,
+ opencast-7-adminworker,
+ opencast-7-adminpresentation,
+ opencast-7-allinone,
+ opencast-7-presentation
 Suggests:
  nfs-client
 Description: Open Source Lecture Capture & Video Management Tool Worker Profile
@@ -105,21 +105,21 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
  at least one of these installed in a clustered install of Opencast.  More workers
  means you can process videos faster, to a point.
 
-Package: opencast-6-adminworker
+Package: opencast-7-adminworker
 Architecture: all
 Depends:
- opencast-6-common (>= 6.x),
+ opencast-7-common (>= 7.x),
  activemq-dist | activemq,
  sox,
  ffmpeg-dist | ffmpeg,
  hunspell,
  tesseract-ocr
 Conflicts:
- opencast-6-admin,
- opencast-6-adminpresentation,
- opencast-6-allinone,
- opencast-6-worker,
- opencast-6-presentation
+ opencast-7-admin,
+ opencast-7-adminpresentation,
+ opencast-7-allinone,
+ opencast-7-worker,
+ opencast-7-presentation
 Suggests:
  nfs-client
 Description: Open Source Lecture Capture & Video Management Tool Worker Profile
@@ -132,16 +132,16 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
  and worker nodes into one profile.  In general you want separate nodes for large
  installs but this profile works well for small installations.
 
-Package: opencast-6-presentation
+Package: opencast-7-presentation
 Architecture: all
 Depends:
- opencast-6-common (>= 6.x)
+ opencast-7-common (>= 7.x)
 Conflicts:
- opencast-6-admin,
- opencast-6-adminworker,
- opencast-6-adminpresentation,
- opencast-6-worker,
- opencast-6-allinone
+ opencast-7-admin,
+ opencast-7-adminworker,
+ opencast-7-adminpresentation,
+ opencast-7-worker,
+ opencast-7-allinone
 Suggests:
  nginx,
  nfs-client
@@ -155,17 +155,17 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
  at least one of these installed in a clustered install of Opencast.  This is the node
  where your users will go for the output video files.
 
-Package: opencast-6-adminpresentation
+Package: opencast-7-adminpresentation
 Architecture: all
 Depends:
- opencast-6-common (>= 6.x),
+ opencast-7-common (>= 7.x),
  activemq-dist | activemq
 Conflicts:
- opencast-6-admin,
- opencast-6-adminworker,
- opencast-6-worker,
- opencast-6-presentation,
- opencast-6-allinone
+ opencast-7-admin,
+ opencast-7-adminworker,
+ opencast-7-worker,
+ opencast-7-presentation,
+ opencast-7-allinone
 Suggests:
  nginx,
  nfs-client
