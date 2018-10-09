@@ -1,2 +1,2 @@
-build/opencast-dist-allinone/etc/org.apache.karaf.features.cfg	/usr/share/opencast/etc/
-build/opencast-dist-allinone/etc/profile.cfg	/usr/share/opencast/etc/
+build/opencast-dist-allinone/etc/org.apache.karaf.features.cfg	/etc/opencast/
+build/opencast-dist-allinone/etc/profile.cfg	/etc/opencast/
