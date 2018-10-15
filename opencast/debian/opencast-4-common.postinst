@@ -36,8 +36,8 @@ create_group() {
 
 create_user() {
   if ! getent passwd $OC_USER > /dev/null 2>&1; then
-    adduser --no-create-home --uid $OC_UID --ingroup $OC_GROUP \
-        --home $OC_HOME --shell /usr/sbin/nologin $OC_USER
+    adduser --system --no-create-home --uid $OC_UID --ingroup $OC_GROUP \
+        --disabled-login --disabled-password --home $OC_HOME --shell /usr/sbin/nologin $OC_USER
   fi
 }
 

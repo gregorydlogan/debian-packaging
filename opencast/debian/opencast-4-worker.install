@@ -1,1 +1,2 @@
-build/opencast-dist-worker/etc/org.apache.karaf.features.cfg	/usr/share/opencast/etc/
+build/opencast-dist-worker/etc/org.apache.karaf.features.cfg	/etc/opencast/
+build/opencast-dist-worker/etc/profile.cfg	/etc/opencast/
