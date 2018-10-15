@@ -63,6 +63,7 @@ doOpencast() {
     #Extract *just* the profiles
     echo "Extracting Karaf feature config"
     tar -xvf build/$line -C build $archiveName/etc/org.apache.karaf.features.cfg
+    tar -xvf build/$line -C build $archiveName/etc/profile.cfg
     #Extract the contents of the various tarballs to the common base
     echo "Extracting contents to common base directory"
     tar --strip-components=1 -xf build/$line -C build/opencast-dist-base
@@ -71,14 +72,13 @@ doOpencast() {
   echo ""
   #Remove the karaf feature configuration file, since that is set with the packages
   rm -f build/opencast-dist-base/etc/org.apache.karaf.features.cfg
+  rm -f build/opencast-dist-base/etc/profile.cfg
   cd ..
 
   echo "Building source tarball"
   #Exclude the raw tarballs
   majorVersion=`echo $1 | cut -c 1`
   tar --exclude='opencast/build/opencast-dist-*.tar.*' -cvJf opencast-$majorVersion\_$1.orig.tar.xz opencast
-  #For compat with old packaging scheme
-  #ln opencast-3_$1.orig.tar.xz opencast_$1.orig.tar.xz
 
   doBuild opencast
   createOutputs $VERSION $1 $3

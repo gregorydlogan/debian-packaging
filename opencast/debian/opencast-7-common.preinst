@@ -15,7 +15,17 @@ set -e
 
 
 case "$1" in
-    install|upgrade)
+    install)
+    ;;
+
+    upgrade)
+        ETC_CONFIG_DIR="/etc/opencast"
+        USR_CONFIG_DIR="/usr/share/opencast/etc"
+        if [ -L "$ETC_CONFIG_DIR" -a -d "$USR_CONFIG_DIR" ]; then
+            rm -f $ETC_CONFIG_DIR
+            mv $USR_CONFIG_DIR $ETC_CONFIG_DIR
+            ln -s $ETC_CONFIG_DIR $USR_CONFIG_DIR
+        fi
     ;;
 
     abort-upgrade)
