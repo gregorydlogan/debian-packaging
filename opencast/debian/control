@@ -34,7 +34,7 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-4-allinone
 Architecture: all
 Depends:
- opencast-4-common (>= 4.x),
+ opencast-4-common (>= 4.5),
  activemq-dist | activemq,
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
@@ -61,7 +61,7 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-4-admin
 Architecture: all
 Depends:
- opencast-4-common (>= 4.x),
+ opencast-4-common (>= 4.5),
  activemq-dist | activemq
 Conflicts:
  opencast-4-allinone,
@@ -86,7 +86,7 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-4-worker
 Architecture: all
 Depends:
- opencast-4-common (>= 4.x),
+ opencast-4-common (>= 4.5),
  sox,
  ffmpeg-dist | ffmpeg,
  hunspell,
@@ -114,7 +114,7 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-4-adminworker
 Architecture: all
 Depends:
- opencast-4-common (>= 4.x),
+ opencast-4-common (>= 4.5),
  activemq-dist | activemq,
  sox,
  ffmpeg-dist | ffmpeg,
@@ -143,7 +143,7 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-4-presentation
 Architecture: all
 Depends:
- opencast-4-common (>= 4.x)
+ opencast-4-common (>= 4.5)
 Conflicts:
  opencast-4-admin,
  opencast-4-adminworker,
@@ -168,7 +168,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-4-adminpresentation
 Architecture: all
 Depends:
- opencast-4-common (>= 4.x),
+ opencast-4-common (>= 4.5),
  activemq-dist | activemq
 Conflicts:
  opencast-4-admin,
@@ -194,7 +194,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-4-ingest
 Architecture: all
 Depends:
- opencast-4-common (>= 4.x),
+ opencast-4-common (>= 4.5),
  activemq-dist | activemq
 Conflicts:
  opencast-4-admin,
@@ -218,7 +218,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-4-migration
 Architecture: all
 Depends:
- opencast-4-common (>= 4.x),
+ opencast-4-common (>= 4.5),
  activemq-dist | activemq
 Conflicts:
  opencast-4-admin,
