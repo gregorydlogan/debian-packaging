@@ -44,7 +44,9 @@ Conflicts:
  opencast-5-adminworker,
  opencast-5-adminpresentation,
  opencast-5-worker,
- opencast-5-presentation
+ opencast-5-presentation,
+ opencast-5-migration,
+ opencast-5-ingest
 Suggests:
  mariadb-server
 Description: Open Source Lecture Capture & Video Management Tool All-In-One Profile
@@ -66,7 +68,9 @@ Conflicts:
  opencast-5-adminworker,
  opencast-5-adminpresentation,
  opencast-5-worker,
- opencast-5-presentation
+ opencast-5-presentation,
+ opencast-5-migration,
+ opencast-5-ingest
 Suggests:
  nfs-kernel-server,
  mariadb-server
@@ -92,7 +96,9 @@ Conflicts:
  opencast-5-adminworker,
  opencast-5-adminpresentation,
  opencast-5-allinone,
- opencast-5-presentation
+ opencast-5-presentation,
+ opencast-5-migration,
+ opencast-5-ingest
 Suggests:
  nfs-client
 Description: Open Source Lecture Capture & Video Management Tool Worker Profile
@@ -119,7 +125,9 @@ Conflicts:
  opencast-5-adminpresentation,
  opencast-5-allinone,
  opencast-5-worker,
- opencast-5-presentation
+ opencast-5-presentation,
+ opencast-5-migration,
+ opencast-5-ingest
 Suggests:
  nfs-client
 Description: Open Source Lecture Capture & Video Management Tool Worker Profile
@@ -141,7 +149,9 @@ Conflicts:
  opencast-5-adminworker,
  opencast-5-adminpresentation,
  opencast-5-worker,
- opencast-5-allinone
+ opencast-5-allinone,
+ opencast-5-migration,
+ opencast-5-ingest
 Suggests:
  nginx,
  nfs-client
@@ -165,7 +175,9 @@ Conflicts:
  opencast-5-adminworker,
  opencast-5-worker,
  opencast-5-presentation,
- opencast-5-allinone
+ opencast-5-allinone,
+ opencast-5-migration,
+ opencast-5-ingest
 Suggests:
  nginx,
  nfs-client
@@ -179,3 +191,49 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
  and presentation nodes into one profile.  In general you want separate nodes for large
  installs but this profile works well for small installations.
 
+Package: opencast-5-ingest
+Architecture: all
+Depends:
+ opencast-5-common (>= 5.x),
+ activemq-dist | activemq
+Conflicts:
+ opencast-5-admin,
+ opencast-5-adminworker,
+ opencast-5-worker,
+ opencast-5-presentation,
+ opencast-5-allinone,
+ opencast-5-migration
+Suggests:
+ nginx,
+ nfs-client
+Description: Open Source Lecture Capture & Video Management Tool Distribution Profile
+ Opencast is a free, open-source platform to support the management of
+ educational audio and video content. Institutions will use Opencast to
+ produce lecture recordings, manage existing video, serve designated
+ distribution channels, and provide user interfaces to engage students with
+ educational videos.
+ This is the ingest node profile of Opencast.  It contains only the portions of Opencast
+ required to ingest media from capture agents.
+
+Package: opencast-5-migration
+Architecture: all
+Depends:
+ opencast-5-common (>= 5.x),
+ activemq-dist | activemq
+Conflicts:
+ opencast-5-admin,
+ opencast-5-adminworker,
+ opencast-5-worker,
+ opencast-5-presentation,
+ opencast-5-allinone,
+ opencast-5-ingest
+Suggests:
+ nfs-client
+Description: Open Source Lecture Capture & Video Management Tool Distribution Profile
+ Opencast is a free, open-source platform to support the management of
+ educational audio and video content. Institutions will use Opencast to
+ produce lecture recordings, manage existing video, serve designated
+ distribution channels, and provide user interfaces to engage students with
+ educational videos.
+ This is the migration profile of Opencast.  It is only useful when upgrading between
+ major versions.
