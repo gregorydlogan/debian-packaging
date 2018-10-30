@@ -1,30 +1,33 @@
 #!/bin/bash
 
-if [ $# -lt 3 -o $# -gt 4 ]; then
-  echo "Usage: updateVersion.sh package version suite [new]"
-  echo " eg: updateVersion.sh opencast 3.4-1 testing -> set Opencast's version to 3.4-1 in testing"
-    echo " eg: updateVersion.sh opencast 4.0-1 testing new -> erase the current changelog for opencast and do the above"
+if [ $# -lt 4 -o $# -gt 5 ]; then
+  echo "Usage: updateVersion.sh major minor build suite [new]"
+  echo " eg: updateVersion.sh 3 4 1 testing -> set Opencast's version to 3.4-1 in testing"
+    echo " eg: updateVersion.sh 4 0 1 testing new -> erase the current changelog for opencast and set the version to 4.0-1 in testing"
   exit 1
 fi
 
-package=$1
-version=$2
-suite=$3
+major=$1
+minor=$2
+build=$3
+suite=$4
 
 export DEBEMAIL="Greg Logan <gregorydlogan@gmail.com>"
-cd $package
+cd opencast
 #If the new flag is set, erase the current changelog
-if [ $# -eq 4 ]; then
+if [ $# -eq 5 ]; then
   rm -f debian/changelog
   new="--create"
+else
+  new="-b"
 fi
 #Create the changelog entry
 dch \
  $new \
- --package $package \
- --newversion $version \
+ --package opencast-$major \
+ --newversion $major.$minor-$build \
  -D $suite \
  -u low \
- "Initial release of Debian packages based on Opencast $2.x"
+ "Initial release of Debian packages based on Opencast $major.x"
 #Zero out the time
 sed -i 's/..\:..\:../00:00:00/' debian/changelog
