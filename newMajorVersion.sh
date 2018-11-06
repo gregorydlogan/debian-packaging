@@ -4,15 +4,15 @@ set -ue
 
 if [ $# -ne 2 ]; then
   echo "Usage: $0 oldversion newversion"
-  echo " eg: $0 6 7"
+  echo " eg: $0 6 7 -> Opencast 6.x-1 becomes Opencast 7.x-1"
+  echo " Note: oldversion *MUST* match current checkout version!"
   exit 1
 fi
 
 package="opencast"
 
 #Regenerate the changelog
-./changelog opencast $2.x-1 unstable
-git add $package/debian/changelog
+./changelog.sh $2 x 1 unstable new
 
 #Update the control file
 sed -i "s/$1.x/$2.x/g" $package/debian/control
