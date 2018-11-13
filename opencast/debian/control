@@ -34,7 +34,7 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-5-allinone
 Architecture: all
 Depends:
- opencast-5-common (>= 5.x),
+ opencast-5-common (>= 5.2),
  activemq-dist | activemq,
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
@@ -61,7 +61,7 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-5-admin
 Architecture: all
 Depends:
- opencast-5-common (>= 5.x),
+ opencast-5-common (>= 5.2),
  activemq-dist | activemq
 Conflicts:
  opencast-5-allinone,
@@ -86,7 +86,7 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-5-worker
 Architecture: all
 Depends:
- opencast-5-common (>= 5.x),
+ opencast-5-common (>= 5.2),
  sox,
  ffmpeg-dist | ffmpeg,
  hunspell,
@@ -114,7 +114,7 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-5-adminworker
 Architecture: all
 Depends:
- opencast-5-common (>= 5.x),
+ opencast-5-common (>= 5.2),
  activemq-dist | activemq,
  sox,
  ffmpeg-dist | ffmpeg,
@@ -143,7 +143,7 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-5-presentation
 Architecture: all
 Depends:
- opencast-5-common (>= 5.x)
+ opencast-5-common (>= 5.2)
 Conflicts:
  opencast-5-admin,
  opencast-5-adminworker,
@@ -168,7 +168,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-5-adminpresentation
 Architecture: all
 Depends:
- opencast-5-common (>= 5.x),
+ opencast-5-common (>= 5.2),
  activemq-dist | activemq
 Conflicts:
  opencast-5-admin,
@@ -194,7 +194,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-5-ingest
 Architecture: all
 Depends:
- opencast-5-common (>= 5.x),
+ opencast-5-common (>= 5.2),
  activemq-dist | activemq
 Conflicts:
  opencast-5-admin,
@@ -218,7 +218,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-5-migration
 Architecture: all
 Depends:
- opencast-5-common (>= 5.x),
+ opencast-5-common (>= 5.2),
  activemq-dist | activemq
 Conflicts:
  opencast-5-admin,
