@@ -1,3 +1,9 @@
+opencast-4 (4.5-2) stable; urgency=low
+
+  * Rebuild of Debian packages based on Opencast 4.5 because the initial packages failed to run
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Thu, 22 Nov 2018 00:00:00 -0600
+
 opencast-4 (4.5-1) stable; urgency=low
 
   * Initial release of Debian packages based on Opencast 4.x
