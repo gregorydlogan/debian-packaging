@@ -7,8 +7,8 @@ Build-Depends:
  dh-exec,
 Standards-Version: 3.9.5
 Homepage: http://activemq.apache.org
-Vcs-Git: git@bitbucket.org:greg_logan/debian_packaging.git
-Vcs-Browser: https://bitbucket.org/greg_logan/debian_packaging
+Vcs-Git: git@github.com:gregorydlogan/debian-packaging.git
+Vcs-Browser: https://github.com/gregorydlogan/debian-packaging
 
 Package: activemq-dist
 Architecture: all
