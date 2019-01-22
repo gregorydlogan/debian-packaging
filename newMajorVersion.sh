@@ -14,7 +14,10 @@ package="opencast"
 #Regenerate the changelog
 ./changelog.sh $2 x 1 unstable new
 
+next=`bc <<< "$2 + 1"`
+
 #Update the control file
+sed -i "s/$2.x/$next.x/g" $package/debian/control
 sed -i "s/$1.x/$2.x/g" $package/debian/control
 sed -i "s/$package-$1/$package-$2/g" $package/debian/control
 
