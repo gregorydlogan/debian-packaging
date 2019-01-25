@@ -22,6 +22,9 @@ fi
 git add $package/debian/changelog
 
 #Update the control file
+next=`bc <<< "$1 + 1"`
+cur=`bc <<< "$2 + 1"`
+sed -i "s/$next.x/$1.$cur/g" $package/debian/control
 sed -i "s/$1.x/$1.$2/g" $package/debian/control
 
 git add $package/debian/control
