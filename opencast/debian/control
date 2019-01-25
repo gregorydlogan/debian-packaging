@@ -22,6 +22,11 @@ Depends:
  netcat,
  sudo,
  init-system-helpers
+Provides:
+ opencast (= 7.x)
+Conflicts:
+ opencast (<< 7.x),
+ opencast (>> 8.x)
 Description: Open Source Lecture Capture & Video Management Tool Common Files
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -35,6 +40,7 @@ Package: opencast-7-allinone
 Architecture: all
 Depends:
  opencast-7-common (>= 7.x),
+ opencast-7-common (<< 8.x),
  activemq-dist | activemq,
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
@@ -62,6 +68,7 @@ Package: opencast-7-admin
 Architecture: all
 Depends:
  opencast-7-common (>= 7.x),
+ opencast-7-common (<< 8.x),
  activemq-dist | activemq
 Conflicts:
  opencast-7-allinone,
@@ -87,6 +94,7 @@ Package: opencast-7-worker
 Architecture: all
 Depends:
  opencast-7-common (>= 7.x),
+ opencast-7-common (<< 8.x),
  sox,
  ffmpeg-dist | ffmpeg,
  hunspell,
@@ -115,6 +123,7 @@ Package: opencast-7-adminworker
 Architecture: all
 Depends:
  opencast-7-common (>= 7.x),
+ opencast-7-common (<< 8.x),
  activemq-dist | activemq,
  sox,
  ffmpeg-dist | ffmpeg,
@@ -143,7 +152,8 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-7-presentation
 Architecture: all
 Depends:
- opencast-7-common (>= 7.x)
+ opencast-7-common (>= 7.x),
+ opencast-7-common (<< 8.x),
 Conflicts:
  opencast-7-admin,
  opencast-7-adminworker,
@@ -169,6 +179,7 @@ Package: opencast-7-adminpresentation
 Architecture: all
 Depends:
  opencast-7-common (>= 7.x),
+ opencast-7-common (<< 8.x),
  activemq-dist | activemq
 Conflicts:
  opencast-7-admin,
@@ -195,6 +206,7 @@ Package: opencast-7-ingest
 Architecture: all
 Depends:
  opencast-7-common (>= 7.x),
+ opencast-7-common (<< 8.x),
  activemq-dist | activemq
 Conflicts:
  opencast-7-admin,
@@ -219,6 +231,7 @@ Package: opencast-7-migration
 Architecture: all
 Depends:
  opencast-7-common (>= 7.x),
+ opencast-7-common (<< 8.x),
  activemq-dist | activemq
 Conflicts:
  opencast-7-admin,
