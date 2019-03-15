@@ -44,7 +44,7 @@ del_group() {
 del_user() {
     if getent passwd $OC_USER > /dev/null 2>&1; then
         if [ -x "`which deluser 2>/dev/null`" ]; then
-            deluser $OC_USER
+            deluser $OC_USER || true
         else
             echo >&2 "Not removing \`$OC_USER' system account" \
               "because deluser command was not found."
