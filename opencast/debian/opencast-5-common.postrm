@@ -29,29 +29,6 @@ OC_UID=7967
 # for details, see http://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
-del_group() {
-    if getent group $OC_GROUP > /dev/null 2>&1; then
-        if [ -x "`which delgroup 2>/dev/null`" ]; then
-            delgroup --only-if-empty $OC_GROUP
-        else
-            echo >&2 "Not removing \`$OC_GROUP' system group" \
-              "because delgroup command was not found."
-        fi
-
-    fi
-}
-
-del_user() {
-    if getent passwd $OC_USER > /dev/null 2>&1; then
-        if [ -x "`which deluser 2>/dev/null`" ]; then
-            deluser $OC_USER
-        else
-            echo >&2 "Not removing \`$OC_USER' system account" \
-              "because deluser command was not found."
-        fi
-    fi
-}
-
 case "$1" in
     purge|remove)
     # purge stats overrides
@@ -61,11 +38,6 @@ case "$1" in
     dpkg-statoverride --remove $OC_LOG || true
     dpkg-statoverride --remove $OC_DATA || true
     dpkg-statoverride --remove $OC_KARAF_DATA || true
-
-    # Unsure about this:
-    # http://wiki.debian.org/AccountHandlingInMaintainerScripts
-    del_user
-    del_group
 
     ;;
 
