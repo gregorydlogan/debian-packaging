@@ -1,6 +1,13 @@
 --- build/opencast-dist-base/bin/setenv
 +++ build/opencast-dist-base/bin/setenv
-@@ -27,9 +27,13 @@
+@@ -21,15 +21,20 @@
+ # Possible configuration options for the start script:
+ #
+ # export JAVA_HOME         # Location of Java installation
++export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+ # export JAVA_MIN_MEM      # Minimum memory for the JVM
+ # export JAVA_MAX_MEM      # Maximum memory for the JVM
+ # export JAVA_PERM_MEM     # Minimum perm memory for the JVM
  # export JAVA_MAX_PERM_MEM # Maximum perm memory for the JVM
  # export EXTRA_JAVA_OPTS   # Additional JVM options
  # export KARAF_HOME        # Karaf home folder
