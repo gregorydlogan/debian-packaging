@@ -17,6 +17,8 @@ if [ $# -eq 3 ]; then
   build=$3
 fi
 
+git checkout -b r/$1.$2
+
 #Regenerate the changelog, bumping to testing
 ./changelog.sh $1 $2 $build testing new
 git add $package/debian/changelog
@@ -28,4 +30,4 @@ sed -i "s/$next.x/$1.$cur/g" $package/debian/control
 sed -i "s/$1.x/$1.$2/g" $package/debian/control
 
 git add $package/debian/control
-
+git commit -m "Opencast $1.$2 into testing"
