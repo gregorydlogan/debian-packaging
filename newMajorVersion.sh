@@ -16,6 +16,11 @@ package="opencast"
 
 next=`bc <<< "$2 + 1"`
 
+echo "Creating r/$1.x"
+git checkout -b r/$1.x
+echo "Checking back out into develop"
+git checkout develop
+
 #Update the control file
 sed -i "s/$2.x/$next.x/g" $package/debian/control
 sed -i "s/$1.x/$2.x/g" $package/debian/control
@@ -39,3 +44,4 @@ do
     git mv $line $newname
   fi
 done
+git commit -m "Opencast $2.x"
