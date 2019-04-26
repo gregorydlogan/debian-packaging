@@ -27,9 +27,6 @@ createOutputs() {
   fi
 }
 
-testing() {
-  false
-}
 
 #Usage: doOpencast packageversion branchname friendlyname
 #eg: doOpencast 3.1 r/3.1 3.1-new
