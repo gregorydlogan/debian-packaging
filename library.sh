@@ -7,7 +7,11 @@ set -e
 doBuild() {
   cd $1
   echo "Building $1"
-  dpkg-buildpackage -k3259FFB3967266533FCD4B249A7EA8E5B3820B26 -tc
+  if [ -z "$SIGNING_KEY" ]; then
+    dpkg-buildpackage -k3259FFB3967266533FCD4B249A7EA8E5B3820B26 -tc
+  else
+    dpkg-buildpackage -k$SIGNING_KEY -tc
+  fi
   cd ..
 }
 
@@ -27,9 +31,6 @@ createOutputs() {
   fi
 }
 
-testing() {
-  false
-}
 
 #Usage: doOpencast packageversion branchname friendlyname
 #eg: doOpencast 3.1 r/3.1 3.1-new
