@@ -53,6 +53,8 @@ case "$1" in
     create_group
     create_user
 
+    mkdir -p /srv/opencast
+
     apply_permissions $OC_HOME
     apply_permissions $OC_CONFIG
     apply_permissions $OC_LOG
