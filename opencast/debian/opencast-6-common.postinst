@@ -28,6 +28,10 @@ OC_UID=7967
 # for details, see http://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
+check_mounted() {
+  findmnt -rno TARGET "$1" > /dev/null
+}
+
 create_group() {
   if ! getent group $OC_GROUP > /dev/null 2>&1; then
     addgroup --gid $OC_GID $OC_GROUP
@@ -42,9 +46,8 @@ create_user() {
 }
 
 apply_permissions() {
-  if ! dpkg-statoverride --list $1 >/dev/null 2>&1; then
+  if ! dpkg-statoverride --list $1 >/dev/null 2>&1 -a check_mounted $1; then
     dpkg-statoverride --update --add $OC_USER $OC_GROUP 755 $1
-    chown -R $OC_USER:$OC_GROUP $1
   fi
 }
 
