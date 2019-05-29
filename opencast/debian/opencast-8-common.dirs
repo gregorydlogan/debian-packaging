@@ -1,7 +1,5 @@
 /etc/opencast
 
-/srv/opencast
-
 /usr/share/opencast/deploy
 
 /var/lib/opencast/instances

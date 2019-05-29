@@ -1,3 +1,9 @@
+activemq-dist (5.15.9-1) testing; urgency=low
+
+  * Updating ActiveMQ to 5.15.9
+
+ -- Greg Logan <greg@UX310UA.loganite.ca>  Wed, 29 May 2019 10:20:09 -0600
+
 activemq-dist (5.15.2-1) stable; urgency=low
 
   * Initial release of Apache ActiveMQ packaged for Opencast but unconfigured
