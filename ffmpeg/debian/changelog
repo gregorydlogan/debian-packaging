@@ -1,3 +1,9 @@
+ffmpeg-dist (4.1.3-1) testing; urgency=low
+
+  * Updating FFmpeg to 4.1.3
+
+ -- Greg Logan <greg@UX310UA.loganite.ca>  Wed, 29 May 2019 10:20:42 -0600
+
 ffmpeg-dist (4.0-1) stable; urgency=low
 
   * Updated to FFmpeg 4.0
