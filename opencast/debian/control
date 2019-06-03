@@ -47,11 +47,9 @@ Depends:
  hunspell
 Conflicts:
  opencast-8-admin,
- opencast-8-adminworker,
  opencast-8-adminpresentation,
  opencast-8-worker,
  opencast-8-presentation,
- opencast-8-migration,
  opencast-8-ingest
 Suggests:
  mariadb-server
@@ -72,11 +70,9 @@ Depends:
  activemq-dist | activemq
 Conflicts:
  opencast-8-allinone,
- opencast-8-adminworker,
  opencast-8-adminpresentation,
  opencast-8-worker,
  opencast-8-presentation,
- opencast-8-migration,
  opencast-8-ingest
 Suggests:
  nfs-kernel-server,
@@ -101,11 +97,9 @@ Depends:
  tesseract-ocr
 Conflicts:
  opencast-8-admin,
- opencast-8-adminworker,
  opencast-8-adminpresentation,
  opencast-8-allinone,
  opencast-8-presentation,
- opencast-8-migration,
  opencast-8-ingest
 Suggests:
  nfs-client
@@ -119,36 +113,6 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
  at least one of these installed in a clustered install of Opencast.  More workers
  means you can process videos faster, to a point.
 
-Package: opencast-8-adminworker
-Architecture: all
-Depends:
- opencast-8-common (>= 8.x),
- opencast-8-common (<< 9.x),
- activemq-dist | activemq,
- sox,
- ffmpeg-dist | ffmpeg,
- hunspell,
- tesseract-ocr
-Conflicts:
- opencast-8-admin,
- opencast-8-adminpresentation,
- opencast-8-allinone,
- opencast-8-worker,
- opencast-8-presentation,
- opencast-8-migration,
- opencast-8-ingest
-Suggests:
- nfs-client
-Description: Open Source Lecture Capture & Video Management Tool Worker Profile
- Opencast is a free, open-source platform to support the management of
- educational audio and video content. Institutions will use Opencast to
- produce lecture recordings, manage existing video, serve designated
- distribution channels, and provide user interfaces to engage students with
- educational videos.
- This is the admin+worker node profile of Opencast.  It combines both the admin
- and worker nodes into one profile.  In general you want separate nodes for large
- installs but this profile works well for small installations.
-
 Package: opencast-8-presentation
 Architecture: all
 Depends:
@@ -156,11 +120,9 @@ Depends:
  opencast-8-common (<< 9.x),
 Conflicts:
  opencast-8-admin,
- opencast-8-adminworker,
  opencast-8-adminpresentation,
  opencast-8-worker,
  opencast-8-allinone,
- opencast-8-migration,
  opencast-8-ingest
 Suggests:
  nginx,
@@ -183,11 +145,9 @@ Depends:
  activemq-dist | activemq
 Conflicts:
  opencast-8-admin,
- opencast-8-adminworker,
  opencast-8-worker,
  opencast-8-presentation,
  opencast-8-allinone,
- opencast-8-migration,
  opencast-8-ingest
 Suggests:
  nginx,
@@ -210,11 +170,9 @@ Depends:
  activemq-dist | activemq
 Conflicts:
  opencast-8-admin,
- opencast-8-adminworker,
  opencast-8-worker,
  opencast-8-presentation,
- opencast-8-allinone,
- opencast-8-migration
+ opencast-8-allinone
 Suggests:
  nginx,
  nfs-client
@@ -227,26 +185,3 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
  This is the ingest node profile of Opencast.  It contains only the portions of Opencast
  required to ingest media from capture agents.
 
-Package: opencast-8-migration
-Architecture: all
-Depends:
- opencast-8-common (>= 8.x),
- opencast-8-common (<< 9.x),
- activemq-dist | activemq
-Conflicts:
- opencast-8-admin,
- opencast-8-adminworker,
- opencast-8-worker,
- opencast-8-presentation,
- opencast-8-allinone,
- opencast-8-ingest
-Suggests:
- nfs-client
-Description: Open Source Lecture Capture & Video Management Tool Distribution Profile
- Opencast is a free, open-source platform to support the management of
- educational audio and video content. Institutions will use Opencast to
- produce lecture recordings, manage existing video, serve designated
- distribution channels, and provide user interfaces to engage students with
- educational videos.
- This is the migration profile of Opencast.  It is only useful when upgrading between
- major versions.
