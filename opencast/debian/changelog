@@ -1,5 +1,5 @@
-opencast-6 (6.x-1) unstable; urgency=low
+opencast-6 (6.5-1) testing; urgency=low
 
   * Initial release of Debian packages based on Opencast 6.x
 
- -- Greg Logan <gregorydlogan@gmail.com>  Wed, 4 Apr 2018 00:00:00 -0600
+ -- Greg Logan <gregorydlogan@gmail.com>  Thu, 13 Jun 2019 00:00:00 -0600
