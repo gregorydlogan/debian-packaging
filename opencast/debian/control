@@ -23,10 +23,10 @@ Depends:
  sudo,
  init-system-helpers
 Provides:
- opencast (= 7.x)
+ opencast (= 7.0)
 Conflicts:
- opencast (<< 7.x),
- opencast (>> 8.x)
+ opencast (<< 7.0),
+ opencast (>> 7.1)
 Description: Open Source Lecture Capture & Video Management Tool Common Files
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -39,8 +39,8 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-7-allinone
 Architecture: all
 Depends:
- opencast-7-common (>= 7.x),
- opencast-7-common (<< 8.x),
+ opencast-7-common (>= 7.0),
+ opencast-7-common (<< 7.1),
  activemq-dist | activemq,
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
@@ -67,8 +67,8 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-7-admin
 Architecture: all
 Depends:
- opencast-7-common (>= 7.x),
- opencast-7-common (<< 8.x),
+ opencast-7-common (>= 7.0),
+ opencast-7-common (<< 7.1),
  activemq-dist | activemq
 Conflicts:
  opencast-7-allinone,
@@ -93,8 +93,8 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-7-worker
 Architecture: all
 Depends:
- opencast-7-common (>= 7.x),
- opencast-7-common (<< 8.x),
+ opencast-7-common (>= 7.0),
+ opencast-7-common (<< 7.1),
  sox,
  ffmpeg-dist | ffmpeg,
  hunspell,
@@ -122,8 +122,8 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-7-adminworker
 Architecture: all
 Depends:
- opencast-7-common (>= 7.x),
- opencast-7-common (<< 8.x),
+ opencast-7-common (>= 7.0),
+ opencast-7-common (<< 7.1),
  activemq-dist | activemq,
  sox,
  ffmpeg-dist | ffmpeg,
@@ -152,8 +152,8 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-7-presentation
 Architecture: all
 Depends:
- opencast-7-common (>= 7.x),
- opencast-7-common (<< 8.x),
+ opencast-7-common (>= 7.0),
+ opencast-7-common (<< 7.1),
 Conflicts:
  opencast-7-admin,
  opencast-7-adminworker,
@@ -178,8 +178,8 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-7-adminpresentation
 Architecture: all
 Depends:
- opencast-7-common (>= 7.x),
- opencast-7-common (<< 8.x),
+ opencast-7-common (>= 7.0),
+ opencast-7-common (<< 7.1),
  activemq-dist | activemq
 Conflicts:
  opencast-7-admin,
@@ -205,8 +205,8 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-7-ingest
 Architecture: all
 Depends:
- opencast-7-common (>= 7.x),
- opencast-7-common (<< 8.x),
+ opencast-7-common (>= 7.0),
+ opencast-7-common (<< 7.1),
  activemq-dist | activemq
 Conflicts:
  opencast-7-admin,
@@ -230,8 +230,8 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-7-migration
 Architecture: all
 Depends:
- opencast-7-common (>= 7.x),
- opencast-7-common (<< 8.x),
+ opencast-7-common (>= 7.0),
+ opencast-7-common (<< 7.1),
  activemq-dist | activemq
 Conflicts:
  opencast-7-admin,
