@@ -1,3 +1,9 @@
+opencast-6 (6.5-2) testing; urgency=low
+
+  * Fix for dpkg-override on NFS mounts
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Wed, 26 Jun 2019 00:00:00 -0600
+
 opencast-6 (6.5-1) testing; urgency=low
 
   * Initial release of Debian packages based on Opencast 6.x
