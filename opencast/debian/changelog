@@ -1,3 +1,9 @@
+opencast-7 (7.0-4) stable; urgency=low
+
+  * Initial release of Debian packages based on Opencast 7.x
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Wed, 10 Jul 2019 00:00:00 -0600
+
 opencast-7 (7.0-3) testing; urgency=low
 
   * Resolved issue where /srv/opencast was incorrectly marked for
