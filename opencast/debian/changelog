@@ -1,3 +1,9 @@
+opencast-7 (7.1-2) stable; urgency=low
+
+  * Initial release of Debian packages based on Opencast 7.x
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Fri, 02 Aug 2019 00:00:00 -0600
+
 opencast-7 (7.1-1) testing; urgency=low
 
   * Initial release of Debian packages based on Opencast 7.x
