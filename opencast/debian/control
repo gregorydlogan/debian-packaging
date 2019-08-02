@@ -23,10 +23,10 @@ Depends:
  sudo,
  init-system-helpers
 Provides:
- opencast (= 6.x)
+ opencast (= 6.6)
 Conflicts:
- opencast (<< 6.x),
- opencast (>> 7.x)
+ opencast (<< 6.6),
+ opencast (>> 6.7)
 Description: Open Source Lecture Capture & Video Management Tool Common Files
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -39,8 +39,8 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-6-allinone
 Architecture: all
 Depends:
- opencast-6-common (>= 6.x),
- opencast-6-common (<< 7.x),
+ opencast-6-common (>= 6.6),
+ opencast-6-common (<< 6.7),
  activemq-dist | activemq,
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
@@ -67,8 +67,8 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-6-admin
 Architecture: all
 Depends:
- opencast-6-common (>= 6.x),
- opencast-6-common (<< 7.x),
+ opencast-6-common (>= 6.6),
+ opencast-6-common (<< 6.7),
  activemq-dist | activemq
 Conflicts:
  opencast-6-allinone,
@@ -93,8 +93,8 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-6-worker
 Architecture: all
 Depends:
- opencast-6-common (>= 6.x),
- opencast-6-common (<< 7.x),
+ opencast-6-common (>= 6.6),
+ opencast-6-common (<< 6.7),
  sox,
  ffmpeg-dist | ffmpeg,
  hunspell,
@@ -122,8 +122,8 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-6-adminworker
 Architecture: all
 Depends:
- opencast-6-common (>= 6.x),
- opencast-6-common (<< 7.x),
+ opencast-6-common (>= 6.6),
+ opencast-6-common (<< 6.7),
  activemq-dist | activemq,
  sox,
  ffmpeg-dist | ffmpeg,
@@ -152,8 +152,8 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-6-presentation
 Architecture: all
 Depends:
- opencast-6-common (>= 6.x),
- opencast-6-common (<< 7.x),
+ opencast-6-common (>= 6.6),
+ opencast-6-common (<< 6.7),
 Conflicts:
  opencast-6-admin,
  opencast-6-adminworker,
@@ -178,8 +178,8 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-6-adminpresentation
 Architecture: all
 Depends:
- opencast-6-common (>= 6.x),
- opencast-6-common (<< 7.x),
+ opencast-6-common (>= 6.6),
+ opencast-6-common (<< 6.7),
  activemq-dist | activemq
 Conflicts:
  opencast-6-admin,
@@ -205,8 +205,8 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-6-ingest
 Architecture: all
 Depends:
- opencast-6-common (>= 6.x),
- opencast-6-common (<< 7.x),
+ opencast-6-common (>= 6.6),
+ opencast-6-common (<< 6.7),
  activemq-dist | activemq
 Conflicts:
  opencast-6-admin,
@@ -230,8 +230,8 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-6-migration
 Architecture: all
 Depends:
- opencast-6-common (>= 6.x),
- opencast-6-common (<< 7.x),
+ opencast-6-common (>= 6.6),
+ opencast-6-common (<< 6.7),
  activemq-dist | activemq
 Conflicts:
  opencast-6-admin,
