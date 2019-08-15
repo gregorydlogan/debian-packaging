@@ -43,7 +43,9 @@ create_user() {
 
 apply_permissions() {
   #If $1 is *not* a mount, apply the dpkg-statoverride
-  if ! findmnt -M "$1" 2>&1 > /dev/null; then
+  findmnt -M "$1" 2>&1 > /dev/null && export isMount="true" || export isMount="false"
+  dpkg-statoverride --list "$1" 2>&1 > /dev/null && export isOverridden="true" || export isOverridden="false"
+  if ! $isMount && ! $isOverridden; then
     dpkg-statoverride --update --add $OC_USER $OC_GROUP 755 $1
     #This chown is required, dpkg-statoverride does not recurse and apply the change to the children
     chown -R $OC_USER:$OC_GROUP $1
