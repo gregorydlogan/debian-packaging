@@ -48,8 +48,10 @@ apply_permissions() {
   if ! $isMount && ! $isOverridden; then
     dpkg-statoverride --update --add $OC_USER $OC_GROUP 755 $1
   fi
-  #This chown is required, dpkg-statoverride does not recurse and apply the change to the children
-  chown -R $OC_USER:$OC_GROUP $1
+  if ! $isMount; then
+    #This chown is required, dpkg-statoverride does not recurse and apply the change to the children
+    chown -R $OC_USER:$OC_GROUP $1
+  fi
 }
 
 case "$1" in
