@@ -19,7 +19,7 @@ set -e
 
 case "$1" in
     configure)
-      update-rc.d opencast defaults
+      systemctl enable opencast
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

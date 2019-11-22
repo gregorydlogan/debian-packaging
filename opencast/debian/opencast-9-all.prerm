@@ -19,8 +19,8 @@ set -e
 
 case "$1" in
     remove)
-      service opencast stop
-      update-rc.d opencast remove
+      systemctl stop opencast
+      systemctl disable opencast
     ;;
 
     upgrade|deconfigure)
