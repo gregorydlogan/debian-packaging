@@ -1,3 +1,9 @@
+opencast-6 (6.7-2) stable; urgency=low
+
+  * Opencast 6.7 into stable
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Tue, 17 Dec 2019 00:00:00 -0600
+
 opencast-6 (6.7-1) testing; urgency=low
 
   * Initial release of Debian packages based on Opencast 6.7
