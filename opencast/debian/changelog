@@ -1,3 +1,10 @@
+opencast-8 (8.0-3) stable; urgency=low
+
+  * Resolving upstream url issue.  Initial patch in opencast/opencast#1356,
+    adjusting paths manually here.
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Sun, 19 Jan 2020 00:00:00 -0600
+
 opencast-8 (8.0-2) stable; urgency=low
 
   * Opencast 8.0 into stable
