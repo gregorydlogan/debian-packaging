@@ -1,3 +1,10 @@
+opencast-7 (7.5-3) stable; urgency=low
+
+  * Resolving upstream url issue.  Initial patch in opencast/opencast#1356,
+    adjusting paths manually here.
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Sun, 19 Jan 2020 00:00:00 -0600
+
 opencast-7 (7.5-2) stable; urgency=low
 
   * Moving Opencast 7.5 into stable

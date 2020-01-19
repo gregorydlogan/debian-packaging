@@ -1,0 +1,43 @@
+
+--- build/opencast-dist-base/etc/org.ops4j.pax.url.mvn.cfg
++++ build/opencast-dist-base/etc/org.ops4j.pax.url.mvn.cfg
+@@ -7,7 +7,7 @@
+ #    (the "License"); you may not use this file except in compliance with
+ #    the License.  You may obtain a copy of the License at
+ #
+-#       http://www.apache.org/licenses/LICENSE-2.0
++#       https://www.apache.org/licenses/LICENSE-2.0
+ #
+ #    Unless required by applicable law or agreed to in writing, software
+ #    distributed under the License is distributed on an "AS IS" BASIS,
+@@ -56,7 +56,7 @@
+ 
+ #
+ # Default this to false. It's just weird to use undocumented repos
+-# "false" means that http://repo1.maven.org/maven2@id=central won't be
++# "false" means that https://repo1.maven.org/maven2@id=central won't be
+ # implicitly used as remote repository
+ #
+ org.ops4j.pax.url.mvn.useFallbackRepositories=false
+@@ -101,8 +101,8 @@
+ # profiles defined in effective settings.xml file will be _appended_ to this
+ # list
+ # The default list includes the following repositories:
+-#    http://repo1.maven.org/maven2@id=central
+-#    http://repository.apache.org/content/groups/snapshots-group@id=apache@snapshots@noreleases
++#    https://repo1.maven.org/maven2@id=central
++#    https://repository.apache.org/content/groups/snapshots-group@id=apache@snapshots@noreleases
+ #    https://oss.sonatype.org/content/repositories/snapshots@id=sonatype.snapshots.deploy@snapshots@noreleases
+ #    https://oss.sonatype.org/content/repositories/ops4j-snapshots@id=ops4j.sonatype.snapshots.deploy@snapshots@noreleases
+ # A repository url can be appended with zero or more of the following flags:
+@@ -112,8 +112,8 @@
+ #        settings.xml this is optional but recommended
+ #
+ org.ops4j.pax.url.mvn.repositories= \
+-    http://repo1.maven.org/maven2@id=central, \
+-    http://repository.apache.org/content/groups/snapshots-group@id=apache@snapshots@noreleases, \
++    https://repo1.maven.org/maven2@id=central, \
++    https://repository.apache.org/content/groups/snapshots-group@id=apache@snapshots@noreleases, \
+     https://oss.sonatype.org/content/repositories/ops4j-snapshots@id=ops4j.sonatype.snapshots.deploy@snapshots@noreleases
+ 
+ #
