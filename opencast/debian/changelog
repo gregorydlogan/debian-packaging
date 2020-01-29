@@ -1,3 +1,10 @@
+opencast-8 (8.1-2) stable; urgency=high
+
+  * Initial release of Debian packages based on Opencast 8.1
+  * These packages resolve a number of security issues.
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Wed, 29 Jan 2020 00:00:00 -0600
+
 opencast-8 (8.1-1) testing; urgency=high
 
   * Initial release of Debian packages based on Opencast 8.1.
