@@ -1,5 +1,6 @@
-opencast-7 (7.x-1) unstable; urgency=low
+opencast-7 (7.6-1) testing; urgency=high
 
-  * Initial release of Debian packages based on Opencast 7.x
+  * Initial release of Debian packages based on Opencast 7.6
+  * These packages resolve a number of security issues.
 
- -- Greg Logan <gregorydlogan@gmail.com>  Tue, 25 Sep 2018 00:00:00 -0600
+ -- Greg Logan <gregorydlogan@gmail.com>  Wed, 29 Jan 2020 00:00:00 -0600
