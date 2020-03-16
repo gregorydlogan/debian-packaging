@@ -1,5 +1,5 @@
-opencast-8 (8.x-1) unstable; urgency=low
+opencast-8 (8.2-1) testing; urgency=low
 
-  * Initial release of Debian packages based on Opencast 8.x
+  * Initial release of Debian packages based on Opencast 8.2
 
- -- Greg Logan <gregorydlogan@gmail.com>  Mon, 01 Apr 2019 00:00:00 -0600
+ -- Greg Logan <gregorydlogan@gmail.com>  Mon, 16 Mar 2020 00:00:00 -0600
