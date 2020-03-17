@@ -1,0 +1,2 @@
+build/opencast-dist-ingest/etc/org.apache.karaf.features.cfg	/etc/opencast/
+build/opencast-dist-ingest/etc/profile.cfg	/etc/opencast/
