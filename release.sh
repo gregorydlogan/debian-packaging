@@ -12,21 +12,10 @@ minor=$2
 build=$3
 suite=$4
 
-export DEBEMAIL="Greg Logan <gregorydlogan@gmail.com>"
-cd opencast
 #If the new flag is set, erase the current changelog
 if [ $# -eq 5 ]; then
-  rm -f debian/changelog
-  new="--create"
+  ./changelog.sh $1 $2 $3 $4 new
 else
-  new="-b"
+  ./changelog.sh $1 $2 $3 $4
 fi
-#Create the changelog entry
-dch \
- $new \
- --package opencast-$major \
- --newversion $major.$minor-$build \
- -D $suite \
- -u low
-#Zero out the time
-sed -i 's/..\:..\:../00:00:00/' debian/changelog
+git tag -sm "Opencast $1.$2-$3" $1.$2-$3
