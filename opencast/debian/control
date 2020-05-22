@@ -23,10 +23,10 @@ Depends:
  sudo,
  init-system-helpers
 Provides:
- opencast (= 8.x)
+ opencast (= 8.4)
 Conflicts:
- opencast (<< 8.x),
- opencast (>> 9.x)
+ opencast (<< 8.4),
+ opencast (>> 8.5)
 Description: Open Source Lecture Capture & Video Management Tool Common Files
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -39,8 +39,8 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-8-allinone
 Architecture: all
 Depends:
- opencast-8-common (>= 8.x),
- opencast-8-common (<< 9.x),
+ opencast-8-common (>= 8.4),
+ opencast-8-common (<< 8.5),
  activemq-dist | activemq,
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
@@ -65,8 +65,8 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-8-admin
 Architecture: all
 Depends:
- opencast-8-common (>= 8.x),
- opencast-8-common (<< 9.x),
+ opencast-8-common (>= 8.4),
+ opencast-8-common (<< 8.5),
  activemq-dist | activemq
 Conflicts:
  opencast-8-allinone,
@@ -89,8 +89,8 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-8-worker
 Architecture: all
 Depends:
- opencast-8-common (>= 8.x),
- opencast-8-common (<< 9.x),
+ opencast-8-common (>= 8.4),
+ opencast-8-common (<< 8.5),
  sox,
  ffmpeg-dist | ffmpeg,
  hunspell,
@@ -116,8 +116,8 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-8-presentation
 Architecture: all
 Depends:
- opencast-8-common (>= 8.x),
- opencast-8-common (<< 9.x),
+ opencast-8-common (>= 8.4),
+ opencast-8-common (<< 8.5),
 Conflicts:
  opencast-8-admin,
  opencast-8-adminpresentation,
@@ -140,8 +140,8 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-8-adminpresentation
 Architecture: all
 Depends:
- opencast-8-common (>= 8.x),
- opencast-8-common (<< 9.x),
+ opencast-8-common (>= 8.4),
+ opencast-8-common (<< 8.5),
  activemq-dist | activemq
 Conflicts:
  opencast-8-admin,
@@ -165,8 +165,8 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-8-ingest
 Architecture: all
 Depends:
- opencast-8-common (>= 8.x),
- opencast-8-common (<< 9.x),
+ opencast-8-common (>= 8.4),
+ opencast-8-common (<< 8.5),
  activemq-dist | activemq
 Conflicts:
  opencast-8-admin,
