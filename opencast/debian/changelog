@@ -1,3 +1,9 @@
+opencast-8 (8.5-2) stable; urgency=low
+
+  * Opencast 8.5 in stable.
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Mon, 22 Jun 2020 00:00:00 -0600
+
 opencast-8 (8.5-1) testing; urgency=low
 
   * Initial release of Opencast 8.5 into testing.
