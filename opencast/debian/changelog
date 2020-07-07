@@ -1,3 +1,9 @@
+opencast-8 (8.5-3) stable; urgency=low
+
+  * Resolved an issue where the headless version of the JDK was installed, which lead to broken coverimage WOHs
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Tue, 07 Jul 2020 00:00:00 -0600
+
 opencast-8 (8.5-2) stable; urgency=low
 
   * Opencast 8.5 in stable.
