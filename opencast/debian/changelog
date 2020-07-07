@@ -1,3 +1,9 @@
+opencast-7 (7.7-3) stable; urgency=low
+
+  * Resolved an issue where the headless version of the JDK was installed, which lead to broken coverimage WOHs
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Tue, 07 Jul 2020 00:00:00 -0600
+
 opencast-7 (7.7-2) stable; urgency=low
 
   * Initial release of packages based on Opencast 7.7 to stable
