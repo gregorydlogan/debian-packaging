@@ -1,3 +1,9 @@
+opencast-8 (8.6-2) stable; urgency=low
+
+  * Moving Opencast 8.6 up to debian stable.
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Tue, 11 Aug 2020 00:00:00 -0600
+
 opencast-8 (8.6-1) testing; urgency=low
 
   * Initial release of Opencast 8.6 debian packaging.
