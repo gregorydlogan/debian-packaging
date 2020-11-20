@@ -27,6 +27,7 @@ dch \
  --package opencast-$major \
  --newversion $major.$minor-$build \
  -D $suite \
- -u low
+ -u low \
+ "Initial release based on Opencast $major.$minor"
 #Zero out the time
 sed -i 's/..\:..\:../00:00:00/' debian/changelog
