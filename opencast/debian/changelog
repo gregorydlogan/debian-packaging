@@ -1,4 +1,4 @@
-opencast-9 (9.x-1) unstable; urgency=low
+opencast-9 (9.x-x) unstable; urgency=low
 
   * Initial release of Debian packages based on Opencast 9.x
 
