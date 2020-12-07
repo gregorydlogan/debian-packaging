@@ -6,7 +6,7 @@ Build-Depends:
  debhelper (>= 9),
  dh-exec,
  maven (>= 3.1.0),
- openjdk-8-jdk
+ openjdk-11-jdk | openjdk-8-jdk
 Standards-Version: 3.9.5
 Homepage: http://opencast.org
 Vcs-Git: git@github.com:gregorydlogan/debian-packaging.git
@@ -17,7 +17,7 @@ Architecture: all
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- openjdk-8-jre,
+ openjdk-11-jre | openjdk-8-jre,
  adduser,
  netcat,
  sudo,
