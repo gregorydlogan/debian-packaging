@@ -45,14 +45,15 @@ Depends:
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
  hunspell
+Recommends:
+ elasticsearch-oss | elasticsearch,
+ mariadb-server
 Conflicts:
  opencast-9-admin,
  opencast-9-adminpresentation,
  opencast-9-worker,
  opencast-9-presentation,
  opencast-9-ingest
-Suggests:
- mariadb-server
 Description: Open Source Lecture Capture & Video Management Tool All-In-One Profile
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -74,9 +75,11 @@ Conflicts:
  opencast-9-worker,
  opencast-9-presentation,
  opencast-9-ingest
+Recommends:
+ mariadb-server
 Suggests:
  nfs-kernel-server,
- mariadb-server
+ elasticsearch-oss | elasticsearch
 Description: Open Source Lecture Capture & Video Management Tool Admin Profile
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -124,8 +127,10 @@ Conflicts:
  opencast-9-worker,
  opencast-9-allinone,
  opencast-9-ingest
+Recommends:
+ elasticsearch-oss | elasticsearch,
+ nginx | apache2
 Suggests:
- nginx,
  nfs-client
 Description: Open Source Lecture Capture & Video Management Tool Distribution Profile
  Opencast is a free, open-source platform to support the management of
@@ -149,8 +154,10 @@ Conflicts:
  opencast-9-presentation,
  opencast-9-allinone,
  opencast-9-ingest
+Recommends:
+ nginx | apache2,
+ elasticsearch-oss | elasticsearch
 Suggests:
- nginx,
  nfs-client
 Description: Open Source Lecture Capture & Video Management Tool Distribution Profile
  Opencast is a free, open-source platform to support the management of
@@ -173,8 +180,9 @@ Conflicts:
  opencast-9-worker,
  opencast-9-presentation,
  opencast-9-allinone
+Recommends:
+ nginx | apache2
 Suggests:
- nginx,
  nfs-client
 Description: Open Source Lecture Capture & Video Management Tool Distribution Profile
  Opencast is a free, open-source platform to support the management of
