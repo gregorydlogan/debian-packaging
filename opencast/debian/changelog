@@ -1,3 +1,9 @@
+opencast-7 (7.9-2) stable; urgency=low
+
+  * Release Opencast 7.9 packaged for Debian
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Tue, 15 Dec 2020 00:00:00 -0600
+
 opencast-7 (7.9-1) testing; urgency=low
 
   * Initial release of Opencast 7 packaged for Debian
