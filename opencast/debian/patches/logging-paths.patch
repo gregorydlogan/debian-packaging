@@ -1,8 +1,8 @@
---- build/opencast-dist-base/etc/org.ops4j.pax.logging.cfg
-+++ build/opencast-dist-base/etc/org.ops4j.pax.logging.cfg
-@@ -49,7 +49,7 @@ log4j2.appender.console.layout.pattern = ${log4j2.out.pattern}
+--- a/build/opencast-dist-base/etc/org.ops4j.pax.logging.cfg
++++ b/build/opencast-dist-base/etc/org.ops4j.pax.logging.cfg
+@@ -49,7 +49,7 @@
  # Rolling file appender
- log4j2.appender.out.type = RandomAccessFile
+ log4j2.appender.out.type = File
  log4j2.appender.out.name = File
 -log4j2.appender.out.fileName = ${karaf.data}/log/opencast.log
 +log4j2.appender.out.fileName = /var/log/opencast/opencast.log

@@ -1,3 +1,9 @@
+activemq-dist (5.15.14-1) stable; urgency=low
+
+  * Updating ActiveMQ to 5.15.14
+
+ -- Greg Logan <greg@UX310UA.loganite.ca>  Wed, 17 Dec 2020 00:00:00 -0600
+
 activemq-dist (5.15.12-1) stable; urgency=low
 
   * Updating ActiveMQ to 5.15.12

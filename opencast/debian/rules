@@ -22,10 +22,6 @@ override_dh_strip_nondeterminism:
 override_dh_auto_clean:
 	#Do nothing
 
-override_dh_auto_install:
-	#Apply the patches.  We don't trust quilt here because it does it at the wrong time and the changes are not passed through to the packages.
-	find ./debian/patches -type f -name *.patch -exec patch -p0 -i '{}' \;
-
 # main packaging script based on dh7 syntax
 %:
 	dh $@

@@ -1,21 +1,21 @@
---- build/opencast-dist-base/etc/custom.properties
-+++ build/opencast-dist-base/etc/custom.properties
-@@ -58,7 +58,7 @@ org.opencastproject.security.digest.pass=CHANGE_ME
-
+--- a/build/opencast-dist-base/etc/custom.properties
++++ b/build/opencast-dist-base/etc/custom.properties
+@@ -63,7 +63,7 @@
+ 
  # The directory where the system will store its processed files (including temporary files).  This directory should
  # be persistent between reboots (i.e., not /tmp)
 -org.opencastproject.storage.dir=${karaf.data}/opencast
 +org.opencastproject.storage.dir=/srv/opencast
-
+ 
  # The path to the asset manager directory
  # Default: ${org.opencastproject.storage.dir}/archive
-@@ -184,13 +184,13 @@ org.opencastproject.workspace.cleanup.max.age=2592000
-
+@@ -174,13 +174,13 @@
+ 
  # Default directory to use for embedded solr indexes.
  # If not set, ${karaf.data}/solr-indexes will be used.
 -#org.opencastproject.solr.dir=${karaf.data}/solr-indexes
 +org.opencastproject.solr.dir=${karaf.data}/solr-indexes
-
+ 
  # Directory to store the embedded solr indices.  This should be a persistent and stable directory.
  # Default: ${org.opencastproject.solr.dir}/{search, series, workflow}
 -#org.opencastproject.search.solr.dir=${org.opencastproject.solr.dir}/search
@@ -24,11 +24,11 @@
 +org.opencastproject.search.solr.dir=${org.opencastproject.solr.dir}/search
 +org.opencastproject.series.solr.dir=${org.opencastproject.solr.dir}/series
 +org.opencastproject.workflow.solr.dir=${org.opencastproject.solr.dir}/workflow
-
+ 
  # URLs of dedicated Solr server to use.  Note that if thesw URLs are specified, the local embedded Solr index as
  # configured using `org.opencastproject.*.solr.dir` will be ignored. A dedicated Solr server should be set up in order
---- build/opencast-dist-base/etc/org.opencastproject.ingest.scanner.InboxScannerService-inbox.cfg
-+++ build/opencast-dist-base/etc/org.opencastproject.ingest.scanner.InboxScannerService-inbox.cfg
+--- a/build/opencast-dist-base/etc/org.opencastproject.ingest.scanner.InboxScannerService-inbox.cfg
++++ b/build/opencast-dist-base/etc/org.opencastproject.ingest.scanner.InboxScannerService-inbox.cfg
 @@ -16,7 +16,7 @@
  workflow.config.straightToPublishing=false
  
@@ -36,5 +36,5 @@
 -inbox.path=${karaf.data}/inbox
 +inbox.path=/srv/opencast/inbox
  
- # Inbox polling interval in ms.
- inbox.poll=5000
+ # Inbox polling interval in milliseconds
+ # Default: 5000
