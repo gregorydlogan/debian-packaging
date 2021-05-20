@@ -1,7 +1,7 @@
---- build/opencast-dist-base/docs/scripts/service/opencast.service
-+++ build/opencast-dist-base/docs/scripts/service/opencast.service
-@@ -5,8 +5,8 @@
- After=remote-fs.target
+--- a/build/opencast-dist-base/docs/scripts/service/opencast.service
++++ b/build/opencast-dist-base/docs/scripts/service/opencast.service
+@@ -8,8 +8,8 @@
+ Documentation=https://docs.opencast.org
  
  [Service]
 -ExecStart=/opt/opencast/bin/start-opencast server

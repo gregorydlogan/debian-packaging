@@ -17,7 +17,7 @@ doBuild() {
 
 
 #Usage: createOutputs hash branchname friendlyname, falls back to using branch name if friendly is missing
-#eg: createOutputs <some git has> r/3.2 3.2-new
+#eg: createOutputs <some git hash> r/3.2 3.2-new
 createOutputs() {
   mkdir -p outputs/$1
   if [ $# -eq 3 ]; then
@@ -88,31 +88,62 @@ doOpencast() {
 
 
 #Usage: doActiveMQ packageversion branchname friendlyname
-#eg: doActiveMQ 5.13.0 r/3.x 3.x
+#eg: doActiveMQ 5.13.0 r/3.x
 doActiveMQ() {
 
   git checkout $2
 
   VERSION=`git rev-parse HEAD`
 
+  cd activemq
+  git checkout -- ./
+  git clean -fdx ./
+  ln -s ../binaries/apache-activemq-*$1*.tar.gz
+  tar xvf apache-activemq-*$1*.tar.gz
+  rm -f apache-activemq-*$1*.tar.gz
+  mv apache-activemq-*$1*/* ./
+  rmdir apache-activemq-*$1*
+
+  dch -b --package activemq-dist --newversion $1-1 -D stable -u low "Updating ActiveMQ based on upstream $1 build"
+  #Zero out the time
+  sed -i 's/..\:..\:../00:00:00/' debian/changelog
+
+  cd ..
+
   tar cvJf activemq-dist_$1.orig.tar.xz activemq
   doBuild activemq
-  createOutputs $VERSION $1 $3
+  createOutputs $VERSION $1 activemq-dist-$1
   mv activemq*.* outputs/$VERSION
 }
 
 
 #Usage: doFfmpeg packageversion branchname friendlyname
-#eg: doFfmpeg 5.13.0 r/3.x 3.x
+#eg: doFfmpeg 5.13.0 r/3.x
 doFfmpeg() {
 
   git checkout $2
 
   VERSION=`git rev-parse HEAD`
 
-  tar cvJf ffmpeg-dist_$1.orig.tar.xz ffmpeg
+  cd ffmpeg
+  git checkout -- ./
+  git clean -fdx ./
+  ln -s ../binaries/ffmpeg-*$1*.xz
+  tar xvf *$1*.xz
+  rm -f *$1*.xz
+  version=`ls | grep ffmpeg-*$1* | cut -f 4-5 -d "-"`
+  mv *$1*/* ./
+  rmdir *$1*
+
+  dch -b --package ffmpeg-dist --newversion $1-1 -D stable -u low "Updating ffmpeg based on Opencast build $1"
+  #Zero out the time
+  sed -i 's/..\:..\:../00:00:00/' debian/changelog
+
+  cd ..
+
+  tar cvJf ffmpeg-dist_$version.orig.tar.xz ffmpeg
   doBuild ffmpeg
-  createOutputs $VERSION $1 $3
+  createOutputs $VERSION $1 ffmpeg-dist-$version
   mv ffmpeg*.* outputs/$VERSION
 }
 

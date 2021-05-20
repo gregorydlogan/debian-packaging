@@ -17,14 +17,6 @@ include /usr/share/dpkg/default.mk
 # package maintainers to append LDFLAGS
 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
-override_dh_strip_nondeterminism:
-
-override_dh_auto_clean:
-	#Do nothing
-
-override_dh_auto_install:
-	#Clear out any existing configuration file so that we can overlay this package with a config package
-	rm -f conf/activemq.xml
 
 # main packaging script based on dh7 syntax
 %:

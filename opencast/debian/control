@@ -6,7 +6,7 @@ Build-Depends:
  debhelper (>= 9),
  dh-exec,
  maven (>= 3.1.0),
- openjdk-8-jdk
+ openjdk-11-jdk
 Standards-Version: 3.9.5
 Homepage: http://opencast.org
 Vcs-Git: git@github.com:gregorydlogan/debian-packaging.git
@@ -17,13 +17,13 @@ Architecture: all
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- openjdk-8-jre,
+ openjdk-11-jre,
  adduser,
  netcat,
  sudo,
  init-system-helpers
 Provides:
- opencast (= 10.x)
+ opencast (= 10.x-x)
 Conflicts:
  opencast (<< 10.x),
  opencast (>> 11.x)
@@ -39,20 +39,19 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-10-allinone
 Architecture: all
 Depends:
- opencast-10-common (>= 10.x),
- opencast-10-common (<< 11.x),
+ opencast-10-common (= 10.x-x),
  activemq-dist | activemq,
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
- hunspell
+ hunspell,
+ elasticsearch-oss | elasticsearch,
+ mariadb-server
 Conflicts:
  opencast-10-admin,
  opencast-10-adminpresentation,
  opencast-10-worker,
  opencast-10-presentation,
  opencast-10-ingest
-Suggests:
- mariadb-server
 Description: Open Source Lecture Capture & Video Management Tool All-In-One Profile
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -65,8 +64,7 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-10-admin
 Architecture: all
 Depends:
- opencast-10-common (>= 10.x),
- opencast-10-common (<< 11.x),
+ opencast-10-common (= 10.x-x),
  activemq-dist | activemq
 Conflicts:
  opencast-10-allinone,
@@ -74,9 +72,12 @@ Conflicts:
  opencast-10-worker,
  opencast-10-presentation,
  opencast-10-ingest
+Recommends:
+ mariadb-server,
+ nginx | apache2,
+ elasticsearch-oss | elasticsearch
 Suggests:
- nfs-kernel-server,
- mariadb-server
+ nfs-kernel-server
 Description: Open Source Lecture Capture & Video Management Tool Admin Profile
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -89,8 +90,7 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-10-worker
 Architecture: all
 Depends:
- opencast-10-common (>= 10.x),
- opencast-10-common (<< 11.x),
+ opencast-10-common (= 10.x-x),
  sox,
  ffmpeg-dist | ffmpeg,
  hunspell,
@@ -116,16 +116,16 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-10-presentation
 Architecture: all
 Depends:
- opencast-10-common (>= 10.x),
- opencast-10-common (<< 11.x),
+ opencast-10-common (= 10.x-x),
 Conflicts:
  opencast-10-admin,
  opencast-10-adminpresentation,
  opencast-10-worker,
  opencast-10-allinone,
  opencast-10-ingest
+Recommends:
+ nginx | apache2
 Suggests:
- nginx,
  nfs-client
 Description: Open Source Lecture Capture & Video Management Tool Distribution Profile
  Opencast is a free, open-source platform to support the management of
@@ -140,8 +140,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-10-adminpresentation
 Architecture: all
 Depends:
- opencast-10-common (>= 10.x),
- opencast-10-common (<< 11.x),
+ opencast-10-common (= 10.x-x),
  activemq-dist | activemq
 Conflicts:
  opencast-10-admin,
@@ -149,9 +148,12 @@ Conflicts:
  opencast-10-presentation,
  opencast-10-allinone,
  opencast-10-ingest
+Recommends:
+ mariadb-server,
+ nginx | apache2,
+ elasticsearch-oss | elasticsearch
 Suggests:
- nginx,
- nfs-client
+ nfs-kernel-server
 Description: Open Source Lecture Capture & Video Management Tool Distribution Profile
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -165,16 +167,15 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-10-ingest
 Architecture: all
 Depends:
- opencast-10-common (>= 10.x),
- opencast-10-common (<< 11.x),
- activemq-dist | activemq
+ opencast-10-common (= 10.x-x),
 Conflicts:
  opencast-10-admin,
  opencast-10-worker,
  opencast-10-presentation,
  opencast-10-allinone
+Recommends:
+ nginx | apache2
 Suggests:
- nginx,
  nfs-client
 Description: Open Source Lecture Capture & Video Management Tool Distribution Profile
  Opencast is a free, open-source platform to support the management of

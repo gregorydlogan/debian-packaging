@@ -26,7 +26,11 @@ dch \
  $new \
  --package opencast-$major \
  --newversion $major.$minor-$build \
+ --allow-lower-version \
+ --force-bad-version \
  -D $suite \
- -u low
+ -u low \
+ "Initial release based on Opencast $major.$minor"
 #Zero out the time
 sed -i 's/..\:..\:../00:00:00/' debian/changelog
+sed -i "s/\(opencast.*\) $major.[x0-9]\{1,2\}-[x0-9]\{1,2\}/\1 $major.$minor-$build/g" debian/control
