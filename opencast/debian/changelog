@@ -1,5 +1,5 @@
-opencast-10 (10.x-x) unstable; urgency=low
+opencast-10 (10.0-1) testing; urgency=low
 
-  * Initial release of Debian packages based on Opencast 10.x
+  * Initial release based on Opencast 10.0
 
- -- Greg Logan <gregorydlogan@gmail.com>  Thu, 20 May 2021 00:00:00 -0600
+ -- Greg Logan <gregorydlogan@gmail.com>  Wed, 16 Jun 2021 00:00:00 -0600
