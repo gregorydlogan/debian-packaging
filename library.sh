@@ -78,7 +78,7 @@ doOpencast() {
 
   echo "Building source tarball"
   #Exclude the raw tarballs
-  majorVersion=`echo $1 | cut -c 1`
+  majorVersion=`echo $1 | cut -f 1 -d "."`
   tar --exclude='opencast/build/opencast-dist-*.tar.*' --exclude='debian' -cvJf opencast-$majorVersion\_$1.orig.tar.xz opencast
 
   doBuild opencast
