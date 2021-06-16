@@ -4,9 +4,7 @@ Priority: optional
 Maintainer: Greg Logan <gregorydlogan@gmail.com>
 Build-Depends:
  debhelper (>= 9),
- dh-exec,
- maven (>= 3.1.0),
- openjdk-11-jdk | openjdk-8-jdk
+ dh-exec
 Standards-Version: 3.9.5
 Homepage: http://opencast.org
 Vcs-Git: git@github.com:gregorydlogan/debian-packaging.git
