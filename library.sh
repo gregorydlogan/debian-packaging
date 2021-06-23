@@ -133,11 +133,11 @@ doFfmpeg() {
   ln -s ../binaries/ffmpeg-*$1*.xz
   tar xvf *$1*.xz
   rm -f *$1*.xz
-  version=`ls | grep ffmpeg-*$1* | cut -f 4-5 -d "-"`
+  version=`ls | grep ffmpeg-*$1* | cut -f 2-5 -d "-"`
   mv *$1*/* ./
   rmdir *$1*
 
-  dch -b --package ffmpeg-dist --newversion $1-1 -D stable -u low "Updating ffmpeg based on Opencast build $1"
+  dch --create --package ffmpeg-dist --newversion $1-1 -D stable -u low "Updating ffmpeg based on Opencast build $1"
   #Zero out the time
   sed -i 's/..\:..\:../00:00:00/' debian/changelog
 
