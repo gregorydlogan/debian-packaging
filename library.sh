@@ -65,6 +65,7 @@ doOpencast() {
     echo "Extracting Karaf feature config"
     tar -xvf build/$line -C build $archiveName/etc/org.apache.karaf.features.cfg
     tar -xvf build/$line -C build $archiveName/etc/profile.cfg
+    tar -xvf build/$line -C build $archiveName/etc/org.opencastproject.serviceregistry.impl.ServiceRegistryJpaImpl.cfg
     #Extract the contents of the various tarballs to the common base
     echo "Extracting contents to common base directory"
     tar --strip-components=1 -xf build/$line -C build/opencast-dist-base
@@ -74,11 +75,12 @@ doOpencast() {
   #Remove the karaf feature configuration file, since that is set with the packages
   rm -f build/opencast-dist-base/etc/org.apache.karaf.features.cfg
   rm -f build/opencast-dist-base/etc/profile.cfg
+  rm -f build/opencast-dist-base/etc/org.opencastproject.serviceregistry.impl.ServiceRegistryJpaImpl.cfg
   cd ..
 
   echo "Building source tarball"
   #Exclude the raw tarballs
-  majorVersion=`echo $1 | cut -c 1`
+  majorVersion=`echo $1 | cut -f 1 -d "."`
   tar --exclude='opencast/build/opencast-dist-*.tar.*' --exclude='debian' -cvJf opencast-$majorVersion\_$1.orig.tar.xz opencast
 
   doBuild opencast
@@ -131,11 +133,11 @@ doFfmpeg() {
   ln -s ../binaries/ffmpeg-*$1*.xz
   tar xvf *$1*.xz
   rm -f *$1*.xz
-  version=`ls | grep ffmpeg-*$1* | cut -f 4-5 -d "-"`
+  version=`ls | grep ffmpeg-*$1* | cut -f 2-5 -d "-"`
   mv *$1*/* ./
   rmdir *$1*
 
-  dch -b --package ffmpeg-dist --newversion $1-1 -D stable -u low "Updating ffmpeg based on Opencast build $1"
+  dch --create --package ffmpeg-dist --newversion $1-1 -D stable -u low "Updating ffmpeg based on Opencast build $1"
   #Zero out the time
   sed -i 's/..\:..\:../00:00:00/' debian/changelog
 

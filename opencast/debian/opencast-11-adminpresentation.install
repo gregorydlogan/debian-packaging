@@ -1,2 +1,3 @@
 build/opencast-dist-adminpresentation/etc/org.apache.karaf.features.cfg	/etc/opencast/
 build/opencast-dist-adminpresentation/etc/profile.cfg	/etc/opencast/
+build/opencast-dist-adminpresentation/etc/org.opencastproject.serviceregistry.impl.ServiceRegistryJpaImpl.cfg /etc/opencast/
