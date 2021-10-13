@@ -6,6 +6,7 @@ build/opencast-dist-base/lib/*  /usr/share/opencast/lib/
 build/opencast-dist-base/system/*  /usr/share/opencast/system/
 
 build/opencast-dist-base/etc/*	/etc/opencast/
+debian/opencast.logrotate /etc/logrotate.d/
 
 build/opencast-dist-base/data/* /var/lib/opencast/data
 
