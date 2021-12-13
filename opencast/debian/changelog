@@ -1,5 +1,5 @@
-opencast-9 (9.x-x) unstable; urgency=low
+opencast-9 (9.10-1) testing; urgency=low
 
-  * Initial release of Debian packages based on Opencast 9.x
+  * Initial release based on Opencast 9.10
 
- -- Greg Logan <gregorydlogan@gmail.com>  Mon, 30 Sep 2019 00:00:00 -0600
+ -- Greg Logan <gregorydlogan@gmail.com>  Mon, 13 Dec 2021 00:00:00 -0600
