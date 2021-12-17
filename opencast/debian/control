@@ -21,10 +21,10 @@ Depends:
  sudo,
  init-system-helpers
 Provides:
- opencast (= 9.x-x)
+ opencast (= 9.11-1)
 Conflicts:
- opencast (<< 9.x),
- opencast (>> 10.x)
+ opencast (<< 9.11),
+ opencast (>> 9.12)
 Description: Open Source Lecture Capture & Video Management Tool Common Files
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -37,7 +37,7 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-9-allinone
 Architecture: all
 Depends:
- opencast-9-common (= 9.x-x),
+ opencast-9-common (= 9.11-1),
  activemq-dist | activemq,
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
@@ -62,7 +62,7 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-9-admin
 Architecture: all
 Depends:
- opencast-9-common (= 9.x-x),
+ opencast-9-common (= 9.11-1),
  activemq-dist | activemq
 Conflicts:
  opencast-9-allinone,
@@ -88,7 +88,7 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-9-worker
 Architecture: all
 Depends:
- opencast-9-common (= 9.x-x),
+ opencast-9-common (= 9.11-1),
  sox,
  ffmpeg-dist | ffmpeg,
  hunspell,
@@ -114,7 +114,7 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-9-presentation
 Architecture: all
 Depends:
- opencast-9-common (= 9.x-x),
+ opencast-9-common (= 9.11-1),
 Conflicts:
  opencast-9-admin,
  opencast-9-adminpresentation,
@@ -138,7 +138,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-9-adminpresentation
 Architecture: all
 Depends:
- opencast-9-common (= 9.x-x),
+ opencast-9-common (= 9.11-1),
  activemq-dist | activemq
 Conflicts:
  opencast-9-admin,
@@ -165,7 +165,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-9-ingest
 Architecture: all
 Depends:
- opencast-9-common (= 9.x-x),
+ opencast-9-common (= 9.11-1),
 Conflicts:
  opencast-9-admin,
  opencast-9-worker,
