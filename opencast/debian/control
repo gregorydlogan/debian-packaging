@@ -21,7 +21,7 @@ Depends:
  sudo,
  init-system-helpers
 Provides:
- opencast (= 11.5-1)
+ opencast (= 11.5-2)
 Conflicts:
  opencast (<< 11.5),
  opencast (>> 11.6)
@@ -37,7 +37,7 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-11-allinone
 Architecture: all
 Depends:
- opencast-11-common (= 11.5-1),
+ opencast-11-common (= 11.5-2),
  activemq-dist | activemq,
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
@@ -62,7 +62,7 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-11-admin
 Architecture: all
 Depends:
- opencast-11-common (= 11.5-1),
+ opencast-11-common (= 11.5-2),
  activemq-dist | activemq
 Conflicts:
  opencast-11-allinone,
@@ -88,7 +88,7 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-11-worker
 Architecture: all
 Depends:
- opencast-11-common (= 11.5-1),
+ opencast-11-common (= 11.5-2),
  sox,
  ffmpeg-dist | ffmpeg,
  hunspell,
@@ -114,7 +114,7 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-11-presentation
 Architecture: all
 Depends:
- opencast-11-common (= 11.5-1),
+ opencast-11-common (= 11.5-2),
 Conflicts:
  opencast-11-admin,
  opencast-11-adminpresentation,
@@ -138,7 +138,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-11-adminpresentation
 Architecture: all
 Depends:
- opencast-11-common (= 11.5-1),
+ opencast-11-common (= 11.5-2),
  activemq-dist | activemq
 Conflicts:
  opencast-11-admin,
@@ -165,7 +165,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-11-ingest
 Architecture: all
 Depends:
- opencast-11-common (= 11.5-1),
+ opencast-11-common (= 11.5-2),
 Conflicts:
  opencast-11-admin,
  opencast-11-worker,
