@@ -21,10 +21,10 @@ Depends:
  sudo,
  init-system-helpers
 Provides:
- opencast (= 10.x-x)
+ opencast (= 10.12-1)
 Conflicts:
- opencast (<< 10.x),
- opencast (>> 11.x)
+ opencast (<< 10.12),
+ opencast (>> 10.13)
 Description: Open Source Lecture Capture & Video Management Tool Common Files
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -37,7 +37,7 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-10-allinone
 Architecture: all
 Depends:
- opencast-10-common (= 10.x-x),
+ opencast-10-common (= 10.12-1),
  activemq-dist | activemq,
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
@@ -62,7 +62,7 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-10-admin
 Architecture: all
 Depends:
- opencast-10-common (= 10.x-x),
+ opencast-10-common (= 10.12-1),
  activemq-dist | activemq
 Conflicts:
  opencast-10-allinone,
@@ -88,7 +88,7 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-10-worker
 Architecture: all
 Depends:
- opencast-10-common (= 10.x-x),
+ opencast-10-common (= 10.12-1),
  sox,
  ffmpeg-dist | ffmpeg,
  hunspell,
@@ -114,7 +114,7 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-10-presentation
 Architecture: all
 Depends:
- opencast-10-common (= 10.x-x),
+ opencast-10-common (= 10.12-1),
 Conflicts:
  opencast-10-admin,
  opencast-10-adminpresentation,
@@ -138,7 +138,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-10-adminpresentation
 Architecture: all
 Depends:
- opencast-10-common (= 10.x-x),
+ opencast-10-common (= 10.12-1),
  activemq-dist | activemq
 Conflicts:
  opencast-10-admin,
@@ -165,7 +165,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-10-ingest
 Architecture: all
 Depends:
- opencast-10-common (= 10.x-x),
+ opencast-10-common (= 10.12-1),
 Conflicts:
  opencast-10-admin,
  opencast-10-worker,
