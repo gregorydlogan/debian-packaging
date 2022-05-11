@@ -1,3 +1,9 @@
+opencast-10 (10.13-2) stable; urgency=low
+
+  * Initial release based on Opencast 10.13
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Wed, 11 May 2022 00:00:00 -0600
+
 opencast-10 (10.13-1) testing; urgency=low
 
   * Initial release based on Opencast 10.13
