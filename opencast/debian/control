@@ -1,4 +1,4 @@
-Source: opencast-12
+Source: opencast-13
 Section: java
 Priority: optional
 Maintainer: Greg Logan <gregorydlogan@gmail.com>
@@ -10,7 +10,7 @@ Homepage: http://opencast.org
 Vcs-Git: git@github.com:gregorydlogan/debian-packaging.git
 Vcs-Browser: https://github.com/gregorydlogan/debian-packaging
 
-Package: opencast-12-common
+Package: opencast-13-common
 Architecture: all
 Depends:
  ${shlibs:Depends},
@@ -21,10 +21,10 @@ Depends:
  sudo,
  init-system-helpers
 Provides:
- opencast (= 12.x-x)
+ opencast (= 13.x-x)
 Conflicts:
- opencast (<< 12.x),
- opencast (>> 13.x)
+ opencast (<< 13.x),
+ opencast (>> 14.x)
 Description: Open Source Lecture Capture & Video Management Tool Common Files
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -32,12 +32,12 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
  distribution channels, and provide user interfaces to engage students with
  educational videos.
  This is the base fileset for Opencast and is not functional without an 
- opencast-12-* package.
+ opencast-13-* package.
 
-Package: opencast-12-allinone
+Package: opencast-13-allinone
 Architecture: all
 Depends:
- opencast-12-common (= 12.x-x),
+ opencast-13-common (= 13.x-x),
  activemq-dist | activemq,
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
@@ -45,11 +45,11 @@ Depends:
  elasticsearch-oss | elasticsearch,
  mariadb-server
 Conflicts:
- opencast-12-admin,
- opencast-12-adminpresentation,
- opencast-12-worker,
- opencast-12-presentation,
- opencast-12-ingest
+ opencast-13-admin,
+ opencast-13-adminpresentation,
+ opencast-13-worker,
+ opencast-13-presentation,
+ opencast-13-ingest
 Description: Open Source Lecture Capture & Video Management Tool All-In-One Profile
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -59,17 +59,17 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
  This is the all-in-one profile of Opencast.  You 
  will not need any additional nodes for this install.
 
-Package: opencast-12-admin
+Package: opencast-13-admin
 Architecture: all
 Depends:
- opencast-12-common (= 12.x-x),
+ opencast-13-common (= 13.x-x),
  activemq-dist | activemq
 Conflicts:
- opencast-12-allinone,
- opencast-12-adminpresentation,
- opencast-12-worker,
- opencast-12-presentation,
- opencast-12-ingest
+ opencast-13-allinone,
+ opencast-13-adminpresentation,
+ opencast-13-worker,
+ opencast-13-presentation,
+ opencast-13-ingest
 Recommends:
  mariadb-server,
  nginx | apache2,
@@ -85,20 +85,20 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
  This is the admin node profile of Opencast.  You will need
  one of these installed in a clustered install of Opencast.
 
-Package: opencast-12-worker
+Package: opencast-13-worker
 Architecture: all
 Depends:
- opencast-12-common (= 12.x-x),
+ opencast-13-common (= 13.x-x),
  sox,
  ffmpeg-dist | ffmpeg,
  hunspell,
  tesseract-ocr
 Conflicts:
- opencast-12-admin,
- opencast-12-adminpresentation,
- opencast-12-allinone,
- opencast-12-presentation,
- opencast-12-ingest
+ opencast-13-admin,
+ opencast-13-adminpresentation,
+ opencast-13-allinone,
+ opencast-13-presentation,
+ opencast-13-ingest
 Suggests:
  nfs-client
 Description: Open Source Lecture Capture & Video Management Tool Worker Profile
@@ -111,16 +111,16 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
  at least one of these installed in a clustered install of Opencast.  More workers
  means you can process videos faster, to a point.
 
-Package: opencast-12-presentation
+Package: opencast-13-presentation
 Architecture: all
 Depends:
- opencast-12-common (= 12.x-x),
+ opencast-13-common (= 13.x-x),
 Conflicts:
- opencast-12-admin,
- opencast-12-adminpresentation,
- opencast-12-worker,
- opencast-12-allinone,
- opencast-12-ingest
+ opencast-13-admin,
+ opencast-13-adminpresentation,
+ opencast-13-worker,
+ opencast-13-allinone,
+ opencast-13-ingest
 Recommends:
  nginx | apache2
 Suggests:
@@ -135,17 +135,17 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
  at least one of these installed in a clustered install of Opencast.  This is the node
  where your users will go for the output video files.
 
-Package: opencast-12-adminpresentation
+Package: opencast-13-adminpresentation
 Architecture: all
 Depends:
- opencast-12-common (= 12.x-x),
+ opencast-13-common (= 13.x-x),
  activemq-dist | activemq
 Conflicts:
- opencast-12-admin,
- opencast-12-worker,
- opencast-12-presentation,
- opencast-12-allinone,
- opencast-12-ingest
+ opencast-13-admin,
+ opencast-13-worker,
+ opencast-13-presentation,
+ opencast-13-allinone,
+ opencast-13-ingest
 Recommends:
  mariadb-server,
  nginx | apache2,
@@ -162,15 +162,15 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
  and presentation nodes into one profile.  In general you want separate nodes for large
  installs but this profile works well for small installations.
 
-Package: opencast-12-ingest
+Package: opencast-13-ingest
 Architecture: all
 Depends:
- opencast-12-common (= 12.x-x),
+ opencast-13-common (= 13.x-x),
 Conflicts:
- opencast-12-admin,
- opencast-12-worker,
- opencast-12-presentation,
- opencast-12-allinone
+ opencast-13-admin,
+ opencast-13-worker,
+ opencast-13-presentation,
+ opencast-13-allinone
 Recommends:
  nginx | apache2
 Suggests:
