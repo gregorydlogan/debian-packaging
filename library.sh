@@ -89,36 +89,6 @@ doOpencast() {
 }
 
 
-#Usage: doActiveMQ packageversion branchname friendlyname
-#eg: doActiveMQ 5.13.0 r/3.x
-doActiveMQ() {
-
-  git checkout $2
-
-  VERSION=`git rev-parse HEAD`
-
-  cd activemq
-  git checkout -- ./
-  git clean -fdx ./
-  ln -s ../binaries/apache-activemq-*$1*.tar.gz
-  tar xvf apache-activemq-*$1*.tar.gz
-  rm -f apache-activemq-*$1*.tar.gz
-  mv apache-activemq-*$1*/* ./
-  rmdir apache-activemq-*$1*
-
-  dch -b --package activemq-dist --newversion $1-1 -D stable -u low "Updating ActiveMQ based on upstream $1 build"
-  #Zero out the time
-  sed -i 's/..\:..\:../00:00:00/' debian/changelog
-
-  cd ..
-
-  tar cvJf activemq-dist_$1.orig.tar.xz activemq
-  doBuild activemq
-  createOutputs $VERSION $1 activemq-dist-$1
-  mv activemq*.* outputs/$VERSION
-}
-
-
 #Usage: doFfmpeg packageversion branchname friendlyname
 #eg: doFfmpeg 5.13.0 r/3.x
 doFfmpeg() {
