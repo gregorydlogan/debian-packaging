@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -ue
+
+if [ $# -ne 2 ]; then
+  echo "Usage: $0 major newminor"
+  echo " eg: $0 4 5 -> Opencast 4.5-1"
+  exit 1
+fi
+
+package="opencast"
+build=1
+major=$1
+minor=$2
+
+git checkout -b r/$major.$minor
+
+#Regenerate the changelog, bumping straight to stable
+./changelog $major $minor $build stable new
+git add $package/debian/changelog
+
+#Update the control file
+next=`bc <<< "$major + 1"`
+cur=`bc <<< "$minor + 1"`
+sed -i "s/$next.x/$major.$cur/g" $package/debian/control
+sed -i "s/$major.x/$major.$minor/g" $package/debian/control
+
+git add $package/debian/control
+git commit -m "Opencast $major.$minor into stable"
+git tag -sm "Opencast $major.$minor-$build" $major.$minor-$build

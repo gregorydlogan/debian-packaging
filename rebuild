@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ $# -lt 3 -o $# -gt 4 ]; then
+  echo "Usage: $0 major minor build [suite]"
+  echo " eg: $0 3 4 1 -> Set Opencast's version to 3.4-1 in stable"
+  echo " eg: $0 3 4 1 testing -> Set Opencast's version to 3.4-1 in testing"
+  exit 1
+fi
+
+major=$1
+minor=$2
+build=$3
+
+suite="stable"
+if [ $# -eq 4 ]; then
+  suite=$4
+fi
+
+./changelog $major $minor $build $suite
+
+git add opencast/debian/changelog opencast/debian/control
+git commit -m "Opencast $major.$minor into $suite"
+git tag -sm "Opencast $major.$minor-$build" $major.$minor-$build

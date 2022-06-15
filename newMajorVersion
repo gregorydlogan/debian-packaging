@@ -9,34 +9,36 @@ if [ $# -ne 2 ]; then
   exit 1
 fi
 
+old=$1
+new=$2
 package="opencast"
 
 #Regenerate the changelog
-./changelog.sh $2 x 1 unstable new
+./changelog $new x 1 unstable new
 
-next=`bc <<< "$2 + 1"`
+next=`bc <<< "$new + 1"`
 
-echo "Creating r/$1.x"
-git checkout -b r/$1.x
+echo "Creating r/$old.x"
+git checkout -b r/$old.x
 echo "Checking back out into develop"
 git checkout develop
 
 #Update the control file
-sed -i "s/$2.x/$next.x/g" $package/debian/control
-sed -i "s/$1.x/$2.x/g" $package/debian/control
-sed -i "s/$package-$1/$package-$2/g" $package/debian/control
+sed -i "s/$new.x/$next.x/g" $package/debian/control
+sed -i "s/$old.x/$new.x/g" $package/debian/control
+sed -i "s/$package-$old/$package-$new/g" $package/debian/control
 
 git add $package/debian/changelog $package/debian/control
 
 #For all the packaging instruction files
-ls opencast/debian/opencast-$1* | while read line
+ls opencast/debian/opencast-$old* | while read line
 do
-  newname=`echo $line | sed "s/opencast-$1/opencast-$2/"`
+  newname=`echo $line | sed "s/opencast-$old/opencast-$new/"`
   #We do links first since links are a subset of files
   if [ -L "$line" ]; then
     #If it's a symlink, figure out where it should be linking to, remove the old one, and create a new one
     git rm $line
-    allname=`echo $newname | sed "s/$2-.*.p/$2-all.p/" | sed "s/opencast\/debian\///"`
+    allname=`echo $newname | sed "s/$new-.*.p/$new-all.p/" | sed "s/opencast\/debian\///"`
     ln -s $allname $newname
     git add -f $newname
   elif [ -f "$line" ]; then
@@ -44,4 +46,4 @@ do
     git mv $line $newname
   fi
 done
-git commit -m "Opencast $2.x"
+git commit -m "Opencast $new.x"

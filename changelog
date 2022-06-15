@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [ $# -lt 4 -o $# -gt 5 ]; then
-  echo "Usage: updateVersion.sh major minor build suite [new]"
-  echo " eg: updateVersion.sh 3 4 1 testing -> set Opencast's version to 3.4-1 in testing"
-    echo " eg: updateVersion.sh 4 0 1 testing new -> erase the current changelog for opencast and set the version to 4.0-1 in testing"
+  echo "Usage: $0 major minor build suite [new]"
+  echo " eg: $0 3 4 1 testing -> set Opencast's version to 3.4-1 in testing"
+  echo " eg: $0 4 0 1 testing new -> erase the current changelog for opencast and set the version to 4.0-1 in testing"
   exit 1
 fi
 
@@ -21,6 +21,13 @@ if [ $# -eq 5 ]; then
 else
   new="-b"
 fi
+
+message="Initial release based on Opencast $major.$minor"
+
+if [ $build -ne 1 ]; then
+  message="Build $build based on Opencast $major.$minor"
+fi
+
 #Create the changelog entry
 dch \
  $new \
@@ -30,7 +37,7 @@ dch \
  --force-bad-version \
  -D $suite \
  -u low \
- "Initial release based on Opencast $major.$minor"
+ "$message"
 #Zero out the time
 sed -i 's/..\:..\:../00:00:00/' debian/changelog
 sed -i "s/\(opencast.*\) $major.[x0-9]\{1,2\}-[x0-9]\{1,2\}/\1 $major.$minor-$build/g" debian/control
