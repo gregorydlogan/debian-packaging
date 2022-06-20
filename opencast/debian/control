@@ -38,7 +38,6 @@ Package: opencast-12-allinone
 Architecture: all
 Depends:
  opencast-12-common (= 12.0-1),
- activemq-dist | activemq,
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
  hunspell,
@@ -63,7 +62,6 @@ Package: opencast-12-admin
 Architecture: all
 Depends:
  opencast-12-common (= 12.0-1),
- activemq-dist | activemq
 Conflicts:
  opencast-12-allinone,
  opencast-12-adminpresentation,
@@ -139,7 +137,6 @@ Package: opencast-12-adminpresentation
 Architecture: all
 Depends:
  opencast-12-common (= 12.0-1),
- activemq-dist | activemq
 Conflicts:
  opencast-12-admin,
  opencast-12-worker,
