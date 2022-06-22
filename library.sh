@@ -89,8 +89,8 @@ doOpencast() {
 }
 
 
-#Usage: doFfmpeg packageversion branchname friendlyname
-#eg: doFfmpeg 5.13.0 r/3.x
+#Usage: doFfmpeg packageversion branchname friendlyname buildnumber
+#eg: doFfmpeg 20220613051048-N-107098-g4d45f5acbd develop ffmpeg-20220613051048 2
 doFfmpeg() {
 
   git checkout $2
@@ -98,7 +98,6 @@ doFfmpeg() {
   VERSION=`git rev-parse HEAD`
 
   cd ffmpeg
-  git checkout -- ./
   git clean -fdx ./
   ln -s ../binaries/ffmpeg-*$1*.xz
   tar xvf *$1*.xz
@@ -107,7 +106,7 @@ doFfmpeg() {
   mv *$1*/* ./
   rmdir *$1*
 
-  dch --create --package ffmpeg-dist --newversion $1-1 -D stable -u low "Updating ffmpeg based on Opencast build $1"
+  dch --create --package ffmpeg-dist --newversion $1-$4 -D stable -u low "FFmpeg build $4, based on Opencast FFmpeg build $3"
   #Zero out the time
   sed -i 's/..\:..\:../00:00:00/' debian/changelog
 
