@@ -17,13 +17,14 @@ include /usr/share/dpkg/default.mk
 # package maintainers to append LDFLAGS
 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
-override_dh_auto_clean:
+override_dh_strip:
 
-override_dh_auto_build:
+override_dh_auto_clean:
+	#Do nothing
 
 # main packaging script based on dh7 syntax
 %:
-	dh $@  --with autotools-dev  --parallel
+	dh $@
 
 # debmake generated override targets
 # This is example for Cmake (See http://bugs.debian.org/641051 )
