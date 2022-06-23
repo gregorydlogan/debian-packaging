@@ -41,7 +41,7 @@ Depends:
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
  hunspell,
- elasticsearch-oss | elasticsearch,
+ opensearch-dist | elasticsearch-oss | elasticsearch,
  mariadb-server
 Conflicts:
  opencast-12-admin,
@@ -71,7 +71,7 @@ Conflicts:
 Recommends:
  mariadb-server,
  nginx | apache2,
- elasticsearch-oss | elasticsearch
+ opensearch-dist | elasticsearch-oss | elasticsearch
 Suggests:
  nfs-kernel-server
 Description: Open Source Lecture Capture & Video Management Tool Admin Profile
@@ -146,7 +146,7 @@ Conflicts:
 Recommends:
  mariadb-server,
  nginx | apache2,
- elasticsearch-oss | elasticsearch
+ opensearch-dist | elasticsearch-oss | elasticsearch
 Suggests:
  nfs-kernel-server
 Description: Open Source Lecture Capture & Video Management Tool Distribution Profile

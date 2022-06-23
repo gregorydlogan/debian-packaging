@@ -1,0 +1,9 @@
+--- a/config/opensearch.yml
++++ b/config/opensearch.yml
+@@ -86,3 +86,6 @@
+ # Require explicit names when deleting indices:
+ #
+ #action.destructive_requires_name: true
++
++#Disable SSL by default.  User should configure this later
++plugins.security.disabled: true

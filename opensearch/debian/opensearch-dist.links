@@ -1,0 +1,3 @@
+/etc/opensearch /usr/share/opensearch/config
+/var/lib/opensearch /usr/share/opensearch/data
+/var/log/opensearch /usr/share/opensearch/logs

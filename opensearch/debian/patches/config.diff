@@ -1,0 +1,16 @@
+--- a/config/opensearch.yml
++++ b/config/opensearch.yml
+@@ -30,11 +30,11 @@
+ #
+ # Path to directory where to store the data (separate multiple locations by comma):
+ #
+-#path.data: /path/to/data
++path.data: /var/lib/opensearch
+ #
+ # Path to log files:
+ #
+-#path.logs: /path/to/logs
++path.logs: /var/log/opensearch
+ #
+ # ----------------------------------- Memory -----------------------------------
+ #
