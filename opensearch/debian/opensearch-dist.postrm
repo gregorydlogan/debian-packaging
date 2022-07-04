@@ -5,16 +5,10 @@
 
 set -e
 
-OC_HOME=/usr/share/opencast
-OC_CONFIG=/etc/opencast
-OC_DATA=/srv/opencast
-OC_KARAF_DATA=/var/lib/opencast
-OC_LOG=/var/log/opencast
-
-OC_GROUP=opencast
-OC_GID=7967
-OC_USER=opencast
-OC_UID=7967
+OS_HOME=/usr/share/opensearch
+OS_CONFIG=/etc/opensearch
+OS_DATA=/var/lib/opensearch
+OS_LOG=/var/log/opensearch
 
 # summary of how this script can be called:
 #        * <postrm> `remove'
@@ -30,19 +24,14 @@ OC_UID=7967
 # the debian-policy package
 
 case "$1" in
-    #NB: Purge here applies both the stuff in purge *and* remove!
     purge|remove)
-      rm -rf $OC_HOME $OC_CONFIG $OC_LOG $OC_KARAF_DIR
-    ;;
+    # purge stats overrides
+    # stats overrides could already be removed by root
+    dpkg-statoverride --remove $OS_HOME || true
+    dpkg-statoverride --remove $OS_CONFIG || true
+    dpkg-statoverride --remove $OS_DATA || true
+    dpkg-statoverride --remove $OS_LOG || true
 
-    remove)
-      # purge stats overrides
-      # stats overrides could already be removed by root
-      dpkg-statoverride --remove $OC_HOME || true
-      dpkg-statoverride --remove $OC_CONFIG || true
-      dpkg-statoverride --remove $OC_LOG || true
-      dpkg-statoverride --remove $OC_DATA || true
-      dpkg-statoverride --remove $OC_KARAF_DATA || true
     ;;
 
     upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)

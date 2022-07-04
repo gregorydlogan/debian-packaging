@@ -38,11 +38,10 @@ Package: opencast-13-allinone
 Architecture: all
 Depends:
  opencast-13-common (= 13.x-x),
- activemq-dist | activemq,
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
  hunspell,
- elasticsearch-oss | elasticsearch,
+ opensearch-dist | elasticsearch-oss | elasticsearch,
  mariadb-server
 Conflicts:
  opencast-13-admin,
@@ -63,7 +62,6 @@ Package: opencast-13-admin
 Architecture: all
 Depends:
  opencast-13-common (= 13.x-x),
- activemq-dist | activemq
 Conflicts:
  opencast-13-allinone,
  opencast-13-adminpresentation,
@@ -73,7 +71,7 @@ Conflicts:
 Recommends:
  mariadb-server,
  nginx | apache2,
- elasticsearch-oss | elasticsearch
+ opensearch-dist | elasticsearch-oss | elasticsearch
 Suggests:
  nfs-kernel-server
 Description: Open Source Lecture Capture & Video Management Tool Admin Profile
@@ -139,7 +137,6 @@ Package: opencast-13-adminpresentation
 Architecture: all
 Depends:
  opencast-13-common (= 13.x-x),
- activemq-dist | activemq
 Conflicts:
  opencast-13-admin,
  opencast-13-worker,
@@ -149,7 +146,7 @@ Conflicts:
 Recommends:
  mariadb-server,
  nginx | apache2,
- elasticsearch-oss | elasticsearch
+ opensearch-dist | elasticsearch-oss | elasticsearch
 Suggests:
  nfs-kernel-server
 Description: Open Source Lecture Capture & Video Management Tool Distribution Profile
