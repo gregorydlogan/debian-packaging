@@ -25,11 +25,12 @@ ffmpeg/debian/*.debhelper
 ffmpeg/debian/files
 ffmpeg/debian/debhelper-build-stamp
 
-activemq/*
-!activemq/debian
-activemq/debian/activemq-dist
-activemq/debian/*.log
-activemq/debian/*.substvars
-activemq/debian/*.debhelper
-activemq/debian/files
-activemq/debian/debhelper-build-stamp
+opensearch/*
+!opensearch/debian
+opensearch/debian/changelog
+opensearch/debian/opensearch-dist
+opensearch/debian/*.log
+opensearch/debian/*.substvars
+opensearch/debian/*.debhelper
+opensearch/debian/files
+opensearch/debian/debhelper-build-stamp

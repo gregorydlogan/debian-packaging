@@ -1,0 +1,26 @@
+Source: opensearch-dist
+Section: java
+Priority: optional
+Maintainer: Greg Logan <gregorydlogan@gmail.com>
+Build-Depends:
+ debhelper (>= 9),
+ autotools-dev,
+ dh-exec
+Standards-Version: 3.9.5
+Homepage: https://opensearch.org/
+Vcs-Git: git@github.com:gregorydlogan/debian-packaging.git
+Vcs-Browser: https://github.com/gregorydlogan/debian-packaging
+
+Package: opensearch-dist
+Architecture: amd64
+Conflicts: opensearch
+Description: OpenSearch is a community-driven, Apache 2.0-licensed open source
+ search and analytics suite that makes it easy to ingest, search, visualize,
+ and analyze data. Developers build with OpenSearch for use cases such as
+ application search, log analytics, data observability, data ingestion, and
+ more.
+ .
+ OpenSearch consists of a data store and search engine (OpenSearch), and a
+ visualization and user interface (OpenSearch Dashboards). Users can extend the
+ functionality of OpenSearch with a selection of plugins that enhance search,
+ security, performance analysis, machine learning, and more.

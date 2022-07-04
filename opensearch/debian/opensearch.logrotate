@@ -1,0 +1,9 @@
+/var/log/opensearch/*log {
+	weekly
+	copytruncate
+	rotate 52
+	missingok
+	notifempty
+	compress
+	sharedscripts
+}
