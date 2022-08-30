@@ -40,9 +40,12 @@ Depends:
  opencast-12-common (= 12.x-x),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
- hunspell,
  opensearch-dist | elasticsearch-oss | elasticsearch,
- mariadb-server
+Recommends:
+ mariadb-server | postgresql
+Suggests:
+ sox,
+ hunspell
 Conflicts:
  opencast-12-admin,
  opencast-12-adminpresentation,
@@ -69,7 +72,7 @@ Conflicts:
  opencast-12-presentation,
  opencast-12-ingest
 Recommends:
- mariadb-server,
+ mariadb-server | postgresql,
  nginx | apache2,
  opensearch-dist | elasticsearch-oss | elasticsearch
 Suggests:
@@ -87,9 +90,7 @@ Package: opencast-12-worker
 Architecture: all
 Depends:
  opencast-12-common (= 12.x-x),
- sox,
  ffmpeg-dist | ffmpeg,
- hunspell,
  tesseract-ocr
 Conflicts:
  opencast-12-admin,
@@ -98,7 +99,9 @@ Conflicts:
  opencast-12-presentation,
  opencast-12-ingest
 Suggests:
- nfs-client
+ nfs-client,
+ hunspell,
+ sox
 Description: Open Source Lecture Capture & Video Management Tool Worker Profile
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
