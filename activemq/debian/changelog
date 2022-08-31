@@ -1,3 +1,11 @@
+activemq-dist (5.15.14-2) stable; urgency=low
+
+  * Rebuild of ActiveMQ 5.15.14 to remove the defaults file in /etc/defaults.
+    The existence of this file precludes further environment file config
+    parsing, which was causing issues with some adopters.
+
+ -- Greg Logan <greg@UX310UA.loganite.ca>  Wed, 31 Aug 2022 00:00:00 -0600
+
 activemq-dist (5.15.14-1) stable; urgency=low
 
   * Updating ActiveMQ to 5.15.14
