@@ -1,0 +1,20 @@
+Source: tobira
+Section: video
+Priority: optional
+Maintainer: Greg Logan <gregorydlogan@gmail.com>
+Build-Depends:
+ debhelper (>= 9),
+ autotools-dev,
+ dh-exec
+Standards-Version: 3.9.5
+Homepage: https://github.com/elan-ev/tobira/
+Vcs-Git: git@github.com:gregorydlogan/debian-packaging.git
+Vcs-Browser: https://github.com/gregorydlogan/debian-packaging
+
+Package: tobira
+Architecture: amd64
+Description: Tobira is a video portal for Opencast. It provides a hierarchical
+ page structure, with each page consisting of simple configurable content
+ blocks (e.g. text, videos or series). Opencast content (series or single
+ events) can be shown on these pages. Users can upload, edit (via external
+ editor) and share their videos.

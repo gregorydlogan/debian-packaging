@@ -1,0 +1,10 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Tobira
+Upstream-Contact: users@opencast.org
+Source: https://github.com/elan-ev/tobira
+Comment:
+This is the Opencast project's distribution of Tobira.  This is a minimal convenience wrapper around the upstream
+builds.
+
+Files: *
+Copyright: TODO
