@@ -1,6 +1,6 @@
 --- a/build/opencast-dist-base/etc/custom.properties
 +++ b/build/opencast-dist-base/etc/custom.properties
-@@ -63,7 +63,7 @@
+@@ -67,7 +67,7 @@
  
  # The directory where the system will store its processed files (including temporary files).  This directory should
  # be persistent between reboots (i.e., not /tmp)
@@ -9,7 +9,7 @@
  
  # The path to the asset manager directory
  # Default: ${org.opencastproject.storage.dir}/archive
-@@ -174,13 +174,13 @@
+@@ -191,11 +191,11 @@
  
  # Default directory to use for embedded solr indexes.
  # If not set, ${karaf.data}/solr-indexes will be used.
@@ -19,11 +19,7 @@
  # Directory to store the embedded solr indices.  This should be a persistent and stable directory.
  # Default: ${org.opencastproject.solr.dir}/{search, series, workflow}
 -#org.opencastproject.search.solr.dir=${org.opencastproject.solr.dir}/search
--#org.opencastproject.series.solr.dir=${org.opencastproject.solr.dir}/series
--#org.opencastproject.workflow.solr.dir=${org.opencastproject.solr.dir}/workflow
 +org.opencastproject.search.solr.dir=${org.opencastproject.solr.dir}/search
-+org.opencastproject.series.solr.dir=${org.opencastproject.solr.dir}/series
-+org.opencastproject.workflow.solr.dir=${org.opencastproject.solr.dir}/workflow
  
  # URLs of dedicated Solr server to use.  Note that if thesw URLs are specified, the local embedded Solr index as
  # configured using `org.opencastproject.*.solr.dir` will be ignored. A dedicated Solr server should be set up in order
