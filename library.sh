@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#set -e
+set -e
 
 #Usage: doBuild directoryname
 #eg: doBuild opencast
@@ -119,20 +119,21 @@ doFfmpeg() {
   mv ffmpeg*.* outputs/$VERSION
 }
 
-#Usage: doTobira packageversion build
-#eg: doTobira 1.3 2
+#Usage: doTobira packageversion branch build
+#eg: doTobira 1.3 develop 2
 doTobira() {
-  set -ux
-  git checkout f/tobira
+  git checkout $2
   tobiraVersion=$1
-  buildNumber=$2
-  friendlyName="tobira-$1-$2"
+  buildNumber=$3
+
+  friendlyName="tobira-$tobiraVersion-$buildNumber"
 
   VERSION=`git rev-parse HEAD`
 
   cd tobira
   git clean -fdx ./
-  ln ../binaries/tobira-$tobiraVersion/tobira-x86_64-unknown-linux-gnu ./tobira
+  #This might be the upstream tobira-x86_64-unknown-linux-gnu, or it might be renamed.  Let's wildcard
+  ln ../binaries/tobira-$tobiraVersion/tobira* ./tobira
   ln ../binaries/tobira-$tobiraVersion/config.toml ./config.toml
 
   dch --create --package tobira --newversion $tobiraVersion-$buildNumber -D stable -u low "Tobira version $tobiraVersion, based on Opencast Tobira packaging, build $buildNumber"
