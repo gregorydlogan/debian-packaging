@@ -8,8 +8,7 @@ After=postgresql.service
 After=meili.service
 
 [Service]
-WorkingDirectory=/opt/tobira/
-ExecStart=/opt/tobira/tobira worker
+ExecStart=/usr/bin/tobira worker
 Restart=always
 User=tobira
 
