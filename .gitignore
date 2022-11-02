@@ -34,3 +34,13 @@ opensearch/debian/*.substvars
 opensearch/debian/*.debhelper
 opensearch/debian/files
 opensearch/debian/debhelper-build-stamp
+
+tobira/*
+!tobira/debian
+tobira/debian/changelog
+tobira/debian/tobira
+tobira/debian/*.log
+tobira/debian/*.substvars
+tobira/debian/*.debhelper
+tobira/debian/files
+tobira/debian/debhelper-build-stamp

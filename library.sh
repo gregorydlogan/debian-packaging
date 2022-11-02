@@ -119,6 +119,35 @@ doFfmpeg() {
   mv ffmpeg*.* outputs/$VERSION
 }
 
+#Usage: doTobira packageversion branch build
+#eg: doTobira 1.3 develop 2
+doTobira() {
+  git checkout $2
+  tobiraVersion=$1
+  buildNumber=$3
+
+  friendlyName="tobira-$tobiraVersion-$buildNumber"
+
+  VERSION=`git rev-parse HEAD`
+
+  cd tobira
+  git clean -fdx ./
+  #This might be the upstream tobira-x86_64-unknown-linux-gnu, or it might be renamed.  Let's wildcard
+  ln ../binaries/tobira-$tobiraVersion/tobira* ./tobira
+  ln ../binaries/tobira-$tobiraVersion/config.toml ./config.toml
+
+  dch --create --package tobira --newversion $tobiraVersion-$buildNumber -D stable -u low "Tobira version $tobiraVersion, based on Opencast Tobira packaging, build $buildNumber"
+  #Zero out the time
+  sed -i 's/..\:..\:../00:00:00/' debian/changelog
+
+  cd ..
+
+  tar cvJf tobira_$tobiraVersion.orig.tar.xz tobira
+  doBuild tobira
+  createOutputs $VERSION $tobiraVersion $friendlyName
+  mv tobira*.* outputs/$VERSION
+}
+
 #Usage: doOpensearch packageversion branchname buildnumber
 #eg: doOpensearch 1.3.3 develop 1
 doOpensearch() {

@@ -1,0 +1,11 @@
+--- a/config.toml
++++ b/config.toml
+@@ -278,7 +278,7 @@
+ 
+ # If this is set, log messages are also written to this file.
+ # Example: "/var/log/tobira.log".
+-#file =
++file = /var/log/tobira/tobira.log
+ 
+ # If this is set to `false`, log messages are not written to stdout.
+ #

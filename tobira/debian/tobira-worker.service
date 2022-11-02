@@ -1,0 +1,16 @@
+[Unit]
+Description=Tobira Worker
+Documentation=https://github.com/elan-ev/tobira
+
+After=local-fs.target
+After=network.target
+After=postgresql.service
+After=meili.service
+
+[Service]
+ExecStart=/usr/bin/tobira worker
+Restart=always
+User=tobira
+
+[Install]
+WantedBy=multi-user.target
