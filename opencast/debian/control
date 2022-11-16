@@ -43,7 +43,7 @@ Depends:
  tesseract-ocr,
  elasticsearch-oss | elasticsearch
 Suggests:
- mariadb-server | postgresql
+ mariadb-server | postgresql,
  sox,
  hunspell
 Conflicts:
@@ -75,7 +75,7 @@ Conflicts:
 Suggests:
  mariadb-server | postgresql,
  nginx | apache2,
- elasticsearch-oss | elasticsearch
+ elasticsearch-oss | elasticsearch,
  nfs-kernel-server
 Description: Open Source Lecture Capture & Video Management Tool Admin Profile
  Opencast is a free, open-source platform to support the management of
@@ -123,7 +123,7 @@ Conflicts:
  opencast-11-allinone,
  opencast-11-ingest
 Suggests:
- nginx | apache2
+ nginx | apache2,
  nfs-client
 Description: Open Source Lecture Capture & Video Management Tool Distribution Profile
  Opencast is a free, open-source platform to support the management of
@@ -149,7 +149,7 @@ Conflicts:
 Suggests:
  mariadb-server,
  nginx | apache2,
- elasticsearch-oss | elasticsearch
+ elasticsearch-oss | elasticsearch,
  nfs-kernel-server
 Description: Open Source Lecture Capture & Video Management Tool Distribution Profile
  Opencast is a free, open-source platform to support the management of
@@ -171,7 +171,7 @@ Conflicts:
  opencast-11-presentation,
  opencast-11-allinone
 Suggests:
- nginx | apache2
+ nginx | apache2,
  nfs-client
 Description: Open Source Lecture Capture & Video Management Tool Distribution Profile
  Opencast is a free, open-source platform to support the management of
