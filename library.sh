@@ -100,12 +100,7 @@ doFfmpeg() {
   cd ffmpeg
   git clean -fdx ./
   tar --strip-components=1 -xvf ../binaries/ffmpeg-*$1*.xz
-  ln -s ../binaries/ffmpeg-*$1*.xz
-  tar xvf *$1*.xz
-  rm -f *$1*.xz
-  version=`ls | grep ffmpeg-*$1* | cut -f 2-5 -d "-"`
-  mv *$1*/* ./
-  rmdir *$1*
+  version="$1"
 
   dch --create --package ffmpeg-dist --newversion $1-$4 -D stable -u low "FFmpeg build $4, based on Opencast FFmpeg build $3"
   #Zero out the time
