@@ -1,3 +1,9 @@
+opencast-13 (13.0-2) stable; urgency=low
+
+  * Build 2 based on Opencast 13.0
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Thu, 15 Dec 2022 00:00:00 -0600
+
 opencast-13 (13.x-1) unstable; urgency=low
 
   * Initial release based on Opencast 13.x
