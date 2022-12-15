@@ -63,9 +63,10 @@ doOpencast() {
     archiveName=`echo $line | sed 's/-SNAPSHOT//' | rev | cut -d '-' -f 2- | rev`
     #Extract *just* the profiles
     echo "Extracting Karaf feature config"
-    tar -xvf build/$line -C build $archiveName/etc/org.apache.karaf.features.cfg
-    tar -xvf build/$line -C build $archiveName/etc/profile.cfg
-    tar -xvf build/$line -C build $archiveName/etc/org.opencastproject.serviceregistry.impl.ServiceRegistryJpaImpl.cfg
+    tar -xvf build/$line -C build \
+      $archiveName/etc/org.apache.karaf.features.cfg \
+      $archiveName/etc/profile.cfg \
+      $archiveName/etc/org.opencastproject.serviceregistry.impl.JobDispatcher.cfg
     #Extract the contents of the various tarballs to the common base
     echo "Extracting contents to common base directory"
     tar --strip-components=1 -xf build/$line -C build/opencast-dist-base
@@ -75,7 +76,7 @@ doOpencast() {
   #Remove the karaf feature configuration file, since that is set with the packages
   rm -f build/opencast-dist-base/etc/org.apache.karaf.features.cfg
   rm -f build/opencast-dist-base/etc/profile.cfg
-  rm -f build/opencast-dist-base/etc/org.opencastproject.serviceregistry.impl.ServiceRegistryJpaImpl.cfg
+  rm -f build/opencast-dist-base/etc/org.opencastproject.serviceregistry.impl.JobDispatcher.cfg
   cd ..
 
   echo "Building source tarball"
