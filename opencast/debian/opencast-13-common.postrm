@@ -29,20 +29,25 @@ OC_UID=7967
 # for details, see http://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
+removeStats() {
+  # purge stats overrides
+  # stats overrides could already be removed by root
+  dpkg-statoverride --remove $OC_HOME || true
+  dpkg-statoverride --remove $OC_CONFIG || true
+  dpkg-statoverride --remove $OC_LOG || true
+  dpkg-statoverride --remove $OC_DATA || true
+  dpkg-statoverride --remove $OC_KARAF_DATA || true
+}
+
 case "$1" in
     #NB: Purge here applies both the stuff in purge *and* remove!
-    purge|remove)
+    purge)
       rm -rf $OC_HOME $OC_CONFIG $OC_LOG $OC_KARAF_DIR
+      removeStats
     ;;
 
     remove)
-      # purge stats overrides
-      # stats overrides could already be removed by root
-      dpkg-statoverride --remove $OC_HOME || true
-      dpkg-statoverride --remove $OC_CONFIG || true
-      dpkg-statoverride --remove $OC_LOG || true
-      dpkg-statoverride --remove $OC_DATA || true
-      dpkg-statoverride --remove $OC_KARAF_DATA || true
+      removeStats
     ;;
 
     upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
