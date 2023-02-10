@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 #Usage: doBuild directoryname
 #eg: doBuild opencast
 doBuild() {
