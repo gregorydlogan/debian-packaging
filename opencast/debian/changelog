@@ -1,3 +1,10 @@
+opencast-13 (13.1-2) stable; urgency=low
+
+  * Updated release with updated postrm script.  Removing the package should
+    no longer automatically remove the configuration packages
+
+ -- Greg Logan <gregorydlogan@gmail.com>  Fri, 10 Feb 2023 00:00:00 -0600
+
 opencast-13 (13.1-1) stable; urgency=low
 
   * Initial release based on Opencast 13.1
