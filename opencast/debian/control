@@ -21,10 +21,10 @@ Depends:
  sudo,
  init-system-helpers
 Provides:
- opencast (= 13.x-x)
+ opencast (= 13.3-1)
 Conflicts:
- opencast (<< 13.x),
- opencast (>> 14.x)
+ opencast (<< 13.3),
+ opencast (>> 13.4)
 Description: Open Source Lecture Capture & Video Management Tool Common Files
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -37,7 +37,7 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-13-allinone
 Architecture: all
 Depends:
- opencast-13-common (= 13.x-x),
+ opencast-13-common (= 13.3-1),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
  opensearch-dist | elasticsearch-oss | elasticsearch,
@@ -63,7 +63,7 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-13-admin
 Architecture: all
 Depends:
- opencast-13-common (= 13.x-x),
+ opencast-13-common (= 13.3-1),
 Conflicts:
  opencast-13-allinone,
  opencast-13-adminpresentation,
@@ -87,7 +87,7 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-13-worker
 Architecture: all
 Depends:
- opencast-13-common (= 13.x-x),
+ opencast-13-common (= 13.3-1),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr
 Conflicts:
@@ -113,7 +113,7 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-13-presentation
 Architecture: all
 Depends:
- opencast-13-common (= 13.x-x),
+ opencast-13-common (= 13.3-1),
 Conflicts:
  opencast-13-admin,
  opencast-13-adminpresentation,
@@ -136,7 +136,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-13-adminpresentation
 Architecture: all
 Depends:
- opencast-13-common (= 13.x-x),
+ opencast-13-common (= 13.3-1),
 Conflicts:
  opencast-13-admin,
  opencast-13-worker,
@@ -161,7 +161,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-13-ingest
 Architecture: all
 Depends:
- opencast-13-common (= 13.x-x),
+ opencast-13-common (= 13.3-1),
 Conflicts:
  opencast-13-admin,
  opencast-13-worker,
