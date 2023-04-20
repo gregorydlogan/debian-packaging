@@ -14,7 +14,7 @@ new=$2
 package="opencast"
 
 #Regenerate the changelog
-./changelog $new x 1 unstable new
+./changelog $new x x unstable new
 
 next=`bc <<< "$new + 1"`
 

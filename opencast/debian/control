@@ -23,8 +23,8 @@ Depends:
 Provides:
  opencast (= 12.x-x)
 Conflicts:
- opencast (<< 12.x),
- opencast (>> 13.x)
+ opencast (<< 12.x-x),
+ opencast (>> 13.x-x)
 Description: Open Source Lecture Capture & Video Management Tool Common Files
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
