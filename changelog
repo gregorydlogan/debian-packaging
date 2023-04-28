@@ -24,7 +24,7 @@ fi
 
 message="Initial release based on Opencast $major.$minor"
 
-if [ $build -ne 1 ]; then
+if [ "$build" != "1" ]; then
   message="Build $build based on Opencast $major.$minor"
 fi
 
@@ -41,3 +41,4 @@ dch \
 #Zero out the time
 sed -i 's/..\:..\:../00:00:00/' debian/changelog
 sed -i "s/\(opencast.*\) $major.[x0-9]\{1,2\}-[x0-9]\{1,2\}/\1 $major.$minor-$build/g" debian/control
+sed -i "s/$major.x)/$major.x-$build)/g" debian/control

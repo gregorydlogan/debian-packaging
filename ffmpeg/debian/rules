@@ -22,6 +22,11 @@ override_dh_strip:
 override_dh_auto_clean:
 	#Do nothing
 
+#This forces the use of gzip compression for the packages.
+#Without this Ubuntu 22.04 builds with zst compression, which aptly doesn't support
+override_dh_builddeb:
+	dh_builddeb -- -Zgzip
+
 # main packaging script based on dh7 syntax
 %:
 	dh $@
