@@ -117,32 +117,3 @@ doFfmpeg() {
   createOutputs $VERSION $1 ffmpeg-dist-$version
   mv ffmpeg*.* outputs/$VERSION
 }
-
-#Usage: doOpensearch packageversion branchname buildnumber
-#eg: doOpensearch 1.3.3 develop 1
-doOpensearch() {
-
-  os_version=$1
-  git_branch=$2
-  build_nr=$3
-
-  git checkout $git_branch
-
-  VERSION=`git rev-parse HEAD`
-
-  cd opensearch
-  git checkout -- ./
-  git clean -fdx ./
-  tar --strip-components=1 -xvf ../binaries/opensearch-*$os_version*.tar.gz
-
-  dch --create --package opensearch-dist --newversion $os_version-$build_nr -D stable -u low "Updating opensearch based on Opensearch $os_version, build $build_nr"
-  #Zero out the time
-  sed -i 's/..\:..\:../00:00:00/' debian/changelog
-
-  cd ..
-
-  tar cvJf opensearch-dist_$os_version.orig.tar.xz opensearch
-  doBuild opensearch
-  createOutputs $VERSION $os_version opensearch-dist-$os_version-$build_nr
-  mv opensearch-dist*.* outputs/$VERSION
-}
