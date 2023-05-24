@@ -40,7 +40,7 @@ Depends:
  opencast-14-common (= 14.x-x),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
- opensearch-dist | elasticsearch-oss | elasticsearch,
+ opensearch | elasticsearch-oss | elasticsearch,
 Suggests:
  mariadb-server | postgresql,
  sox,
@@ -73,7 +73,7 @@ Conflicts:
 Suggests:
  mariadb-server | postgresql,
  nginx | apache2,
- opensearch-dist | elasticsearch-oss | elasticsearch,
+ opensearch | elasticsearch-oss | elasticsearch,
  nfs-kernel-server
 Description: Open Source Lecture Capture & Video Management Tool Admin Profile
  Opencast is a free, open-source platform to support the management of
@@ -146,7 +146,7 @@ Conflicts:
 Suggests:
  mariadb-server,
  nginx | apache2,
- opensearch-dist | elasticsearch-oss | elasticsearch,
+ opensearch | elasticsearch-oss | elasticsearch,
  nfs-kernel-server
 Description: Open Source Lecture Capture & Video Management Tool Distribution Profile
  Opencast is a free, open-source platform to support the management of
