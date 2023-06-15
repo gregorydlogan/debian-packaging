@@ -21,10 +21,10 @@ Depends:
  sudo,
  init-system-helpers
 Provides:
- opencast (= 12.x-x)
+ opencast (= 12.12-1)
 Conflicts:
- opencast (<< 12.x-x),
- opencast (>> 13.x-x)
+ opencast (<< 12.12-1),
+ opencast (>> 12.13-x)
 Description: Open Source Lecture Capture & Video Management Tool Common Files
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -37,7 +37,7 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-12-allinone
 Architecture: all
 Depends:
- opencast-12-common (= 12.x-x),
+ opencast-12-common (= 12.12-1),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
  opensearch-dist | elasticsearch-oss | elasticsearch,
@@ -63,7 +63,7 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-12-admin
 Architecture: all
 Depends:
- opencast-12-common (= 12.x-x),
+ opencast-12-common (= 12.12-1),
 Conflicts:
  opencast-12-allinone,
  opencast-12-adminpresentation,
@@ -87,7 +87,7 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-12-worker
 Architecture: all
 Depends:
- opencast-12-common (= 12.x-x),
+ opencast-12-common (= 12.12-1),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr
 Conflicts:
@@ -113,7 +113,7 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-12-presentation
 Architecture: all
 Depends:
- opencast-12-common (= 12.x-x),
+ opencast-12-common (= 12.12-1),
 Conflicts:
  opencast-12-admin,
  opencast-12-adminpresentation,
@@ -136,7 +136,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-12-adminpresentation
 Architecture: all
 Depends:
- opencast-12-common (= 12.x-x),
+ opencast-12-common (= 12.12-1),
 Conflicts:
  opencast-12-admin,
  opencast-12-worker,
@@ -161,7 +161,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-12-ingest
 Architecture: all
 Depends:
- opencast-12-common (= 12.x-x),
+ opencast-12-common (= 12.12-1),
 Conflicts:
  opencast-12-admin,
  opencast-12-worker,
