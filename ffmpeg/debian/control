@@ -12,7 +12,7 @@ Vcs-Git: git@github.com:gregorydlogan/debian-packaging.git
 Vcs-Browser: https://github.com/gregorydlogan/debian-packaging
 
 Package: ffmpeg-dist
-Architecture: amd64
+Architecture: TARGET_ARCH
 Conflicts: ffmpeg
 Description: Tools for transcoding, streaming and playing of multimedia files
  FFmpeg is the leading multimedia framework, able to decode, encode, transcode,
