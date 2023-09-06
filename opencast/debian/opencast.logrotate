@@ -1,7 +1,8 @@
 /var/log/opencast/*log {
 	weekly
 	copytruncate
-	rotate 52
+	rotate 10
+	maxsize 150M
 	missingok
 	notifempty
 	compress
