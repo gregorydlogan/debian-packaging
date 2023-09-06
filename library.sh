@@ -1,14 +1,20 @@
 #!/bin/bash
 
-#Usage: doBuild directoryname
-#eg: doBuild opencast
+#Usage: doBuild directoryname [arch]
+#eg: doBuild opencast arm64
 doBuild() {
   cd $1
   echo "Building $1"
+  #Set the arch, if any.  With it unset it defaults to the system arch
+  params=""
+  if [ $# -eq 2 ]; then
+    params="-a $2"
+  fi
+
   if [ -z "$SIGNING_KEY" ]; then
-    dpkg-buildpackage -k3259FFB3967266533FCD4B249A7EA8E5B3820B26 -tc
+    dpkg-buildpackage -k3259FFB3967266533FCD4B249A7EA8E5B3820B26 -tc $params
   else
-    dpkg-buildpackage -k$SIGNING_KEY -tc
+    dpkg-buildpackage --no-sign -k$SIGNING_KEY -tc $params
   fi
   cd ..
 }
@@ -88,29 +94,38 @@ doOpencast() {
 }
 
 
-#Usage: doFfmpeg packageversion branchname friendlyname buildnumber
-#eg: doFfmpeg 20220613051048-N-107098-g4d45f5acbd develop ffmpeg-20220613051048 2
+#Usage: doFfmpeg packageversion arch branchname friendlyname buildnumber
+#eg: doFfmpeg 20220613051048-N-107098-g4d45f5acbd arm64 develop ffmpeg-20220613051048 2
 doFfmpeg() {
 
-  git checkout $2
+  git checkout $3
 
   VERSION=`git rev-parse HEAD`
+  version="$1"
+  arch="$2"
+  branch="$3"
+  outputDir="$4"
+  buildNr="$5"
 
   cd ffmpeg
   git clean -fdx ./
-  tar --strip-components=1 -xvf ../binaries/ffmpeg-*$1*.xz
-  version="$1"
+  tar --strip-components=1 -xvf ../binaries/ffmpeg-$version-$arch-static.tar.xz
 
-  dch --create --package ffmpeg-dist --newversion $1-$4 -D stable -u low "FFmpeg build $4, based on Opencast FFmpeg build $3"
+  dch --create --package ffmpeg-dist --newversion $version-$buildNr -D stable -u low "FFmpeg build $buildNr for $arch, based on Opencast FFmpeg build $version.  Original build sourced from https://johnvansickle.com/ffmpeg/"
   #Zero out the time
   sed -i 's/..\:..\:../00:00:00/' debian/changelog
+  #Set the target arch
+  sed -i "s/TARGET_ARCH/$arch/" debian/control
 
   cd ..
 
   tar cvJf ffmpeg-dist_$version.orig.tar.xz ffmpeg
-  doBuild ffmpeg
-  createOutputs $VERSION $1 ffmpeg-dist-$version
-  mv ffmpeg*.* outputs/$VERSION
+  doBuild ffmpeg $arch
+  createOutputs $VERSION-$arch $version ffmpeg-dist-$version-$arch-$buildNr
+  mv ffmpeg*.* outputs/$VERSION-$arch
+  #Cleanup for the next build
+  git checkout -- ffmpeg/debian/control
+  rm -f debian/changelog
 }
 
 #Usage: doTobira packageversion branch build
