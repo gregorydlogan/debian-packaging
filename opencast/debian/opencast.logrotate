@@ -2,6 +2,7 @@
 	weekly
 	copytruncate
 	rotate 52
+	maxsize 150M
 	missingok
 	notifempty
 	compress
