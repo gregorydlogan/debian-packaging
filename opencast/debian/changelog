@@ -1,5 +1,5 @@
-opencast-15 (15.x-x) unstable; urgency=low
+opencast-16 (16.x-x) unstable; urgency=low
 
-  * Build x based on Opencast 15.x
+  * Build x based on Opencast 16.x
 
- -- Greg Logan <gregorydlogan@gmail.com>  Wed, 10 May 2023 00:00:00 -0600
+ -- Greg Logan <gregorydlogan@gmail.com>  Wed, 06 Dec 2023 00:00:00 -0600
