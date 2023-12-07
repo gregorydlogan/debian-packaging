@@ -14,7 +14,7 @@ doBuild() {
   if [ -z "$SIGNING_KEY" ]; then
     dpkg-buildpackage -k3259FFB3967266533FCD4B249A7EA8E5B3820B26 -tc $params
   else
-    dpkg-buildpackage --no-sign -k$SIGNING_KEY -tc $params
+    dpkg-buildpackage -k$SIGNING_KEY -tc $params
   fi
   cd ..
 }
