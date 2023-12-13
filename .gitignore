@@ -5,6 +5,8 @@
 *.changes
 *.buildinfo
 
+binaries
+
 #Ignore opencast's source, but not the debian control folder
 opencast/*
 !opencast/debian
