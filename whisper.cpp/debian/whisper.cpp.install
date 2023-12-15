@@ -1,0 +1,8 @@
+#!/usr/bin/dh-exec
+
+main => /usr/bin/whisper.cpp
+quantize => /usr/bin/whisper.cpp-quantize
+bench => /usr/bin/whisper.cpp-bench
+server => /usr/bin/whisper.cpp-server
+
+models/download-ggml-model.sh => /usr/sbin/whisper.cpp-model-download
