@@ -1,0 +1,12 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: whisper.cpp
+Source: https://github.com/ggerganov/whisper.cpp
+Comment:
+This is the Opencast project's distribution of John Van Sickle's static builds.  We use these because they include
+all of the important libraries, and are still redistributable.  These builds are licensed GPL 3, per his licensing.
+For more information, and John's licensing, see the README.Debian file.
+
+Files: *
+Copyright:
+License: MIT
+Comment:
