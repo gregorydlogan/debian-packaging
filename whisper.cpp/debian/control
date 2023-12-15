@@ -1,0 +1,53 @@
+Source: whisper.cpp
+Section: video
+Priority: optional
+Maintainer: Greg Logan <gregorydlogan@gmail.com>
+Build-Depends:
+ debhelper (>= 9),
+ dh-exec
+Standards-Version: 3.9.5
+Homepage: https://github.com/ggerganov/whisper.cpp
+Vcs-Git: git@github.com:gregorydlogan/debian-packaging.git
+Vcs-Browser: https://github.com/gregorydlogan/debian-packaging
+
+Package: whisper.cpp
+Architecture: amd64
+Suggests:
+  whisper.cpp-base | whisper.cpp-medium | whisper.cpp-large-v1 | whisper.cpp-large-v2 | whisper.cpp-large-v3 | whisper.cpp-base | whisper.cpp-tiny
+Description: Provides whisper.cpp, as well as its associated bench, server, and quanitize programs as /usr/bin/whisper.cpp(-bench|-server|-quantize)
+
+Package: whisper.cpp-tiny
+Architecture: all
+Depends:
+  whisper.cpp
+Description: Provides the tiny model as downloaded by the download-ggml-model.sh script provided by whisper.cpp
+
+Package: whisper.cpp-base
+Architecture: all
+Depends:
+  whisper.cpp
+Description: Provides the base model as downloaded by the download-ggml-model.sh script provided by whisper.cpp
+
+Package: whisper.cpp-medium
+Architecture: all
+Depends:
+  whisper.cpp
+Description: Provides the medium model as downloaded by the download-ggml-model.sh script provided by whisper.cpp
+
+Package: whisper.cpp-large-v1
+Architecture: all
+Depends:
+  whisper.cpp
+Description: Provides the large-v1 model as downloaded by the download-ggml-model.sh script provided by whisper.cpp
+
+Package: whisper.cpp-large-v2
+Architecture: all
+Depends:
+  whisper.cpp
+Description: Provides the large-v2 model as downloaded by the download-ggml-model.sh script provided by whisper.cpp
+
+Package: whisper.cpp-large-v3
+Architecture: all
+Depends:
+  whisper.cpp
+Description: Provides the large-v3 model as downloaded by the download-ggml-model.sh script provided by whisper.cpp

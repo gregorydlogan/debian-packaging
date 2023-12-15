@@ -46,3 +46,6 @@ tobira/debian/*.substvars
 tobira/debian/*.debhelper
 tobira/debian/files
 tobira/debian/debhelper-build-stamp
+
+whisper.cpp/*
+!whisper.cpp/debian

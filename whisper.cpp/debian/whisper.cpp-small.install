@@ -1,0 +1,1 @@
+models/ggml-small.bin /usr/share/whisper.cpp/small.bin
