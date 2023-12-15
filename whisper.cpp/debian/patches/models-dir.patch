@@ -1,0 +1,11 @@
+--- a/models/download-ggml-model.sh
++++ b/models/download-ggml-model.sh
+@@ -19,7 +19,7 @@
+     fi
+ }
+ 
+-models_path="$(get_script_path)"
++models_path="/var/lib/whisper.cpp/models/"
+ 
+ # Whisper models
+ models=(

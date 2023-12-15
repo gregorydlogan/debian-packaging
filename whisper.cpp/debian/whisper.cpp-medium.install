@@ -1,0 +1,1 @@
+models/ggml-medium.bin /usr/share/whisper.cpp/medium.bin

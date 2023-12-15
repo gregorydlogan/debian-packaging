@@ -156,3 +156,51 @@ doTobira() {
   createOutputs $VERSION $tobiraVersion $friendlyName
   mv tobira*.* outputs/$VERSION
 }
+
+doWhisper() {
+  git checkout $2
+  whisperVersion=$1
+  buildNumber=$3
+
+  friendlyName="whisper-$whisperVersion-$buildNumber"
+  VERSION=`git rev-parse HEAD`
+
+  cd whisper.cpp
+  git clean -fdx ./
+  tar --strip-components=1 -xvf ../binaries/whisper.cpp-$whisperVersion/whisper.cpp-$whisperVersion.tar.gz
+  cd ..
+  #NB: Creating the source tarball here so that we don't include the models!
+  tar -cvJf whisper.cpp_$whisperVersion.orig.tar.xz whisper.cpp
+  cd whisper.cpp
+  #This fetches the models, and takes (currently) 9.4GB
+  if [ -d ../binaries/models ]; then
+    ls ../binaries/models | while read line; do
+      ln ../binaries/models/$line models
+    done
+  else
+    #Fetch the models
+    for modelsize in tiny base small medium large-v1 large-v2 large-v3
+    do
+      if [ ! -f ./models/ggml-$modelsize.bin ]; then
+        ./models/download-ggml-model.sh $modelsize
+      fi
+    done
+    mkdir -p ../binaries/models
+    ls models/ggml*.bin | while read line; do
+      ln $line ../binaries/models
+    done
+  fi
+
+  dch --create --package whisper.cpp --newversion $whisperVersion-$buildNumber -D stable -u low "Whisper.cpp version $whisperVersion, based on Opencast Whisper.cpp packaging, build $buildNumber"
+  #Zero out the time
+  sed -i 's/..\:..\:../00:00:00/' debian/changelog
+  cd ..
+
+  #We need to pass the extra flags, so we don't use doBuild here
+  #doBuild whisper.cpp
+  cd whisper.cpp
+  dpkg-buildpackage -k3259FFB3967266533FCD4B249A7EA8E5B3820B26 --diff-ignore=models/ggml.*.bin --tar-ignore=models/ggml.*.bin
+  cd ..
+  createOutputs $VERSION $whisperVersion $friendlyName
+  mv whisper.cpp*.* outputs/$VERSION
+}
