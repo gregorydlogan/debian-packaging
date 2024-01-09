@@ -14,8 +14,8 @@ Vcs-Browser: https://github.com/gregorydlogan/debian-packaging
 Package: tobira
 Architecture: amd64
 Suggests:
- postgresql,
- meilisearch-http,
+ postgresql (>= 12),
+ meilisearch-http (>= 1.4),
  nginx | apache2
 Description: Tobira is a video portal for Opencast. It provides a hierarchical
  page structure, with each page consisting of simple configurable content
