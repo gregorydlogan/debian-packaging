@@ -4,8 +4,8 @@
      fi
  }
  
--models_path="$(get_script_path)"
-+models_path="/var/lib/whisper.cpp/models/"
+-models_path="${2:-$(get_script_path)}"
++models_path="${2:-/var/lib/whisper.cpp/models/}"
  
  # Whisper models
  models=(
