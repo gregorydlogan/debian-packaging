@@ -21,10 +21,10 @@ Depends:
  sudo,
  init-system-helpers
 Provides:
- opencast (= 14.x-x)
+ opencast (= 14.8-1)
 Conflicts:
- opencast (<< 14.x-x),
- opencast (>> 15.x-x)
+ opencast (<< 14.8-1),
+ opencast (>> 14.9-x)
 Description: Open Source Lecture Capture & Video Management Tool Common Files
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -37,7 +37,7 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-14-allinone
 Architecture: all
 Depends:
- opencast-14-common (= 14.x-x),
+ opencast-14-common (= 14.8-1),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
  opensearch | elasticsearch-oss | elasticsearch,
@@ -63,7 +63,7 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-14-admin
 Architecture: all
 Depends:
- opencast-14-common (= 14.x-x),
+ opencast-14-common (= 14.8-1),
 Conflicts:
  opencast-14-allinone,
  opencast-14-adminpresentation,
@@ -87,7 +87,7 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-14-worker
 Architecture: all
 Depends:
- opencast-14-common (= 14.x-x),
+ opencast-14-common (= 14.8-1),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr
 Conflicts:
@@ -113,7 +113,7 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-14-presentation
 Architecture: all
 Depends:
- opencast-14-common (= 14.x-x),
+ opencast-14-common (= 14.8-1),
 Conflicts:
  opencast-14-admin,
  opencast-14-adminpresentation,
@@ -136,7 +136,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-14-adminpresentation
 Architecture: all
 Depends:
- opencast-14-common (= 14.x-x),
+ opencast-14-common (= 14.8-1),
 Conflicts:
  opencast-14-admin,
  opencast-14-worker,
@@ -161,7 +161,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-14-ingest
 Architecture: all
 Depends:
- opencast-14-common (= 14.x-x),
+ opencast-14-common (= 14.8-1),
 Conflicts:
  opencast-14-admin,
  opencast-14-worker,

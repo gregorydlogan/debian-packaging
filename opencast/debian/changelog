@@ -1,5 +1,5 @@
-opencast-14 (14.x-1) unstable; urgency=low
+opencast-14 (14.8-1) stable; urgency=low
 
-  * Initial release based on Opencast 14.x
+  * Initial release based on Opencast 14.8
 
- -- Greg Logan <gregorydlogan@gmail.com>  Wed, 16 Nov 2022 00:00:00 -0600
+ -- Greg Logan <gregorydlogan@gmail.com>  Tue, 16 Jan 2024 00:00:00 -0600
