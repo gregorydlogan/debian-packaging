@@ -28,6 +28,12 @@ Depends:
   whisper.cpp
 Description: Provides the base model as downloaded by the download-ggml-model.sh script provided by whisper.cpp
 
+Package: whisper.cpp-small
+Architecture: all
+Depends:
+  whisper.cpp
+Description: Provides the small model as downloaded by the download-ggml-model.sh script provided by whisper.cpp
+
 Package: whisper.cpp-medium
 Architecture: all
 Depends:
