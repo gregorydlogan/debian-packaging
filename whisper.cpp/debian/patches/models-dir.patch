@@ -1,6 +1,6 @@
 --- a/models/download-ggml-model.sh
 +++ b/models/download-ggml-model.sh
-@@ -19,7 +19,7 @@
+@@ -22,7 +22,7 @@
      fi
  }
  
@@ -8,4 +8,4 @@
 +models_path="${2:-/var/lib/whisper.cpp/models/}"
  
  # Whisper models
- models=(
+ models="tiny
