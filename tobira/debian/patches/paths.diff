@@ -1,9 +1,9 @@
 --- a/config.toml
 +++ b/config.toml
-@@ -278,7 +278,7 @@
- 
- # If this is set, log messages are also written to this file.
- # Example: "/var/log/tobira.log".
+@@ -373,7 +373,7 @@
+ # `${cmd}` in this value is replaced by the subcommand name of the Tobira
+ # process, e.g. `serve`, `worker` or `other` (for less important
+ # commands). Example: "/var/log/tobira-${job}.log".
 -#file =
 +file = /var/log/tobira/tobira.log
  
