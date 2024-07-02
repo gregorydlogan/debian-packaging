@@ -21,10 +21,10 @@ Depends:
  sudo,
  init-system-helpers
 Provides:
- opencast (= 16.x-x)
+ opencast (= 16.1-1)
 Conflicts:
- opencast (<< 16.x-x),
- opencast (>> 17.x-x)
+ opencast (<< 16.1-1),
+ opencast (>> 16.2-x)
 Description: Open Source Lecture Capture & Video Management Tool Common Files
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -37,7 +37,7 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-16-allinone
 Architecture: all
 Depends:
- opencast-16-common (= 16.x-x),
+ opencast-16-common (= 16.1-1),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
  opensearch | elasticsearch-oss | elasticsearch,
@@ -63,7 +63,7 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-16-admin
 Architecture: all
 Depends:
- opencast-16-common (= 16.x-x),
+ opencast-16-common (= 16.1-1),
 Conflicts:
  opencast-16-allinone,
  opencast-16-adminpresentation,
@@ -87,7 +87,7 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-16-worker
 Architecture: all
 Depends:
- opencast-16-common (= 16.x-x),
+ opencast-16-common (= 16.1-1),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr
 Conflicts:
@@ -113,7 +113,7 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-16-presentation
 Architecture: all
 Depends:
- opencast-16-common (= 16.x-x),
+ opencast-16-common (= 16.1-1),
 Conflicts:
  opencast-16-admin,
  opencast-16-adminpresentation,
@@ -136,7 +136,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-16-adminpresentation
 Architecture: all
 Depends:
- opencast-16-common (= 16.x-x),
+ opencast-16-common (= 16.1-1),
 Conflicts:
  opencast-16-admin,
  opencast-16-worker,
@@ -161,7 +161,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-16-ingest
 Architecture: all
 Depends:
- opencast-16-common (= 16.x-x),
+ opencast-16-common (= 16.1-1),
 Conflicts:
  opencast-16-admin,
  opencast-16-worker,

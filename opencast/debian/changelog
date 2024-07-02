@@ -1,5 +1,5 @@
-opencast-16 (16.x-x) unstable; urgency=low
+opencast-16 (16.1-1) stable; urgency=low
 
-  * Build x based on Opencast 16.x
+  * Initial release based on Opencast 16.1
 
- -- Greg Logan <gregorydlogan@gmail.com>  Wed, 06 Dec 2023 00:00:00 -0600
+ -- Greg Logan <gregorydlogan@gmail.com>  Tue, 02 Jul 2024 00:00:00 -0600
