@@ -1,4 +1,4 @@
-Source: opencast-17
+Source: opencast-18
 Section: java
 Priority: optional
 Maintainer: Greg Logan <gregorydlogan@gmail.com>
@@ -10,7 +10,7 @@ Homepage: http://opencast.org
 Vcs-Git: git@github.com:gregorydlogan/debian-packaging.git
 Vcs-Browser: https://github.com/gregorydlogan/debian-packaging
 
-Package: opencast-17-common
+Package: opencast-18-common
 Architecture: all
 Depends:
  ${shlibs:Depends},
@@ -21,10 +21,10 @@ Depends:
  sudo,
  init-system-helpers
 Provides:
- opencast (= 17.x-x)
+ opencast (= 18.x-x)
 Conflicts:
- opencast (<< 17.x-x),
- opencast (>> 18.x-x)
+ opencast (<< 18.x-x),
+ opencast (>> 19.x-x)
 Description: Open Source Lecture Capture & Video Management Tool Common Files
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -32,12 +32,12 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
  distribution channels, and provide user interfaces to engage students with
  educational videos.
  This is the base fileset for Opencast and is not functional without an 
- opencast-17-* package.
+ opencast-18-* package.
 
-Package: opencast-17-allinone
+Package: opencast-18-allinone
 Architecture: all
 Depends:
- opencast-17-common (= 17.x-x),
+ opencast-18-common (= 18.x-x),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
  opensearch | elasticsearch-oss | elasticsearch,
@@ -46,11 +46,11 @@ Suggests:
  sox,
  hunspell
 Conflicts:
- opencast-17-admin,
- opencast-17-adminpresentation,
- opencast-17-worker,
- opencast-17-presentation,
- opencast-17-ingest
+ opencast-18-admin,
+ opencast-18-adminpresentation,
+ opencast-18-worker,
+ opencast-18-presentation,
+ opencast-18-ingest
 Description: Open Source Lecture Capture & Video Management Tool All-In-One Profile
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -60,16 +60,16 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
  This is the all-in-one profile of Opencast.  You 
  will not need any additional nodes for this install.
 
-Package: opencast-17-admin
+Package: opencast-18-admin
 Architecture: all
 Depends:
- opencast-17-common (= 17.x-x),
+ opencast-18-common (= 18.x-x),
 Conflicts:
- opencast-17-allinone,
- opencast-17-adminpresentation,
- opencast-17-worker,
- opencast-17-presentation,
- opencast-17-ingest
+ opencast-18-allinone,
+ opencast-18-adminpresentation,
+ opencast-18-worker,
+ opencast-18-presentation,
+ opencast-18-ingest
 Suggests:
  mariadb-server | postgresql,
  nginx | apache2,
@@ -84,18 +84,18 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
  This is the admin node profile of Opencast.  You will need
  one of these installed in a clustered install of Opencast.
 
-Package: opencast-17-worker
+Package: opencast-18-worker
 Architecture: all
 Depends:
- opencast-17-common (= 17.x-x),
+ opencast-18-common (= 18.x-x),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr
 Conflicts:
- opencast-17-admin,
- opencast-17-adminpresentation,
- opencast-17-allinone,
- opencast-17-presentation,
- opencast-17-ingest
+ opencast-18-admin,
+ opencast-18-adminpresentation,
+ opencast-18-allinone,
+ opencast-18-presentation,
+ opencast-18-ingest
 Suggests:
  nfs-client,
  hunspell,
@@ -110,16 +110,16 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
  at least one of these installed in a clustered install of Opencast.  More workers
  means you can process videos faster, to a point.
 
-Package: opencast-17-presentation
+Package: opencast-18-presentation
 Architecture: all
 Depends:
- opencast-17-common (= 17.x-x),
+ opencast-18-common (= 18.x-x),
 Conflicts:
- opencast-17-admin,
- opencast-17-adminpresentation,
- opencast-17-worker,
- opencast-17-allinone,
- opencast-17-ingest
+ opencast-18-admin,
+ opencast-18-adminpresentation,
+ opencast-18-worker,
+ opencast-18-allinone,
+ opencast-18-ingest
 Suggests:
  nginx | apache2,
  nfs-client
@@ -133,16 +133,16 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
  at least one of these installed in a clustered install of Opencast.  This is the node
  where your users will go for the output video files.
 
-Package: opencast-17-adminpresentation
+Package: opencast-18-adminpresentation
 Architecture: all
 Depends:
- opencast-17-common (= 17.x-x),
+ opencast-18-common (= 18.x-x),
 Conflicts:
- opencast-17-admin,
- opencast-17-worker,
- opencast-17-presentation,
- opencast-17-allinone,
- opencast-17-ingest
+ opencast-18-admin,
+ opencast-18-worker,
+ opencast-18-presentation,
+ opencast-18-allinone,
+ opencast-18-ingest
 Suggests:
  mariadb-server,
  nginx | apache2,
@@ -158,15 +158,15 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
  and presentation nodes into one profile.  In general you want separate nodes for large
  installs but this profile works well for small installations.
 
-Package: opencast-17-ingest
+Package: opencast-18-ingest
 Architecture: all
 Depends:
- opencast-17-common (= 17.x-x),
+ opencast-18-common (= 18.x-x),
 Conflicts:
- opencast-17-admin,
- opencast-17-worker,
- opencast-17-presentation,
- opencast-17-allinone
+ opencast-18-admin,
+ opencast-18-worker,
+ opencast-18-presentation,
+ opencast-18-allinone
 Suggests:
  nginx | apache2,
  nfs-client
