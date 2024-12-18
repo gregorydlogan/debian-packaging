@@ -128,6 +128,35 @@ doFfmpeg() {
   rm -f debian/changelog
 }
 
+#Usage: doAnalysis packageversion branchname friendlyname buildnumber
+#eg: doAnalysis 1.3.16 develop 2
+doAnalysis() {
+
+  VERSION=`git rev-parse HEAD`
+  version="$1"
+  branch="$2"
+  buildNr="$3"
+
+  cd analysis-icu
+  git clean -fdx ./
+  unzip ../binaries/analysis-icu-$version.zip
+
+  dch --create --package opensearch-analysis-icu --newversion $version-$buildNr -D stable -u low "Packaged analysis-icu plugin version $version, build $buildNr using Opencast Debian packaging scripts version $VERSION.  Original build sourced from Opensearch artifacts repository."
+  #Zero out the time
+  sed -i 's/..\:..\:../00:00:00/' debian/changelog
+  #Set the depends version
+  sed -i "s/opensearch (= x)/opensearch (= $version)/" debian/control
+
+  cd ..
+
+  tar cvJf opensearch-analysis-icu_$version.orig.tar.xz analysis-icu
+  doBuild analysis-icu
+  createOutputs $VERSION $version opensearch-analysis-icu-$version-$buildNr
+  mv opensearch-analysis-icu*.* outputs/$VERSION
+  #Cleanup for the next build
+  git checkout -- analysis-icu/debian/control
+  rm -f debian/changelog
+}
 #Usage: doTobira packageversion branch build
 #eg: doTobira 1.3 develop 2
 doTobira() {

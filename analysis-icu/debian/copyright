@@ -1,0 +1,86 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: OpenSearch
+Source: https://github.com/opensearch-project/OpenSearch
+Files-Excluded:
+ buildSrc/src/integTest
+ gradle
+ gradlew
+ gradlew.bat
+ *.exe
+ */licenses
+ **/package-info.java
+
+Files: *
+Copyright: OpenSearch Contributors
+ 2009-2018, Elasticsearch
+License: Apache-2.0
+
+Files: buildSrc/src/main/groovy/org/opensearch/gradle/plugin/OptionalDependenciesPlugin.groovy
+Copyright: 2014-2016, Netflix, Inc.
+License: Apache-2.0
+
+Files: libs/common/src/main/java/org/opensearch/common/util/BitMixer.java
+Copyright: 2010-2022, Carrot Search s.c.
+License: Apache-2.0
+
+Files: libs/common/src/main/java/org/opensearch/common/util/FastMath.java
+Copyright: 2012, Jeff Hain
+License: Apache-2.0
+
+Files: libs/core/src/main/java/org/opensearch/core/internal/io/IOUtils.java
+Copyright: 2020, Elasticsearch B.V.
+License: Apache-2.0
+
+Files: libs/ssl-config/src/main/java/org/opensearch/common/ssl/DerParser.java
+Copyright: 1998-2010, AOL Inc.
+License: Apache-2.0
+
+Files: modules/ingest-user-agent/src/main/resources/regexes.yml
+Copyright: 2009, Google Inc.
+License: Apache-2.0
+
+Files: server/src/main/java/org/opensearch/common/time/DateUtilsRounding.java
+ server/src/main/java/org/joda/time/format/StrictISODateTimeFormat.java
+Copyright: 2001-2014, Stephen Colebourne
+License: Apache-2.0
+
+Files: modules/geo/src/main/java/org/opensearch/geo/algorithm/PolygonGenerator.java
+Copyright: 2017, Sander Verdonschot
+License: Apache-2.0
+
+Files: server/src/main/java/org/opensearch/http/CorsHandler.java
+ modules/transport-netty4/src/main/java/org/opensearch/transport/CopyBytesServerSocketChannel.java
+ modules/transport-netty4/src/main/java/org/opensearch/transport/CopyBytesSocketChannel.java
+Copyright: 2012-2013, The Netty Project
+License: Apache-2.0
+
+Files: server/src/main/java/org/opensearch/common/lucene/search/XMoreLikeThis.java
+ server/src/main/java/org/opensearch/index/codec/fuzzy/BloomFilter.java
+ server/src/main/java/org/opensearch/index/codec/fuzzy/FuzzyFilterPostingsFormat.java
+Copyright: 2001-2022, The Apache Software Foundation
+License: Apache-2.0
+
+Files: server/src/main/java/org/opensearch/common/collect/EvictingQueue.java
+ server/src/main/java/org/opensearch/common/network/InetAddresses.java
+ server/src/test/java/org/opensearch/common/collect/EvictingQueueTests.java
+ server/src/test/java/org/opensearch/common/network/InetAddressesTests.java
+ libs/common/src/main/java/org/opensearch/common/network/InetAddresses.java
+ libs/common/src/test/java/org/opensearch/common/network/InetAddressesTests.java
+Copyright: 2008, 2012, The Guava Authors
+License: Apache-2.0
+
+Files: server/src/main/java/org/opensearch/common/time/RFC3339CompatibleDateTimeFormatter.java
+Copyright: 2017, Morten Haraldsen
+License: Apache-2.0
+
+Files: server/src/main/java/org/opensearch/common/inject/*
+Copyright: 2006-2010, Google Inc.
+License: Apache-2.0
+
+Files: debian/*
+Copyright: 2022-2023, Andrius Merkys <merkys@debian.org>
+License: Apache-2.0
+
+License: Apache-2.0
+ On Debian systems, the complete text of the Apache License, Version 2.0
+ can be found in "/usr/share/common-licenses/Apache-2.0".

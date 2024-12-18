@@ -49,3 +49,7 @@ tobira/debian/debhelper-build-stamp
 
 whisper.cpp/*
 !whisper.cpp/debian
+
+analysis-icu/*
+!analysis-icu/debian
+analysis-icu/debian/changelog
