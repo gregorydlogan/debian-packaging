@@ -137,6 +137,10 @@ doAnalysis() {
   branch="$2"
   buildNr="$3"
 
+  cd binaries
+  ./analysis-icu-fetch.sh $version
+  cd ..
+
   cd analysis-icu
   git clean -fdx ./
   unzip ../binaries/analysis-icu-$version.zip
