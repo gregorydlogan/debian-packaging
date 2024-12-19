@@ -6,4 +6,6 @@ if [ $# -ne 1 ]; then
   exit 1
 fi
 
-wget https://artifacts.opensearch.org/releases/plugins/analysis-icu/$1/analysis-icu-$1.zip
+if [ ! -f "analysis-icu-$1.zip" ]; then
+  wget https://artifacts.opensearch.org/releases/plugins/analysis-icu/$1/analysis-icu-$1.zip
+fi
