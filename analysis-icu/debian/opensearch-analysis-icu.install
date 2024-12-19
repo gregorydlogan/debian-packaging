@@ -1,6 +1,4 @@
-analysis-icu-client-1.3.16.jar  /usr/share/opensearch/plugins/analysis-icu
-icu4j-62.1.jar                  /usr/share/opensearch/plugins/analysis-icu
-lucene-analyzers-icu-8.10.1.jar /usr/share/opensearch/plugins/analysis-icu
+*.jar  /usr/share/opensearch/plugins/analysis-icu
 LICENSE.txt                     /usr/share/opensearch/plugins/analysis-icu
 NOTICE.txt                      /usr/share/opensearch/plugins/analysis-icu
 plugin-descriptor.properties    /usr/share/opensearch/plugins/analysis-icu
