@@ -1,8 +1,10 @@
 #!/usr/bin/dh-exec
 
-main => /usr/bin/whisper.cpp
-quantize => /usr/bin/whisper.cpp-quantize
-bench => /usr/bin/whisper.cpp-bench
-server => /usr/bin/whisper.cpp-server
+build/bin/whisper-bench => /usr/bin/whisper.cpp-bench
+#build/bin/whisper-command => /usr/bin/whisper.cpp-command Does not get built?
+build/bin/whisper-cli => /usr/bin/whisper.cpp
+build/bin/whisper-server => /usr/bin/whisper.cpp-server
+#build/bin/whisper-stream => /usr/bin/whisper.cpp-stream Also does not get built?
+build/bin/quantize => /usr/bin/whisper.cpp-quantize
 
 models/download-ggml-model.sh => /usr/sbin/whisper.cpp-model-download
