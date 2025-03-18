@@ -16,7 +16,11 @@ doBuild() {
   else
     dpkg-buildpackage -k$SIGNING_KEY -tc $params
   fi
+  success=$?
   cd ..
+  if [ 0 -ne $success ]; then
+    exit 1
+  fi
 }
 
 
