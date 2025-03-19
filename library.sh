@@ -1,14 +1,16 @@
 #!/bin/bash
 
-#Usage: doBuild directoryname [arch]
+#Usage: doBuild directoryname [arch] OR [buncha arguments]
 #eg: doBuild opencast arm64
+#    doBuild whisper -myArg=foo -otherarg=asdf
 doBuild() {
   cd $1
   echo "Building $1"
   #Set the arch, if any.  With it unset it defaults to the system arch
-  params=""
   if [ $# -eq 2 ]; then
     params="-a $2"
+  else
+    params="${@:2}"
   fi
 
   if [ -z "$SIGNING_KEY" ]; then
@@ -201,10 +203,7 @@ doWhisper() {
   cd ..
 
   #We need to pass the extra flags, so we don't use doBuild here
-  #doBuild whisper.cpp
-  cd whisper.cpp
-  dpkg-buildpackage -k3259FFB3967266533FCD4B249A7EA8E5B3820B26 --diff-ignore=models/ggml.*.bin --tar-ignore=models/ggml.*.bin
-  cd ..
+  doBuild whisper.cpp --diff-ignore=models/ggml.*.bin --tar-ignore=models/ggml.*.bin
   createOutputs $VERSION $whisperVersion $friendlyName
   mv whisper.cpp*.* outputs/$VERSION
 }
