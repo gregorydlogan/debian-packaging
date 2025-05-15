@@ -6,5 +6,9 @@ build/bin/whisper-cli => /usr/bin/whisper.cpp
 build/bin/whisper-server => /usr/bin/whisper.cpp-server
 #build/bin/whisper-stream => /usr/bin/whisper.cpp-stream Also does not get built?
 build/bin/quantize => /usr/bin/whisper.cpp-quantize
+build/src/libwhisper.so.WHISPER_VERSION => /usr/lib/libwhisper.so.WHISPER_VERSION
+build/ggml/src/libggml.so => /usr/lib/libggml.so
+build/ggml/src/libggml-base.so => /usr/lib/libggml-base.so
+build/ggml/src/libggml-cpu.so => /usr/lib/libggml-cpu.so
 
 models/download-ggml-model.sh => /usr/sbin/whisper.cpp-model-download

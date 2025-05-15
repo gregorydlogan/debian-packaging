@@ -173,6 +173,7 @@ doWhisper() {
 
   cd whisper.cpp
   git clean -fdx ./
+  sed -i "s/WHISPER_VERSION/$whisperVersion/g" debian/whisper.cpp.install
   tar --strip-components=1 -xvf ../binaries/whisper.cpp-$whisperVersion/whisper.cpp-$whisperVersion.tar.gz
   cd ..
   #NB: Creating the source tarball here so that we don't include the models!
