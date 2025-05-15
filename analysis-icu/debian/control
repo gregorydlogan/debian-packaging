@@ -1,0 +1,19 @@
+Source: opensearch-analysis-icu
+Section: java
+Priority: optional
+Maintainer: Greg Logan <gregorydlogan@gmail.com>
+Build-Depends:
+ debhelper (>= 9),
+ autotools-dev,
+ dh-exec
+Standards-Version: 3.9.5
+Homepage: http://www.ffmpeg.org
+Vcs-Git: git@github.com:gregorydlogan/debian-packaging.git
+Vcs-Browser: https://github.com/gregorydlogan/debian-packaging
+
+Package: opensearch-analysis-icu
+Depends:
+ opensearch (= x)
+Architecture: all
+Description: Provides the analysis-icu plugin for opensearch without manually
+ running the plugin install script.

@@ -1,0 +1,4 @@
+*.jar  /usr/share/opensearch/plugins/analysis-icu
+LICENSE.txt                     /usr/share/opensearch/plugins/analysis-icu
+NOTICE.txt                      /usr/share/opensearch/plugins/analysis-icu
+plugin-descriptor.properties    /usr/share/opensearch/plugins/analysis-icu
