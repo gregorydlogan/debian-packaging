@@ -39,21 +39,3 @@ Architecture: all
 Depends:
   whisper.cpp
 Description: Provides the medium model as downloaded by the download-ggml-model.sh script provided by whisper.cpp
-
-Package: whisper.cpp-large-v1
-Architecture: all
-Depends:
-  whisper.cpp
-Description: Provides the large-v1 model as downloaded by the download-ggml-model.sh script provided by whisper.cpp
-
-Package: whisper.cpp-large-v2
-Architecture: all
-Depends:
-  whisper.cpp
-Description: Provides the large-v2 model as downloaded by the download-ggml-model.sh script provided by whisper.cpp
-
-Package: whisper.cpp-large-v3
-Architecture: all
-Depends:
-  whisper.cpp
-Description: Provides the large-v3 model as downloaded by the download-ggml-model.sh script provided by whisper.cpp
