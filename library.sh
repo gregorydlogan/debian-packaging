@@ -220,16 +220,21 @@ doWhisper() {
       ln ../binaries/models/$line models
     done
   else
+    mkdir -p ../binaries/models
     #Fetch the models
     for modelsize in tiny base small medium large-v1 large-v2 large-v3
     do
       if [ ! -f ./models/ggml-$modelsize.bin ]; then
         ./models/download-ggml-model.sh $modelsize
+        ln models/ggml-$line.bin ../binaries/models
       fi
     done
-    mkdir -p ../binaries/models
-    ls models/ggml*.bin | while read line; do
-      ln $line ../binaries/models
+    for vadmodel in silero-v5.1.2
+    do
+      if [ ! -f ./models/$vadmodel.bin ]; then
+        ./models/download-vad-model.sh $modelsize
+        ln models/ggml-$vadmodel.bin ../binaries/models
+      fi
     done
   fi
 
