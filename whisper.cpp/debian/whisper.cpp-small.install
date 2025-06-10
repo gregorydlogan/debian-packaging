@@ -1,1 +1,3 @@
-models/ggml-small.bin /usr/share/whisper.cpp/small.bin
+#!/usr/bin/dh-exec
+
+models/ggml-small.bin /usr/share/whisper.cpp/models/
