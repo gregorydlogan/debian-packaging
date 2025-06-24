@@ -1,11 +1,22 @@
 --- a/models/download-ggml-model.sh
 +++ b/models/download-ggml-model.sh
-@@ -22,7 +22,7 @@
-     fi
- }
+@@ -30,7 +30,7 @@
+     *) default_download_path="$script_path" ;;  # Otherwise, use script directory
+ esac
  
--models_path="${2:-$(get_script_path)}"
-+models_path="${2:-/var/lib/whisper.cpp/models/}"
+-models_path="${2:-$default_download_path}"
++models_path="${2:-/usr/share/whisper.cpp/models}"
  
  # Whisper models
  models="tiny
+--- a/models/download-vad-model.sh
++++ b/models/download-vad-model.sh
+@@ -27,7 +27,7 @@
+     *) default_download_path="$script_path" ;;  # Otherwise, use script directory
+ esac
+ 
+-models_path="${2:-$default_download_path}"
++models_path="${2:-/usr/share/whisper.cpp/models}"
+ 
+ # Whisper VAD models
+ models="silero-v5.1.2"

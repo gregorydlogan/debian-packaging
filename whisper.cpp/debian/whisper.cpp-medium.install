@@ -1,1 +1,3 @@
-models/ggml-medium.bin /usr/share/whisper.cpp/medium.bin
+#!/usr/bin/dh-exec
+
+models/ggml-medium.bin /usr/share/whisper.cpp/models/

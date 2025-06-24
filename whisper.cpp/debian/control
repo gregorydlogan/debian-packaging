@@ -39,3 +39,9 @@ Architecture: all
 Depends:
   whisper.cpp
 Description: Provides the medium model as downloaded by the download-ggml-model.sh script provided by whisper.cpp
+
+Package: whisper.cpp-silero
+Architecture: all
+Depends:
+  whisper.cpp
+Description: Provides the silero vad  model as downloaded by the download-ggml-model.sh script provided by whisper.cpp

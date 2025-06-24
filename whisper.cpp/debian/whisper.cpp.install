@@ -1,14 +1,12 @@
 #!/usr/bin/dh-exec
 
-build/bin/whisper-bench => /usr/bin/whisper.cpp-bench
-#build/bin/whisper-command => /usr/bin/whisper.cpp-command Does not get built?
-build/bin/whisper-cli => /usr/bin/whisper.cpp
-build/bin/whisper-server => /usr/bin/whisper.cpp-server
-#build/bin/whisper-stream => /usr/bin/whisper.cpp-stream Also does not get built?
-build/bin/quantize => /usr/bin/whisper.cpp-quantize
-build/src/libwhisper.so.WHISPER_VERSION => /usr/lib/libwhisper.so.WHISPER_VERSION
+build/bin/whisper-bench => /usr/bin/whisper-bench
+build/bin/whisper-cli => /usr/bin/whisper-cli
+build/bin/whisper-server => /usr/bin/whisper-server
+
+build/src/libwhisper.so.1.7.5 => /usr/lib/libwhisper.so.1.7.5
 build/ggml/src/libggml.so => /usr/lib/libggml.so
 build/ggml/src/libggml-base.so => /usr/lib/libggml-base.so
 build/ggml/src/libggml-cpu.so => /usr/lib/libggml-cpu.so
 
-models/download-ggml-model.sh => /usr/sbin/whisper.cpp-model-download
+models/download-ggml-model.sh => /usr/sbin/whisper-ggml-model-download
