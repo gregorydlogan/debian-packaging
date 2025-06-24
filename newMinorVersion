@@ -28,3 +28,5 @@ sed -i "s/$major.x/$major.$minor/g" $package/debian/control
 git add $package/debian/control
 git commit -m "Opencast $major.$minor into stable"
 git tag -sm "Opencast $major.$minor-$build" $major.$minor-$build
+git co r/$major.x
+git branch -D r/$major.$minor
