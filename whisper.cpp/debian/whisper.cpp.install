@@ -4,7 +4,7 @@ build/bin/whisper-bench => /usr/bin/whisper-bench
 build/bin/whisper-cli => /usr/bin/whisper-cli
 build/bin/whisper-server => /usr/bin/whisper-server
 
-build/src/libwhisper.so.1.7.5 => /usr/lib/libwhisper.so.1.7.5
+build/src/libwhisper.so.WHISPER_VERSION => /usr/lib/libwhisper.so.WHISPER_VERSION
 build/ggml/src/libggml.so => /usr/lib/libggml.so
 build/ggml/src/libggml-base.so => /usr/lib/libggml-base.so
 build/ggml/src/libggml-cpu.so => /usr/lib/libggml-cpu.so
