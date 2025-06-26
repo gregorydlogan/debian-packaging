@@ -215,18 +215,18 @@ doWhisper() {
   tar -cvJf whisper.cpp_$whisperVersion.orig.tar.xz whisper.cpp
   cd whisper.cpp
   #This fetches the models, and takes (currently) 9.4GB
-  if [ -d ../binaries/models ]; then
-    ls ../binaries/models | while read line; do
-      ln ../binaries/models/$line models
+  if [ -d ../binaries/models/$whisperVersion ]; then
+    ls ../binaries/models/$whisperVersion | while read line; do
+      ln ../binaries/models/$whisperVersion/$line models
     done
   else
-    mkdir -p ../binaries/models
+    mkdir -p ../binaries/models/$whisperVersion
     #Fetch the models
     for modelsize in tiny base small medium large-v1 large-v2 large-v3
     do
       if [ ! -f ./models/ggml-$modelsize.bin ]; then
         ./models/download-ggml-model.sh $modelsize
-        ln models/ggml-$line.bin ../binaries/models
+        ln models/ggml-$modelsize.bin ../binaries/models/$whisperVersion
       fi
     done
     for vadmodel in silero-v5.1.2
