@@ -232,8 +232,8 @@ doWhisper() {
     for vadmodel in silero-v5.1.2
     do
       if [ ! -f ./models/$vadmodel.bin ]; then
-        ./models/download-vad-model.sh $modelsize
-        ln models/ggml-$vadmodel.bin ../binaries/models
+        ./models/download-vad-model.sh $vadmodel
+        ln models/ggml-$vadmodel.bin ../binaries/models/$whisperVersion
       fi
     done
   fi
