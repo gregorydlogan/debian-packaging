@@ -1,0 +1,3 @@
+#!/usr/bin/dh-exec
+
+models/ggml-silero-v5.1.2.bin /usr/share/whisper.cpp/models/
