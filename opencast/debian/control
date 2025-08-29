@@ -21,10 +21,10 @@ Depends:
  sudo,
  init-system-helpers
 Provides:
- opencast (= 18.x-x)
+ opencast (= 18.1-1)
 Conflicts:
- opencast (<< 18.x-x),
- opencast (>> 19.x-x)
+ opencast (<< 18.1-1),
+ opencast (>> 18.2-x)
 Description: Open Source Lecture Capture & Video Management Tool Common Files
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -37,7 +37,7 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-18-allinone
 Architecture: all
 Depends:
- opencast-18-common (= 18.x-x),
+ opencast-18-common (= 18.1-1),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
  opensearch | elasticsearch-oss | elasticsearch,
@@ -63,7 +63,7 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-18-admin
 Architecture: all
 Depends:
- opencast-18-common (= 18.x-x),
+ opencast-18-common (= 18.1-1),
 Conflicts:
  opencast-18-allinone,
  opencast-18-adminpresentation,
@@ -87,7 +87,7 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-18-worker
 Architecture: all
 Depends:
- opencast-18-common (= 18.x-x),
+ opencast-18-common (= 18.1-1),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr
 Conflicts:
@@ -113,7 +113,7 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-18-presentation
 Architecture: all
 Depends:
- opencast-18-common (= 18.x-x),
+ opencast-18-common (= 18.1-1),
 Conflicts:
  opencast-18-admin,
  opencast-18-adminpresentation,
@@ -136,7 +136,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-18-adminpresentation
 Architecture: all
 Depends:
- opencast-18-common (= 18.x-x),
+ opencast-18-common (= 18.1-1),
 Conflicts:
  opencast-18-admin,
  opencast-18-worker,
@@ -161,7 +161,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-18-ingest
 Architecture: all
 Depends:
- opencast-18-common (= 18.x-x),
+ opencast-18-common (= 18.1-1),
 Conflicts:
  opencast-18-admin,
  opencast-18-worker,
