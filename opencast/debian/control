@@ -15,7 +15,7 @@ Architecture: all
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- openjdk-17-jre-headless,
+ openjdk-21-jre,
  adduser,
  netcat,
  sudo,

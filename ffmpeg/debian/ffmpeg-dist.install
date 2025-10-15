@@ -1,2 +1,2 @@
-ffmpeg	/usr/bin/
-ffprobe	/usr/bin/
+bin/ffmpeg	/usr/bin/
+bin/ffprobe	/usr/bin/

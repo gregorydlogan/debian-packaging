@@ -1,22 +1,16 @@
 #!/bin/bash
 
-VERSION="release"
-ARCH="amd64"
-
-if [ $# -ge 3 ]; then
-  echo "Usage: $0 [release=$VERSION] [arch=$ARCH]"
-  echo " eg: $0           -> Downloads ffmpeg-release-amd64-static.tar.xz"
-  echo " eg: $0 6.0       -> Downloads ffmpeg-6.0-amd64-static.tar.xz"
-  echo " eg: $0 6.0 arm64 -> Downloads ffmpeg-6.0-arm64-static.tar.xz"
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 slug"
+  echo " eg: $0 n7.1.1-54-g6400860b9d -> Downloads ffmpeg-n7.1.1-54-g6400860b9d-linux64-gpl-7.1.tar.xz and ffmpeg-n7.1.1-54-g6400860b9d-linuxarm64-gpl-7.1.tar.xz"
   exit 1
 fi
 
 
 if [ $# -ge 1 ]; then
-  VERSION="$1"
-fi
-if [ $# -ge 2 ]; then
-  ARCH="$2"
+  SLUG="$1"
+  SUBSLUG="${SLUG:1:3}"
 fi
 
-wget https://s3.opencast.org/opencast-ffmpeg-static/ffmpeg-$VERSION-$ARCH-static.tar.xz
+wget https://s3.opencast.org/opencast-ffmpeg-static/ffmpeg-$SLUG-linux64-gpl-$SUBSLUG.tar.xz
+wget https://s3.opencast.org/opencast-ffmpeg-static/ffmpeg-$SLUG-linuxarm64-gpl-$SUBSLUG.tar.xz

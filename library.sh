@@ -115,9 +115,14 @@ doFfmpeg() {
 
   cd ffmpeg
   git clean -fdx ./
-  tar --strip-components=1 -xvf ../binaries/ffmpeg-$version-$arch-static.tar.xz
+  if [ "$arch" == "amd64" ]; then
+    subarch="64"
+  elif [ "$arch" == "arm64" ]; then
+    subarch="arm64"
+  fi
+  tar --strip-components=1 -xvf ../binaries/ffmpeg-$version-linux$subarch-gpl-${version:1:3}.tar.xz
 
-  dch --create --package ffmpeg-dist --newversion $version-$buildNr -D stable -u low "FFmpeg build $buildNr for $arch, based on Opencast FFmpeg build $version.  Original build sourced from https://johnvansickle.com/ffmpeg/"
+  dch --create --package ffmpeg-dist --newversion ${version:1}-$buildNr -D stable -u low "FFmpeg build $buildNr for $arch, based on Opencast FFmpeg build $version-linux$subarch-gpl-${version:1:3}.tar.xz.  Original build sourced from https://github.com/BtbN/FFmpeg-Builds/releases"
   #Zero out the time
   sed -i 's/..\:..\:../00:00:00/' debian/changelog
   #Set the target arch
@@ -125,10 +130,10 @@ doFfmpeg() {
 
   cd ..
 
-  tar cvJf ffmpeg-dist_$version.orig.tar.xz ffmpeg
+  tar cvJf ffmpeg-dist_${version:1}.orig.tar.xz ffmpeg
   doBuild ffmpeg $arch
-  createOutputs $VERSION-$arch $version ffmpeg-dist-$version-$arch-$buildNr
-  mv ffmpeg*.* outputs/$VERSION-$arch
+  createOutputs $VERSION $version ffmpeg-dist-$version-$buildNr
+  mv ffmpeg*.* outputs/$VERSION
   #Cleanup for the next build
   git checkout -- ffmpeg/debian/control
   rm -f debian/changelog
@@ -222,7 +227,7 @@ doWhisper() {
   else
     mkdir -p ../binaries/models/$whisperVersion
     #Fetch the models
-    for modelsize in tiny base small medium
+    for modelsize in tiny base small medium large-v1 large-v2 large-v3
     do
       if [ ! -f ./models/ggml-$modelsize.bin ]; then
         ./models/download-ggml-model.sh $modelsize
