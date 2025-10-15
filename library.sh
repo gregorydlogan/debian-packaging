@@ -226,7 +226,7 @@ doWhisper() {
     done
   else
     #Fetch the models
-    for modelsize in tiny base small medium
+    for modelsize in tiny base small medium large-v1 large-v2 large-v3
     do
       if [ ! -f ./models/ggml-$modelsize.bin ]; then
         ./models/download-ggml-model.sh $modelsize
