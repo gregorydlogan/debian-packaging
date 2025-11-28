@@ -1,5 +1,5 @@
-opencast-17 (17.x-x) unstable; urgency=low
+opencast-17 (17.10-1) stable; urgency=low
 
-  * Build x based on Opencast 17.x
+  * Initial release based on Opencast 17.10
 
- -- Greg Logan <gregorydlogan@gmail.com>  Sat, 11 May 2024 00:00:00 -0600
+ -- Greg Logan <gregorydlogan@gmail.com>  Fri, 28 Nov 2025 00:00:00 -0600
