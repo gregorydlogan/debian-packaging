@@ -130,8 +130,14 @@ doFfmpeg() {
 
   cd ..
 
-  tar cvJf ffmpeg-dist_${version:1}.orig.tar.xz ffmpeg
-  doBuild ffmpeg $arch
+  #Turning the source tar off since we don't need it now
+  #tar cvJf ffmpeg-dist_${version:1}.orig.tar.xz ffmpeg
+  #Do the build, setting the arch and specifying a binary only build
+  # We're building binary only here because otherwise the *sources* for amd64 and arm64 conflict
+  # Debian assumes that we've got source, and then build exactly the same source in multiple arch
+  # That's not what we're doing here, so of course the sources differ but have the same package name
+  # This could also be fixed by renaming the package cf ffmpeg-dist-$arch
+  doBuild ffmpeg -a $arch -b
   createOutputs $VERSION $version ffmpeg-dist-$version-$buildNr
   mv ffmpeg*.* outputs/$VERSION
   #Cleanup for the next build
