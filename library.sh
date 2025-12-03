@@ -209,6 +209,34 @@ doTobira() {
   mv tobira*.* outputs/$VERSION
 }
 
+#Usage: doOctoka packageversion branch build
+#eg: doOctoka 1.3 develop 2
+doOctoka() {
+  git checkout $2
+  octokaVersion=$1
+  buildNumber=$3
+
+  friendlyName="octoka-$octokaVersion-$buildNumber"
+
+  VERSION=`git rev-parse HEAD`
+
+  cd octoka
+  git clean -fdx ./
+  ln ../binaries/octoka-$octokaVersion/octoka ./octoka
+  ln ../binaries/octoka-$octokaVersion/config.toml ./config.toml
+
+  dch --create --package octoka --newversion $octokaVersion-$buildNumber -D stable -u low "Octoka version $octokaVersion, based on Opencast Tobira packaging, build $buildNumber"
+  #Zero out the time
+  sed -i 's/..\:..\:../00:00:00/' debian/changelog
+
+  cd ..
+
+  tar cvJf octoka_$octokaVersion.orig.tar.xz octoka
+  doBuild octoka
+  createOutputs $VERSION $octokaVersion $friendlyName
+  mv octoka*.* outputs/$VERSION
+}
+
 doWhisper() {
   git checkout $2
   whisperVersion=$1

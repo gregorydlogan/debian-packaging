@@ -47,6 +47,9 @@ tobira/debian/*.debhelper
 tobira/debian/files
 tobira/debian/debhelper-build-stamp
 
+octoka/*
+!octoka/debian
+
 whisper.cpp/*
 !whisper.cpp/debian
 

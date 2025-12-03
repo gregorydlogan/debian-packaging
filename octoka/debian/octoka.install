@@ -1,0 +1,3 @@
+octoka	/usr/bin/
+config.toml	/etc/octoka/
+debian/octoka.service /etc/systemd/system/

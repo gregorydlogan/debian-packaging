@@ -1,0 +1,11 @@
+--- a/config.toml
++++ b/config.toml
+@@ -160,7 +160,7 @@
+ #filters = { octoka = "info" }
+ 
+ # If this is set, log messages are also written to this file.
+-#file =
++file = /var/log/octoka
+ 
+ # If this is set to `false`, log messages are not written to stdout.
+ #
