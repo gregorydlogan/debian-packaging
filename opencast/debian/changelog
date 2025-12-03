@@ -1,5 +1,5 @@
-opencast-19 (19.x-x) unstable; urgency=low
+opencast-20 (20.x-x) unstable; urgency=low
 
-  * Build x based on Opencast 19.x
+  * Build x based on Opencast 20.x
 
- -- Greg Logan <gregorydlogan@gmail.com>  Tue, 24 Jun 2025 00:00:00 -0600
+ -- Greg Logan <gregorydlogan@gmail.com>  Tue, 02 Dec 2025 00:00:00 -0600
