@@ -1,11 +1,11 @@
 --- a/config.toml
 +++ b/config.toml
-@@ -392,7 +392,7 @@
+@@ -445,7 +445,7 @@
  # `${cmd}` in this value is replaced by the subcommand name of the Tobira
  # process, e.g. `serve`, `worker` or `other` (for less important
  # commands). Example: "/var/log/tobira-${cmd}.log".
 -#file =
-+file = /var/log/tobira/tobira.log
++file = "/var/log/tobira/tobira.log"
  
  # If this is set to `false`, log messages are not written to stdout.
  #
