@@ -8,9 +8,13 @@ After=postgresql.service
 After=meili.service
 
 [Service]
+WorkingDirectory=/usr/bin/
 ExecStart=/usr/bin/tobira worker
 Restart=always
 User=tobira
+
+Restart=on-failure
+RestartSec=60
 
 [Install]
 WantedBy=multi-user.target
