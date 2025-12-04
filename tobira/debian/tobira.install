@@ -1,2 +1,4 @@
 tobira	/usr/bin/
 config.toml	/etc/tobira/
+debian/tobira.service /etc/systemd/system/
+debian/tobira-worker.service /etc/systemd/system/
