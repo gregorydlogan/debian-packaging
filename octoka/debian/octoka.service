@@ -6,10 +6,10 @@ After=local-fs.target
 After=network.target
 
 [Service]
-WorkingDirectory=/usr/bin/octoka/
+WorkingDirectory=/usr/bin/
 ExecStart=/usr/bin/octoka run
+Restart=always
 User=octoka
-Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
