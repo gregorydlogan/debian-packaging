@@ -58,9 +58,6 @@ case "$1" in
 
     apply_permissions $OCTOKA_CONFIG
     apply_permissions $OCTOKA_LOG
-
-    systemctl enable octoka.service
-    systemctl start octoka.service
   ;;
 
   abort-upgrade|abort-remove|abort-deconfigure)

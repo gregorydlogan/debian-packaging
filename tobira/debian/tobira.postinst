@@ -58,11 +58,6 @@ case "$1" in
 
     apply_permissions $TOBIRA_CONFIG
     apply_permissions $TOBIRA_LOG
-
-    systemctl enable tobira
-    systemctl enable tobira-worker
-    systemctl start tobira
-    systemctl start tobira-worker
   ;;
 
   abort-upgrade|abort-remove|abort-deconfigure)

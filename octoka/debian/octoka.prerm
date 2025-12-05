@@ -21,8 +21,6 @@ set -e
 case "$1" in
     #NB: Purge here applies both the stuff in purge *and* remove!
     purge|remove)
-      systemctl disable octoka
-      systemctl stop octoka
     ;;
 
     upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
