@@ -19,4 +19,4 @@
 +models_path="${2:-/usr/share/whisper.cpp/models}"
  
  # Whisper VAD models
- models="silero-v5.1.2"
+ models="silero-v5.1.2 silero-v6.2.0"
