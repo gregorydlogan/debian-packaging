@@ -1,0 +1,6 @@
+
+Package: whisper.cpp-SILERO_VERSION
+Architecture: all
+Depends:
+  whisper.cpp
+Description: Provides the silero vad model as downloaded by the download-ggml-model.sh script provided by whisper.cpp

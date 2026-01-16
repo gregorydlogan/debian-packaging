@@ -253,29 +253,50 @@ doWhisper() {
   #NB: Creating the source tarball here so that we don't include the models!
   tar -cvJf whisper.cpp_$whisperVersion.orig.tar.xz whisper.cpp
   cd whisper.cpp
-  #This fetches the models, and takes (currently) 9.4GB
-  if [ -d ../binaries/models/$whisperVersion ]; then
-    ls ../binaries/models/$whisperVersion | while read line; do
-      ln ../binaries/models/$whisperVersion/$line models
-    done
-  else
-    mkdir -p ../binaries/models/$whisperVersion
-    #Fetch the models
-    for modelsize in tiny base small medium large-v1 large-v2 large-v3
-    do
-      if [ ! -f ./models/ggml-$modelsize.bin ]; then
-        ./models/download-ggml-model.sh $modelsize
-        ln models/ggml-$modelsize.bin ../binaries/models/$whisperVersion
-      fi
-    done
-    for vadmodel in silero-v5.1.2
-    do
-      if [ ! -f ./models/$vadmodel.bin ]; then
-        ./models/download-vad-model.sh $vadmodel
-        ln models/ggml-$vadmodel.bin ../binaries/models/$whisperVersion
-      fi
-    done
-  fi
+  #This fetches the models, and takes a lot of space
+  mkdir -p ../binaries/models/$whisperVersion
+
+  #Fetch the models
+  for modelsize in tiny base small medium large-v1 large-v2 large-v3
+  do
+    #If the model doesn't exist on disk anywhere
+    if [ ! -f ./models/ggml-$modelsize.bin -a ! -f ../binaries/models/$whisperVersion/ggml-$modelsize.bin ]; then
+      ./models/download-ggml-model.sh $modelsize
+      ln models/ggml-$modelsize.bin ../binaries/models/$whisperVersion/ggml-$modelsize.bin
+    #If the model exists in the deb dir but not the binary dir (how?!)
+    elif [ -f ./models/ggml-$modelsize.bin -a ! -f ../binaries/models/$whisperVersion/ggml-$modelsize.bin ]; then
+      ln models/ggml-$modelsize.bin ../binaries/models/$whisperVersion/ggml-$modelsize.bin
+    #If the model does not exist in the deb dir and does in the binary dir
+    elif [ ! -f ./models/ggml-$modelsize.bin -a -f ../binaries/models/$whisperVersion/ggml-$modelsize.bin ]; then
+      ln ../binaries/models/$whisperVersion/ggml-$modelsize.bin models/ggml-$modelsize.bin
+    else
+      echo "Model exists in both places.  Assuming this is deliberate, so not linking!"
+    fi
+  done
+  for vadmodel in `grep -Eo 'silero-v[0-9]+.[0-9]+.[0-9]+' ./models/download-vad-model.sh`
+  do
+    #If the model doesn't exist on disk anywhere
+    if [ ! -f ./models/ggml-$vadmodel.bin -a ! -f ../binaries/models/$whisperVersion/ggml-$vadmodel.bin ]; then
+      ./models/download-vad-model.sh $vadmodel
+      ln models/ggml-$vadmodel.bin ../binaries/models/$whisperVersion/ggml-$vadmodel.bin
+    #If the model exists in the deb dir but not the binary dir (how?!)
+    elif [ -f ./models/ggml-$vadmodel.bin -a ! -f ../binaries/models/$whisperVersion/ggml-$vadmodel.bin ]; then
+      ln models/ggml-$vadmodel.bin ../binaries/models/$whisperVersion/ggml-$vadmodel.bin
+    #If the model does not exist in the deb dir and does in the binary dir
+    elif [ ! -f ./models/ggml-$vadmodel.bin -a -f ../binaries/models/$whisperVersion/ggml-$vadmodel.bin ]; then
+      ln ../binaries/models/$whisperVersion/ggml-$vadmodel.bin models/ggml-$vadmodel.bin
+    else
+      echo "Model exists in both places.  Assuming this is deliberate, so not linking!"
+    fi
+  done
+  #Make sure the vad models are in the build
+  for vadmodel in `grep -Eo 'silero-v[0-9]+.[0-9]+.[0-9]+' ./models/download-vad-model.sh`
+  do
+    #We need a separate .install for each silero version
+    sed "s/SILERO_VERSION/$vadmodel/g" debian/whisper.cpp-silero.install > debian/whisper.cpp-$vadmodel.install
+    #We add each version to the *end* of the main control file
+    cat debian/whisper.cpp-silero.control | sed "s/SILERO_VERSION/$vadmodel/g" >> debian/control
+  done
 
   dch --create --package whisper.cpp --newversion $whisperVersion-$buildNumber -D stable -u low "Whisper.cpp version $whisperVersion, based on Opencast Whisper.cpp packaging, build $buildNumber"
   #Zero out the time
