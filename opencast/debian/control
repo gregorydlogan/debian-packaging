@@ -15,7 +15,7 @@ Architecture: all
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
- openjdk-21-jre,
+ openjdk-21-jre | java21-runtime,
  adduser,
  netcat,
  sudo,
