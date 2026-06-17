@@ -21,10 +21,10 @@ Depends:
  sudo,
  init-system-helpers
 Provides:
- opencast (= 20.x-x)
+ opencast (= 20.1-1)
 Conflicts:
- opencast (<< 20.x-x),
- opencast (>> 21.x-x)
+ opencast (<< 20.1-1),
+ opencast (>> 20.2-x)
 Description: Open Source Lecture Capture & Video Management Tool Common Files
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -37,7 +37,7 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-20-allinone
 Architecture: all
 Depends:
- opencast-20-common (= 20.x-x),
+ opencast-20-common (= 20.1-1),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
  opensearch | elasticsearch-oss | elasticsearch,
@@ -63,7 +63,7 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-20-admin
 Architecture: all
 Depends:
- opencast-20-common (= 20.x-x),
+ opencast-20-common (= 20.1-1),
 Conflicts:
  opencast-20-allinone,
  opencast-20-adminpresentation,
@@ -87,7 +87,7 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-20-worker
 Architecture: all
 Depends:
- opencast-20-common (= 20.x-x),
+ opencast-20-common (= 20.1-1),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr
 Conflicts:
@@ -113,7 +113,7 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-20-presentation
 Architecture: all
 Depends:
- opencast-20-common (= 20.x-x),
+ opencast-20-common (= 20.1-1),
 Conflicts:
  opencast-20-admin,
  opencast-20-adminpresentation,
@@ -136,7 +136,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-20-adminpresentation
 Architecture: all
 Depends:
- opencast-20-common (= 20.x-x),
+ opencast-20-common (= 20.1-1),
 Conflicts:
  opencast-20-admin,
  opencast-20-worker,
@@ -161,7 +161,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-20-ingest
 Architecture: all
 Depends:
- opencast-20-common (= 20.x-x),
+ opencast-20-common (= 20.1-1),
 Conflicts:
  opencast-20-admin,
  opencast-20-worker,
