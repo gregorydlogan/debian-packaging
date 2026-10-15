@@ -1,5 +1,5 @@
-opencast-21 (21.x-x) unstable; urgency=low
+opencast-22 (22.x-x) unstable; urgency=low
 
-  * Build x based on Opencast 21.x
+  * Build x based on Opencast 22.x
 
- -- Greg Logan <gregorydlogan@gmail.com>  Mon, 04 May 2026 00:00:00 -0600
+ -- Greg Logan <gregorydlogan@gmail.com>  Thu, 15 Oct 2026 00:00:00 -0600
