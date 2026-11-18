@@ -41,16 +41,39 @@ create_user() {
   fi
 }
 
-apply_permissions() {
-  #If $1 is *not* a mount, apply the dpkg-statoverride
-  findmnt -M "$1" 2>&1 > /dev/null && export isMount="true" || export isMount="false"
-  dpkg-statoverride --list "$1" 2>&1 > /dev/null && export isOverridden="true" || export isOverridden="false"
-  if ! $isMount && ! $isOverridden; then
-    dpkg-statoverride --update --add $OC_USER $OC_GROUP 755 $1
-  fi
+apply_rw_permissions() {
+  target="$1"
+
+  # Reading more about this, package maintainers are supposed to use normal chown/chmod, *not* dpkg-statoverride
+  # Given that all the old deb use dpkg-statoverride, we lead this with a removal so that (eventually) they all go away
+  dpkg-statoverride --list "$target" > /dev/null 2>&1 && dpkg-statoverride --quiet --remove "$target"
+
+  findmnt -M "$target" > /dev/null 2>&1 && export isMount="true" || export isMount="false"
+  # Remove any override for this path
   if ! $isMount; then
-    #This chown is required, dpkg-statoverride does not recurse and apply the change to the children
-    chown -R $OC_USER:$OC_GROUP $1
+    # Previous packaging allowed r/w by default, so we set the top level (ie, the constants above) permissions
+    # but we don't recurse downwards since we don't need to.  If this is a new install it won't matter, and if
+    # it's an *old* install then this could be a *very* long process if there are a ton of files
+    chmod 750 "$target"
+    chown $OC_USER:$OC_GROUP "$target"
+  fi
+}
+
+apply_ro_permissions() {
+  target="$1"
+
+  # Reading more about this, package maintainers are supposed to use normal chown/chmod, *not* dpkg-statoverride
+  # Given that all the old deb use dpkg-statoverride, we lead this with a removal so that (eventually) they all go away
+  dpkg-statoverride --list "$target" > /dev/null 2>&1 && dpkg-statoverride --quiet --remove "$target"
+
+  findmnt -M "$target" > /dev/null 2>&1 && export isMount="true" || export isMount="false"
+  if ! $isMount; then
+    # Previous packaging allowed r/w by default, but here we are specifying that these files *must* be RO.
+    # So we do this in two steps, one for each type of file, and recursively
+    # And we lock it to root:opencast with opencast having only read perms
+    find "$target" -type d -exec chmod 750 "{}" \;
+    find "$target" -type f -exec chmod 640 "{}" \;
+    chown -R root:$OC_GROUP "$target"
   fi
 }
 
@@ -61,11 +84,20 @@ case "$1" in
 
     mkdir -p $OC_DATA
 
-    apply_permissions $OC_HOME
-    apply_permissions $OC_CONFIG
-    apply_permissions $OC_LOG
-    apply_permissions $OC_DATA
-    apply_permissions $OC_KARAF_DATA
+    # OC_HOME and OC_CONFIG should both be read-only
+    apply_ro_permissions $OC_HOME
+    apply_ro_permissions $OC_CONFIG
+
+    # The rest are places where Opencast is allowed to make modifications
+    apply_rw_permissions $OC_LOG
+    apply_rw_permissions $OC_DATA
+    apply_rw_permissions $OC_KARAF_DATA
+
+    # Enforce executable permissions on the start/stop scripts
+    chmod 750 $OC_HOME/bin/start-opencast
+    chmod 750 $OC_HOME/bin/stop-opencast
+    # Fix the ownership of these two directories.  They're burned into the packages with root:root otherwise
+    chown -R $OC_USER:$OC_GROUP $OC_KARAF_DATA/data $OC_KARAF_DATA/instances
   ;;
 
   abort-upgrade|abort-remove|abort-deconfigure)

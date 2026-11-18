@@ -16,6 +16,7 @@ Depends:
  ${shlibs:Depends},
  ${misc:Depends},
  openjdk-21-jre,
+ findutils,
  adduser,
  netcat,
  sudo,
