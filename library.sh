@@ -158,7 +158,7 @@ doAnalysis() {
   ./analysis-icu-fetch.sh $version
   cd ..
 
-  cd analysis-icu
+  cd opensearch-analysis-icu
   git clean -fdx ./
   unzip ../binaries/analysis-icu-$version.zip
 
@@ -170,12 +170,12 @@ doAnalysis() {
 
   cd ..
 
-  tar cvJf opensearch-analysis-icu_$version.orig.tar.xz analysis-icu
-  doBuild analysis-icu
+  tar cvJf opensearch-analysis-icu_$version.orig.tar.xz opensearch-analysis-icu
+  doBuild opensearch-analysis-icu
   createOutputs $VERSION $version opensearch-analysis-icu-$version-$buildNr
   mv opensearch-analysis-icu*.* outputs/$VERSION
   #Cleanup for the next build
-  git checkout -- analysis-icu/debian/control
+  git checkout -- opensearch-analysis-icu/debian/control
   rm -f debian/changelog
 }
 

@@ -53,6 +53,6 @@ octoka/*
 whisper.cpp/*
 !whisper.cpp/debian
 
-analysis-icu/*
-!analysis-icu/debian
-analysis-icu/debian/changelog
+opensearch-analysis-icu/*
+!opensearch-analysis-icu/debian
+opensearch-analysis-icu/debian/changelog
