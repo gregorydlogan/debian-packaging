@@ -21,10 +21,10 @@ Depends:
  sudo,
  init-system-helpers
 Provides:
- opencast (= 21.x-x)
+ opencast (= 21.0-1)
 Conflicts:
- opencast (<< 21.x-x),
- opencast (>> 22.x-x)
+ opencast (<< 21.0-1),
+ opencast (>> 21.1-x)
 Description: Open Source Lecture Capture & Video Management Tool Common Files
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -37,7 +37,7 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-21-allinone
 Architecture: all
 Depends:
- opencast-21-common (= 21.x-x),
+ opencast-21-common (= 21.0-1),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
  opensearch | elasticsearch-oss | elasticsearch,
@@ -63,7 +63,7 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-21-admin
 Architecture: all
 Depends:
- opencast-21-common (= 21.x-x),
+ opencast-21-common (= 21.0-1),
 Conflicts:
  opencast-21-allinone,
  opencast-21-adminpresentation,
@@ -87,7 +87,7 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-21-worker
 Architecture: all
 Depends:
- opencast-21-common (= 21.x-x),
+ opencast-21-common (= 21.0-1),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr
 Conflicts:
@@ -113,7 +113,7 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-21-presentation
 Architecture: all
 Depends:
- opencast-21-common (= 21.x-x),
+ opencast-21-common (= 21.0-1),
 Conflicts:
  opencast-21-admin,
  opencast-21-adminpresentation,
@@ -136,7 +136,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-21-adminpresentation
 Architecture: all
 Depends:
- opencast-21-common (= 21.x-x),
+ opencast-21-common (= 21.0-1),
 Conflicts:
  opencast-21-admin,
  opencast-21-worker,
@@ -161,7 +161,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-21-ingest
 Architecture: all
 Depends:
- opencast-21-common (= 21.x-x),
+ opencast-21-common (= 21.0-1),
 Conflicts:
  opencast-21-admin,
  opencast-21-worker,
