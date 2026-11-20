@@ -2,3 +2,4 @@ init-paths.patch
 karaf-oc-paths.patch
 logging-paths.patch
 setenv-paths.patch
+karaf-etc
