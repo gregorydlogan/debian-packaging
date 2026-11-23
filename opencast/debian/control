@@ -22,10 +22,10 @@ Depends:
  sudo,
  init-system-helpers
 Provides:
- opencast (= 19.x-x)
+ opencast (= 19.11-1)
 Conflicts:
- opencast (<< 19.x-x),
- opencast (>> 20.x-x)
+ opencast (<< 19.11-1),
+ opencast (>> 19.12-x)
 Description: Open Source Lecture Capture & Video Management Tool Common Files
  Opencast is a free, open-source platform to support the management of
  educational audio and video content. Institutions will use Opencast to
@@ -38,7 +38,7 @@ Description: Open Source Lecture Capture & Video Management Tool Common Files
 Package: opencast-19-allinone
 Architecture: all
 Depends:
- opencast-19-common (= 19.x-x),
+ opencast-19-common (= 19.11-1),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr,
  opensearch | elasticsearch-oss | elasticsearch,
@@ -64,7 +64,7 @@ Description: Open Source Lecture Capture & Video Management Tool All-In-One Prof
 Package: opencast-19-admin
 Architecture: all
 Depends:
- opencast-19-common (= 19.x-x),
+ opencast-19-common (= 19.11-1),
 Conflicts:
  opencast-19-allinone,
  opencast-19-adminpresentation,
@@ -88,7 +88,7 @@ Description: Open Source Lecture Capture & Video Management Tool Admin Profile
 Package: opencast-19-worker
 Architecture: all
 Depends:
- opencast-19-common (= 19.x-x),
+ opencast-19-common (= 19.11-1),
  ffmpeg-dist | ffmpeg,
  tesseract-ocr
 Conflicts:
@@ -114,7 +114,7 @@ Description: Open Source Lecture Capture & Video Management Tool Worker Profile
 Package: opencast-19-presentation
 Architecture: all
 Depends:
- opencast-19-common (= 19.x-x),
+ opencast-19-common (= 19.11-1),
 Conflicts:
  opencast-19-admin,
  opencast-19-adminpresentation,
@@ -137,7 +137,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-19-adminpresentation
 Architecture: all
 Depends:
- opencast-19-common (= 19.x-x),
+ opencast-19-common (= 19.11-1),
 Conflicts:
  opencast-19-admin,
  opencast-19-worker,
@@ -162,7 +162,7 @@ Description: Open Source Lecture Capture & Video Management Tool Distribution Pr
 Package: opencast-19-ingest
 Architecture: all
 Depends:
- opencast-19-common (= 19.x-x),
+ opencast-19-common (= 19.11-1),
 Conflicts:
  opencast-19-admin,
  opencast-19-worker,
